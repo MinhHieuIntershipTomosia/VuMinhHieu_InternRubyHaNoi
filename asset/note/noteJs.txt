@@ -1,0 +1,16 @@
+Các ghi nhớ về javaScripts
+- Có 3 cách khai báo biến trong JS : var, let, const
+ 2.1 var : có thể update và khai báo lại trong những scope khác nhau
+ 2.2 let : có thể update lại giá trị nhưng không thể khai báo lại
+ 2.3 const : không thể update hoặc khai báo lại
+- hàm trong js : function name_function(var1, var2, ....){ condition}
+- if__else trong js : dùng như với C
+- switch__case__default : dùng như với C
+- Biến toàn cục và biến cục bộ trong Js
+    + biến toàn cục :
+    + biến cục bộ : 
+Note:Nếu có hai hàm trùng tên trong js thì js vẫn sẽ chạy. 
+JS không quan tâm đến số đối số trong các hàm .
+JS chỉ quan tâm đến hàm cuối cùng và sẽ chạy hàm đó
+
+
