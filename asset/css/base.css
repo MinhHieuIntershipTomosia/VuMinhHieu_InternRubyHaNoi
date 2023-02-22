@@ -4,7 +4,22 @@
     --primary-font-size: 12px;
     --text-color:#333;
     --text-exprience-address:#777;
+    --size-icon: 18px;
+    --height-header: 50px;
+    --header-icon: #fff;
+    --color-white: #fff;
 }
+
+*{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+
 
 .bg--primary{
     background-color: var(--primary-color);
@@ -22,4 +37,8 @@
     padding-right: 2px;
     padding-left: 2px;
 
+}
+
+.content-items__footer-container{
+    background-color: transparent;
 }

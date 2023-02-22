@@ -1,42 +1,105 @@
-header{
-    background-color: #78b43d;
-    height: 50px;
+header {
+  background-color: #78b43d;
+  height: var(--height-header);
 }
 
-.page__logo{
-    padding-right: 8px;
+.page__logo {
+  padding-right: 8px;
 }
 
-.header__list-option{
-    list-style: none;
-    height: 100%;
-    color: #fff;
+.header__list-option {
+  list-style: none;
+  height: 100%;
+  color: #fff;
 }
 
-.header__option-items{
-    padding: 4px;
-    text-align: center;
-    margin-right: 3px;
+.header__option-items {
+  padding: 4px;
+  text-align: center;
+  margin-right: 3px;
 }
 
-.header__option-icon{
-    font-size: 18px;
+.header__option-icon {
+  font-size: 18px;
 }
 
-.header__option-content{
-    text-transform: uppercase;
-    font-size: 12px;
+.header__menubar-text,
+.header__option-content {
+  text-transform: uppercase;
+  font-size: 12px;
 }
 
-.header__option-items:hover{
-    background-color: var(--header-item-hover);
+.header__option-items:hover {
+  background-color: var(--header-item-hover);
 }
 
-.header__search{
-    color: #fff;
-    font-size: 24px;
-    line-height: 50px; 
-    padding:0 16px;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+.header__search {
+  color: #fff;
+  font-size: 24px;
+  line-height: 50px;
+  padding: 0 16px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/**
+* CSS Mobile
+*/
+
+.header__menubarContainer{
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+
+.header__menubar {
+  font-size: var(--size-icon);
+  padding: 4px;
+  color: var(--header-icon);
+  height: 100%;
+  text-align: center;
+}
+
+.menubarMobile-listOption {
+  top: 50px;
+  right: 0;
+  position: absolute;
+  width: 270px;
+  background-color: #464646;
+  list-style: none;
+  z-index: 2;
+}
+
+.menubarMobile__items{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 15px;
+  border: 1px solid #555;
+  cursor: pointer;
+  color: var(--color-white);
+  font-size: 16px;
+}
+
+.menubarMobile__items-text{
+  margin: 0;
+  flex: 1;
+  height: 100%;
+}
+
+.menubarMobile__items-icon{
+  padding: 4px;
+  color: var(--primary-color);
+}
+
+.menubarMobile__items.items--home{
+  flex-direction: row;
+}
+
+.items--home > .menubarMobile__items-icon{
+  color: var(--color-white);
+  margin: 0 4px;
 }

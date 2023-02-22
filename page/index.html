@@ -1,314 +1,630 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asset/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>24h.com</title>
-</head>
-<body>
-    <div class="app">
-        <header class="d-flex flex-row  justify-content-center">
-            <div class="page__logo">
-                <img src="../asset/image/logo24.png" alt="Logo" class="page__logo-img">
-            </div>
-            <ul class="header__list-option d-flex flex-row">
-                <li class="header__option-items">
-                    <div class="header__option-icon">
-                        <i class="fa-solid fa-bars"></i>
-                    </div>
-                    <p class="header__option-content">Danh Muc</p>
-                </li>
-                <li class="header__option-items ">
-                    <div class="header__option-icon">
-                        <i class="fa-solid fa-futbol"></i>
-                    </div>
-                    <p class="header__option-content">Bong Da</p>
-                </li>
-                <li class="header__option-items ">
-                    <div class="header__option-icon">
-                        <i class="fa-solid fa-chart-simple"></i>
-                    </div>
-                    <p class="header__option-content">Kinh Doanh</p>
-                </li>
-                <li class="header__option-items ">
-                    <div class="header__option-icon">
-                        <i class="fa-sharp fa-solid fa-heart-pulse"></i>
-                    </div>
-                    <p class="header__option-content">Suc Khoe</p>
-                </li>
-            </ul>
-            <div class="header__search">
-                <i class="fa-sharp fa-solid fa-magnifying-glass header__search-icon"></i>
-            </div>
-        </header>
-        <div class="content">
-            <div class="row">
-                <div class="content__left col-8">
-                    <div class="row row-content sm-gutter">
-                        <div class="col content-items">
-                            <ul class="content-items__title d-flex flex-row">
-                                <li class="title__items title__items--selected">
-                                    <span class="title__items-text">Tin tuc trong ngay</span>
-                                </li>
-                                <li class="title__items">
-                                    <span class="title__items-text">Nang len</span>
-                                </li>
-                                <li class="title__items">
-                                    <span class="title__items-text">Nhip song 24h</span>
-                                </li>
-                            </ul>
-                            <div class="content-items__header">
-                                <h2 class="content-items__header-text">Công an giải đáp các thắc mắc mà người vi phạm hay 'hạch hỏi' CSGT</h2>
-                            </div>
-                            <div class="content-items__primaryContent" >
-                                <div class="primaryContent__img" style="background-image: url(../asset/image/image_items1.jpg);"></div>
-                                <div class="primaryContent__text">
-                                    <span>Nhiều người vi phạm đòi xem chuyên đề của tổ CSGT khi làm nhiệm vụ, hạch hỏi "sao lại dừng xe tôi"...Nhiều người vi phạm đòi xem chuyên đề của tổ CSGT khi làm nhiệm vụ, hạch hỏi "sao lại dừng xe tôi"...</span>
-                                    <a href="#" class="experience-address__link">
-                                        <i class="fa-solid fa-angles-right experience-address__icon"></i>
-                                        Ha Tinh
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="content-items__footer">
-                                <div class="content-items__footer-top">
-                                    <ul class="content-items__footer-list">
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
-                                        </li>
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
-                                        </li>
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-solid fa-video content-items__footer-icon content-items__footer-icon--video"></i>
-                                            <p class="content-items__footer-text">Bắt Phó Giám đốc Trung tâm đăng kiểm ở Ninh Bình</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="content-items__footer-botoom">
-                                    <ul class="content-items__footer-list">
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
-                                        </li>
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col content-items">
-                            <ul class="content-items__title d-flex flex-row">
-                                <li class="title__items title__items--selected">
-                                    <span class="title__items-text">Tin tuc trong ngay</span>
-                                </li>
-                                <li class="title__items">
-                                    <span class="title__items-text">Nang len</span>
-                                </li>
-                                <li class="title__items">
-                                    <span class="title__items-text">Nhip song 24h</span>
-                                </li>
-                            </ul>
-                            <div class="content-items__header">
-                                <h2 class="content-items__header-text">Trực tiếp bóng đá Liverpool - Real Madrid: Dấu hỏi lớn về Nunez và Benzema (Cúp C1)</h2>
-                            </div>
-                            <div class="content-items__primaryContent" >
-                                <div class="primaryContent__img" style="background-image: url(../asset/image/image_items2.jpg);"></div>
-                                <div class="primaryContent__text">
-                                    <span>(3h, 22/2) Hai đội đều đang chờ thể trạng của Darwin Nunez và Karim Benzema.</span>
-                                    <a href="#" class="experience-address__link">
-                                        <i class="fa-solid fa-angles-right experience-address__icon"></i>
-                                        Trực tiếp bóng đá hôm nay
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="content-items__footer">
-                                <div class="content-items__footer-top">
-                                    <ul class="content-items__footer-list">
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
-                                        </li>
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
-                                        </li>
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-solid fa-video content-items__footer-icon content-items__footer-icon--video"></i>
-                                            <p class="content-items__footer-text">Bắt Phó Giám đốc Trung tâm đăng kiểm ở Ninh Bình</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="content-items__footer-botoom">
-                                    <ul class="content-items__footer-list">
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
-                                        </li>
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row row-content sm-gutter">
-                        <div class="col content-items">
-                            <ul class="content-items__title d-flex flex-row">
-                                <li class="title__items title__items--selected">
-                                    <span class="title__items-text">Tin tuc trong ngay</span>
-                                </li>
-                                <li class="title__items">
-                                    <span class="title__items-text">Nang len</span>
-                                </li>
-                                <li class="title__items">
-                                    <span class="title__items-text">Nhip song 24h</span>
-                                </li>
-                            </ul>
-                            <div class="content-items__header">
-                                <h2 class="content-items__header-text">Công an giải đáp các thắc mắc mà người vi phạm hay 'hạch hỏi' CSGT</h2>
-                            </div>
-                            <div class="content-items__primaryContent" >
-                                <div class="primaryContent__img" style="background-image: url(../asset/image/image_items1.jpg);"></div>
-                                <div class="primaryContent__text">
-                                    <span>Nhiều người vi phạm đòi xem chuyên đề của tổ CSGT khi làm nhiệm vụ, hạch hỏi "sao lại dừng xe tôi"...Nhiều người vi phạm đòi xem chuyên đề của tổ CSGT khi làm nhiệm vụ, hạch hỏi "sao lại dừng xe tôi"...</span>
-                                    <a href="#" class="experience-address__link">
-                                        <i class="fa-solid fa-angles-right experience-address__icon"></i>
-                                        Ha Tinh
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="content-items__footer">
-                                <div class="content-items__footer-top">
-                                    <ul class="content-items__footer-list">
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
-                                        </li>
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
-                                        </li>
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-solid fa-video content-items__footer-icon content-items__footer-icon--video"></i>
-                                            <p class="content-items__footer-text">Bắt Phó Giám đốc Trung tâm đăng kiểm ở Ninh Bình</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="content-items__footer-botoom">
-                                    <ul class="content-items__footer-list">
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
-                                        </li>
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col content-items">
-                            <ul class="content-items__title d-flex flex-row">
-                                <li class="title__items title__items--selected">
-                                    <span class="title__items-text">Tin tuc trong ngay</span>
-                                </li>
-                                <li class="title__items">
-                                    <span class="title__items-text">Nang len</span>
-                                </li>
-                                <li class="title__items">
-                                    <span class="title__items-text">Nhip song 24h</span>
-                                </li>
-                            </ul>
-                            <div class="content-items__header">
-                                <h2 class="content-items__header-text">Trực tiếp bóng đá Liverpool - Real Madrid: Dấu hỏi lớn về Nunez và Benzema (Cúp C1)</h2>
-                            </div>
-                            <div class="content-items__primaryContent" >
-                                <div class="primaryContent__img" style="background-image: url(../asset/image/image_items2.jpg);"></div>
-                                <div class="primaryContent__text">
-                                    <span>(3h, 22/2) Hai đội đều đang chờ thể trạng của Darwin Nunez và Karim Benzema.</span>
-                                    <a href="#" class="experience-address__link">
-                                        <i class="fa-solid fa-angles-right experience-address__icon"></i>
-                                        Trực tiếp bóng đá hôm nay
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="content-items__footer">
-                                <div class="content-items__footer-top">
-                                    <ul class="content-items__footer-list">
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
-                                        </li>
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
-                                        </li>
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-solid fa-video content-items__footer-icon content-items__footer-icon--video"></i>
-                                            <p class="content-items__footer-text">Bắt Phó Giám đốc Trung tâm đăng kiểm ở Ninh Bình</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="content-items__footer-botoom">
-                                    <ul class="content-items__footer-list">
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
-                                        </li>
-                                        <li class="content-items__footer-items">
-                                            <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
-                                            <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="content__right col-4">
-                    <img src="../asset/image/imageOustanding.jpg" alt="" class="information-imageOutstanding">
-                    <div class="infornmation">
-                        <h2 class="information__title">Tin Tức Thị Trường</h2>
-                        <ul class="list-information">
-                            <li class="information-items">
-                                <img src="../asset/image/information-image1.jpg" alt="NoImage" class="information-items__img">
-                                <p class="information-items__content">Món quà du lịch cho mọi người cùng Radisson Hotels</p>
-                            </li>
-                            <li class="information-items">
-                                <img src="../asset/image/information-image2.jpg" alt="NoImage" class="information-items__img">
-                                <p class="information-items__content">Thi nhau xuyên Việt nhằm thử thách ô tô điện VinFast VF 8</p>
-                            </li>
-                            <li class="information-items">
-                                <img src="../asset/image/information-image3.jpg" alt="NoImage" class="information-items__img">
-                                <p class="information-items__content">Manulife Việt Nam tiếp tục tri ân khách hàng, công bố 3 chủ nhân trúng thưởng xe Mercedes</p>
-                            </li>
-                            <li class="information-items">
-                                <img src="../asset/image/information-image3.jpg" alt="NoImage" class="information-items__img">
-                                <p class="information-items__content">Manulife Việt Nam tiếp tục tri ân khách hàng, công bố 3 chủ nhân trúng thưởng xe Mercedes Manulife Việt Nam tiếp tục tri ân khách hàng, công bố 3 chủ nhân trúng thưởng xe Mercedes</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer>
 
-        </footer>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../asset/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../asset/css/responsive.css">
+  <title>24h.com</title>
+</head>
+
+<body>
+  <div class="app" style="overflow: hidden;">
+    <header class="d-flex flex-row  justify-content-center">
+      <div class="page__logo">
+        <img src="../asset/image/logo24.png" alt="Logo" class="page__logo-img">
+      </div>
+      <ul class="header__list-option d-flex flex-row">
+        <li class="header__option-items">
+          <div class="header__option-icon">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <p class="header__option-content">Danh Muc</p>
+        </li>
+        <li class="header__option-items ">
+          <div class="header__option-icon">
+            <i class="fa-solid fa-futbol"></i>
+          </div>
+          <p class="header__option-content">Bong Da</p>
+        </li>
+        <li class="header__option-items ">
+          <div class="header__option-icon">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+          <p class="header__option-content">Kinh Doanh</p>
+        </li>
+        <li class="header__option-items ">
+          <div class="header__option-icon">
+            <i class="fa-sharp fa-solid fa-heart-pulse"></i>
+          </div>
+          <p class="header__option-content">Suc Khoe</p>
+        </li>
+        <li class="header__option-items ">
+          <div class="header__option-icon">
+            <i class="fa-sharp fa-solid fa-tablet-screen-button"></i>
+          </div>
+          <p class="header__option-content">HI-TECH</p>
+        </li>
+        <li class="header__option-items ">
+          <div class="header__option-icon">
+            <i class="fa-sharp fa-solid fa-earth-americas"></i>
+          </div>
+          <p class="header__option-content">The Gioi </p>
+        </li>
+        <li class="header__option-items ">
+          <div class="header__option-icon">
+            <i class="fa-sharp fa-solid fa-person-running"></i>
+          </div>
+          <p class="header__option-content">The Thao</p>
+        </li>
+        <li class="header__option-items ">
+          <div class="header__option-icon">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+          <p class="header__option-content">Ngoai Hang Anh</p>
+        </li>
+        <li class="header__option-items ">
+          <div class="header__option-icon">
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
+          <p class="header__option-content">Giai Tri</p>
+        </li>
+        <li class="header__option-items ">
+          <div class="header__option-icon">
+            <i class="fa-solid fa-person"></i>
+          </div>
+          <p class="header__option-content">Phai Dep</p>
+        </li>
+        <li class="header__option-items ">
+          <div class="header__option-icon">
+            <i class="fa-solid fa-book"></i>
+          </div>
+          <p class="header__option-content">Tap Chi</p>
+        </li>
+        <li class="header__option-items ">
+          <div class="header__option-icon">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <p class="header__option-content">Lich</p>
+        </li>
+      </ul>
+      <div class="header__search header__option-items">
+        <i class="fa-sharp fa-solid fa-magnifying-glass header__search-icon"></i>
+      </div>
+      <div class="header__menubarContainer">
+        <div class="header__menubar">
+          <i class="fa-solid fa-bars"></i>
+          <p class="header__menubar-text">Menu</p>
+        </div>
+        <ul class="menubarMobile-listOption">
+          <div class="menubarMobile-search">
+            <input type="Nhap vap de tim kiem" class="menubarMobile__input">
+            <button class="menubarMobile-search__button">
+              <i class="fa-sharp fa-solid fa-magnifying-glass header__search-icon"></i>
+            </button>
+          </div>
+          <li class="menubarMobile__items items--home">
+            <div class="menubarMobile__items-icon">
+              <i class="fa-solid fa-house"></i>
+            </div>
+            <p class="menubarMobile__items-text">
+              Trang chu
+            </p>
+          </li>
+          <li class="menubarMobile__items">
+            <div class="menubarMobile__items-icon">
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <p class="menubarMobile__items-text">
+              Tin Tuc
+            </p>
+          </li>
+          <li class="menubarMobile__items">
+            <div class="menubarMobile__items-icon">
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <p class="menubarMobile__items-text">
+              Bong Da
+            </p>
+          </li>
+          <li class="menubarMobile__items">
+            <div class="menubarMobile__items-icon">
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <p class="menubarMobile__items-text">
+              The Gioi
+            </p>
+          </li>
+          <li class="menubarMobile__items">
+            <div class="menubarMobile__items-icon">
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <p class="menubarMobile__items-text">
+              Video
+            </p>
+          </li>
+          <li class="menubarMobile__items">
+            <div class="menubarMobile__items-icon">
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <p class="menubarMobile__items-text">
+              Thoi Trang
+            </p>
+          </li>
+          <li class="menubarMobile__items">
+            <div class="menubarMobile__items-icon">
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <p class="menubarMobile__items-text">
+              Phap Luat
+            </p>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="content">
+      <div class="row">
+        <div class="content__left col-8">
+          <div class="row row-content sm-gutter">
+            <div class="col content-items">
+              <ul class="content-items__title d-flex flex-row ">
+                <li class="title__items title__items--selected">
+                  <span class="title__items-text">Tin tuc trong ngay</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nang len</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nhip song 24h</span>
+                </li>
+              </ul>
+              <div class="content-items__header">
+                <h2 class="content-items__header-text">Công an giải đáp các thắc mắc mà người vi phạm hay 'hạch hỏi'
+                  CSGT</h2>
+              </div>
+              <div class="content-items__primaryContent">
+                <img class="primaryContent__img" src="../asset/image/image_items1.jpg" alt="NoImage"></img>
+                <div class="primaryContent__text">
+                  <span>Nhiều người vi phạm đòi xem chuyên đề của tổ CSGT khi làm nhiệm vụ, hạch hỏi "sao lại dừng xe
+                    tôi"...Nhiều người vi phạm đòi xem chuyên đề của tổ CSGT khi làm nhiệm vụ, hạch hỏi "sao lại dừng xe
+                    tôi"...</span>
+                  <a href="#" class="experience-address__link">
+                    <i class="fa-solid fa-angles-right experience-address__icon"></i>
+                    Ha Tinh
+                  </a>
+                </div>
+              </div>
+              <div class="content-items__footer">
+                <div class="content-items__footer-top">
+                  <ul class="content-items__footer-list">
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-solid fa-video content-items__footer-icon content-items__footer-icon--video"></i>
+                      <p class="content-items__footer-text">Bắt Phó Giám đốc Trung tâm đăng kiểm ở Ninh Bình</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="content-items__footer-botoom">
+                  <ul class="content-items__footer-list">
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col content-items">
+              <ul class="content-items__title d-flex flex-row">
+                <li class="title__items title__items--selected">
+                  <span class="title__items-text">Tin tuc trong ngay</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nang len</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nhip song 24h</span>
+                </li>
+              </ul>
+              <div class="content-items__header">
+                <h2 class="content-items__header-text">Trực tiếp bóng đá Liverpool - Real Madrid: Dấu hỏi lớn về Nunez
+                  và Benzema (Cúp C1)</h2>
+              </div>
+              <div class="content-items__primaryContent">
+                <img class="primaryContent__img" src="../asset/image/image_items2.jpg" alt="NoImage"></img>
+                <div class="primaryContent__text">
+                  <span>(3h, 22/2) Hai đội đều đang chờ thể trạng của Darwin Nunez và Karim Benzema.</span>
+                  <a href="#" class="experience-address__link">
+                    <i class="fa-solid fa-angles-right experience-address__icon"></i>
+                    Trực tiếp bóng đá hôm nay
+                  </a>
+                </div>
+              </div>
+              <div class="content-items__footer">
+                <div class="content-items__footer-top">
+                  <ul class="content-items__footer-list">
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-solid fa-video content-items__footer-icon content-items__footer-icon--video"></i>
+                      <p class="content-items__footer-text">Bắt Phó Giám đốc Trung tâm đăng kiểm ở Ninh Bình</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="content-items__footer-botoom">
+                  <ul class="content-items__footer-list">
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row--image">
+            <div class="col-12">
+              <img src="../asset/image/anhgt.png" alt="NoImage" class="content-Image">
+            </div>
+          </div>
+          <div class="row row-content sm-gutter">
+            <div class="col content-items">
+              <ul class="content-items__title d-flex flex-row">
+                <li class="title__items title__items--selected">
+                  <span class="title__items-text">Tin tuc trong ngay</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nang len</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nhip song 24h</span>
+                </li>
+              </ul>
+              <div class="content-items__header">
+                <h2 class="content-items__header-text">Công an giải đáp các thắc mắc mà người vi phạm hay 'hạch hỏi'
+                  CSGT</h2>
+              </div>
+              <div class="content-items__primaryContent">
+                <img class="primaryContent__img" src="../asset/image/image_items2.jpg" alt="NoImage"></img>
+                <div class="primaryContent__text">
+                  <span>Nhiều người vi phạm đòi xem chuyên đề của tổ CSGT khi làm nhiệm vụ, hạch hỏi "sao lại dừng xe
+                    tôi"...Nhiều người vi phạm đòi xem chuyên đề của tổ CSGT khi làm nhiệm vụ, hạch hỏi "sao lại dừng xe
+                    tôi"...</span>
+                  <a href="#" class="experience-address__link">
+                    <i class="fa-solid fa-angles-right experience-address__icon"></i>
+                    Ha Tinh
+                  </a>
+                </div>
+              </div>
+              <div class="content-items__footer">
+                <div class="content-items__footer-container">
+                  <ul class="content-items__footer-list">
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-solid fa-video content-items__footer-icon content-items__footer-icon--video"></i>
+                      <p class="content-items__footer-text">Bắt Phó Giám đốc Trung tâm đăng kiểm ở Ninh Bình</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col content-items">
+              <ul class="content-items__title d-flex flex-row">
+                <li class="title__items title__items--selected">
+                  <span class="title__items-text">Tin tuc trong ngay</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nang len</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nhip song 24h</span>
+                </li>
+              </ul>
+              <div class="content-items__header">
+                <h2 class="content-items__header-text">Trực tiếp bóng đá Liverpool - Real Madrid: Dấu hỏi lớn về Nunez
+                  và Benzema (Cúp C1)</h2>
+              </div>
+              <div class="content-items__primaryContent">
+                <img class="primaryContent__img" src="../asset/image/image_items2.jpg" alt="NoImage"></img>
+                <div class="primaryContent__text">
+                  <span>(3h, 22/2) Hai đội đều đang chờ thể trạng của Darwin Nunez và Karim Benzema.</span>
+                  <a href="#" class="experience-address__link">
+                    <i class="fa-solid fa-angles-right experience-address__icon"></i>
+                    Trực tiếp bóng đá hôm nay
+                  </a>
+                </div>
+              </div>
+              <div class="content-items__footer">
+                <div class="content-items__footer-top">
+                  <ul class="content-items__footer-list">
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-solid fa-video content-items__footer-icon content-items__footer-icon--video"></i>
+                      <p class="content-items__footer-text">Bắt Phó Giám đốc Trung tâm đăng kiểm ở Ninh Bình</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="content-items__footer-botoom">
+                  <ul class="content-items__footer-list">
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-content sm-gutter">
+            <div class="col content-items">
+              <ul class="content-items__title d-flex flex-row">
+                <li class="title__items title__items--selected">
+                  <span class="title__items-text">Tin tuc trong ngay</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nang len</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nhip song 24h</span>
+                </li>
+              </ul>
+              <div class="content-items__header">
+                <h2 class="content-items__header-text">Công an giải đáp các thắc mắc mà người vi phạm hay 'hạch hỏi'
+                  CSGT</h2>
+              </div>
+              <div class="content-items__primaryContent">
+                <img class="primaryContent__img" src="../asset/image/image_items2.jpg" alt="NoImage"></img>
+                <div class="primaryContent__text">
+                  <span>Nhiều người vi phạm đòi xem chuyên đề của tổ CSGT khi làm nhiệm vụ, hạch hỏi "sao lại dừng xe
+                    tôi"...Nhiều người vi phạm đòi xem chuyên đề của tổ CSGT khi làm nhiệm vụ, hạch hỏi "sao lại dừng xe
+                    tôi"...</span>
+                  <a href="#" class="experience-address__link">
+                    <i class="fa-solid fa-angles-right experience-address__icon"></i>
+                    Ha Tinh
+                  </a>
+                </div>
+              </div>
+              <div class="content-items__footer">
+                <div class="content-items__footer-container">
+                  <ul class="content-items__footer-list">
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-solid fa-video content-items__footer-icon content-items__footer-icon--video"></i>
+                      <p class="content-items__footer-text">Bắt Phó Giám đốc Trung tâm đăng kiểm ở Ninh Bình</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col content-items">
+              <ul class="content-items__title d-flex flex-row">
+                <li class="title__items title__items--selected">
+                  <span class="title__items-text">Tin tuc trong ngay</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nang len</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nhip song 24h</span>
+                </li>
+              </ul>
+              <div class="content-items__header">
+                <h2 class="content-items__header-text">Trực tiếp bóng đá Liverpool - Real Madrid: Dấu hỏi lớn về Nunez
+                  và Benzema (Cúp C1)</h2>
+              </div>
+              <div class="content-items__primaryContent">
+                <img class="primaryContent__img" src="../asset/image/image_items2.jpg" alt="NoImage"></img>
+                <div class="primaryContent__text">
+                  <span>(3h, 22/2) Hai đội đều đang chờ thể trạng của Darwin Nunez và Karim Benzema.</span>
+                  <a href="#" class="experience-address__link">
+                    <i class="fa-solid fa-angles-right experience-address__icon"></i>
+                    Trực tiếp bóng đá hôm nay
+                  </a>
+                </div>
+              </div>
+              <div class="content-items__footer">
+                <div class="content-items__footer-container">
+                  <ul class="content-items__footer-list">
+                    <li class="content-items__footer-items">
+                      <i class="fa-solid fa-star content-items__footer-icon content-items__footer-icon--star"></i>
+                      <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-solid fa-video content-items__footer-icon content-items__footer-icon--video"></i>
+                      <p class="content-items__footer-text">Bắt Phó Giám đốc Trung tâm đăng kiểm ở Ninh Bình</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-solid fa-camera content-items__footer-icon content-items__footer-icon--camera"></i>
+                      <p class="content-items__footer-text">Bắt Phó Giám đốc Trung tâm đăng kiểm ở Ninh Bình</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-content sm-gutter">
+            <div class="col content-items">
+              <img src="../asset/image/col-image.png" alt="NoImage" class="col--image">
+            </div>
+            <div class="col content-items">
+              <ul class="content-items__title d-flex flex-row">
+                <li class="title__items title__items--selected">
+                  <span class="title__items-text">Tin tuc trong ngay</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nang len</span>
+                </li>
+                <li class="title__items">
+                  <span class="title__items-text">Nhip song 24h</span>
+                </li>
+              </ul>
+              <div class="content-items__header">
+                <h2 class="content-items__header-text">Trực tiếp bóng đá Liverpool - Real Madrid: Dấu hỏi lớn về Nunez
+                  và Benzema (Cúp C1)</h2>
+              </div>
+              <div class="content-items__primaryContent">
+                <img class="primaryContent__img" src="../asset/image/image_items2.jpg" alt="NoImage"></img>
+                <div class="primaryContent__text">
+                  <span>(3h, 22/2) Hai đội đều đang chờ thể trạng của Darwin Nunez và Karim Benzema.</span>
+                  <a href="#" class="experience-address__link">
+                    <i class="fa-solid fa-angles-right experience-address__icon"></i>
+                    Trực tiếp bóng đá hôm nay
+                  </a>
+                </div>
+              </div>
+              <div class="content-items__footer">
+                <div class="content-items__footer-container">
+                  <ul class="content-items__footer-list">
+                    <li class="content-items__footer-items">
+                      <i class="fa-solid fa-star content-items__footer-icon content-items__footer-icon--star"></i>
+                      <p class="content-items__footer-text">Con riêng bà Phương Hằng đề nghị không giám định tâm...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-sharp fa-solid fa-square content-items__footer-icon"></i>
+                      <p class="content-items__footer-text">Lộ số tiền "khủng" lãnh đạo doanh nghiệp nhờ Thiếu...</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-solid fa-video content-items__footer-icon content-items__footer-icon--video"></i>
+                      <p class="content-items__footer-text">Bắt Phó Giám đốc Trung tâm đăng kiểm ở Ninh Bình</p>
+                    </li>
+                    <li class="content-items__footer-items">
+                      <i class="fa-solid fa-camera content-items__footer-icon content-items__footer-icon--camera"></i>
+                      <p class="content-items__footer-text">Bắt Phó Giám đốc Trung tâm đăng kiểm ở Ninh Bình</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content__right col-4">
+          <img src="../asset/image/imageOustanding.jpeg" alt="" class="information-imageOutstanding">
+          <div class="infornmation">
+            <h2 class="information__title">Tin Tức Thị Trường</h2>
+            <ul class="list-information">
+              <li class="information-items">
+                <img src="../asset/image/information-image1.jpg" alt="NoImage" class="information-items__img">
+                <p class="information-items__content">Món quà du lịch cho mọi người cùng Radisson Hotels</p>
+              </li>
+              <li class="information-items">
+                <img src="../asset/image/information-image2.jpg" alt="NoImage" class="information-items__img">
+                <p class="information-items__content">Thi nhau xuyên Việt nhằm thử thách ô tô điện VinFast VF 8</p>
+              </li>
+              <li class="information-items">
+                <img src="../asset/image/information-image3.jpg" alt="NoImage" class="information-items__img">
+                <p class="information-items__content">Manulife Việt Nam tiếp tục tri ân khách hàng, công bố 3 chủ nhân
+                  trúng thưởng xe Mercedes</p>
+              </li>
+              <li class="information-items">
+                <img src="../asset/image/information-image3.jpg" alt="NoImage" class="information-items__img">
+                <p class="information-items__content">Manulife Việt Nam tiếp tục tri ân khách hàng, công bố 3 chủ nhân
+                  trúng thưởng xe Mercedes Manulife Việt Nam tiếp tục tri ân khách hàng, công bố 3 chủ nhân trúng thưởng
+                  xe Mercedes</p>
+              </li>
+            </ul>
+          </div>
+          <div class="information-stock">
+            <h2 class="information-stock__title">
+              <i class="fa-solid fa-chart-line"></i>
+              THÔNG TIN CHỨNG KHOÁN
+            </h2>
+            <ul class="information-stock__list">
+              <li class="information-stock__items">
+                <strong class="information-stock__items-title">VN-INDEX</strong>
+                <span class="information-stock__items-number">1072.09</span>
+                <i class="fa-solid fa-caret-down information-stock__icon items--error"></i>
+                <span class="information-stock__items-number items--error">-10.43</span>
+                <span class="information-stock__items-percent items--success">(-0.96%)</span>
+              </li>
+              <li class="information-stock__items">
+                <strong class="information-stock__items-title">VN-INDEX</strong>
+                <span class="information-stock__items-number">1072.09</span>
+                <i class="fa-solid fa-caret-down information-stock__icon items--error"></i>
+                <span class="information-stock__items-number items--error">-10.43</span>
+                <span class="information-stock__items-percent items--success">(-0.96%)</span>
+              </li>
+              <li class="information-stock__items">
+                <strong class="information-stock__items-title">VN-INDEX</strong>
+                <span class="information-stock__items-number">1072.09</span>
+                <i class="fa-solid fa-caret-down information-stock__icon items--error"></i>
+                <span class="information-stock__items-number items--error">-10.43</span>
+                <span class="information-stock__items-percent items--success">(-0.96%)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <footer>
+
+    </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
