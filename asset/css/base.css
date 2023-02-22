@@ -5,3 +5,21 @@
     --text-color:#333;
     --text-exprience-address:#777;
 }
+
+.bg--primary{
+    background-color: var(--primary-color);
+}
+
+.content-items__footer-top{
+    background-color: #eaf8d2;
+}
+
+.content-items__footer-botoom{
+    background-color: #d5ecab;
+}
+
+.sm-gutter .col{
+    padding-right: 2px;
+    padding-left: 2px;
+
+}
