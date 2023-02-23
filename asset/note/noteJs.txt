@@ -7,10 +7,29 @@ Các ghi nhớ về javaScripts
 - if__else trong js : dùng như với C
 - switch__case__default : dùng như với C
 - Biến toàn cục và biến cục bộ trong Js
-    + biến toàn cục :
-    + biến cục bộ : 
+    + biến toàn cục : là biến được khai báo bên ngoài không nằm trong một hàm cụ thể nào cả
+    + biến cục bộ : là khi bạn khai báo biến nằm bên trong một hàm cụ thể nào đó,lúc này biến đấy sẽ không được sử dụng bên ngoài
+- setTimeout() và setInterval() trong JS: 
+    +setTimeout() dùng để thiết lập một khoảng thời gian nào đó nó sẽ thực hiện một nhiệm vụ nào đó và chỉ thực hiện đúng 1 lần
+     Cú pháp setTimeout(function,time)
+    + setInterval() : cũng giống như setTimeout nhưng số lần thực hiện là mãi mãi
+     Cú pháp setInterval(function,time)
+    + clearTimeout(acction) dùng dể hủy hành động được thiết lập trong hàm setTimeout()
+    + clearInterval(action) dùng để hủy hành động được thiết lập trong setInterval()
+Kiểu dữ liệu trong JavaScripts:
+    + String :
+        - muốn ép kiểu sang String thì chuỗi có thể sử dụng cú pháp String.toString();
+        Một số hàm xử lý String trong JS:
+        + length() : đếm tổng số kí tự trong chuỗi
+        + Tìm kiếm chuỗi trong chuỗi có hàm :
+            - indexOf() :Nếu tìm thấy trả về  vị trí xuất hiện đầu tiên của chuỗi con, Nếu không tìm thấy giá trị sẽ trả về -1
+            - lastIndexOf():Nếu tìm thấy trả về  vị trí xuất hiện cuối cùng của chuỗi con 
+            - hàm search() cũng tương tự như lastIndexOf()
+        + Hàm cắt chuỗi String trong JS:
+        + Hàm tìm kiếm và lặp chuỗi trong JS: 
+        + Chuyển chữ hoa thành chữ thường trong JS: 
+            - chuy
 Note:Nếu có hai hàm trùng tên trong js thì js vẫn sẽ chạy. 
 JS không quan tâm đến số đối số trong các hàm .
 JS chỉ quan tâm đến hàm cuối cùng và sẽ chạy hàm đó
-
 
