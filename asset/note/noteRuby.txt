@@ -1,0 +1,47 @@
+rvm, rbenv và chruby : rvm, rbenv và chruby có lẽ là 3 công cụ phổ biến nhất giúp quản lý phiên bản cho Ruby;
+biến trong Ruby:
+	 + Global variable : bắt đầu với ký hiệu $
+	 + local variable : bắt đầu bằng một chữ cái thường hoặc _
+	 + instance variable : bắt đầu bằng @
+	 	là biến chỉ thuộc về đối tượng và phạm vi truy cập của nó ở trong lớp 
+	 + class variable(biến lớp) : bắt đầu bằng @@ 
+	 	là biến thuộc về lớp nó được dùng để chia sẻ giữa các oject với nhau
+	 + constants(hằng số) :bắt đầu bằng một chữ cái viết hoa chữ cái đầu hoặc viết hoa toàn bộ tên biến
+ Quy ước đặt tên biến:
+ 	+Để đặt tên biến cục bộ (local variable), sử dụng ký tự chữ thường và phân cách các từ bằng dấu gạch dưới "_". Ví dụ: my_local_variable.
+
+	+Để đặt tên biến instance (instance variable), sử dụng ký tự "@", sau đó là tên biến theo quy ước đặt tên biến cục bộ. Ví dụ: @my_instance_variable.
+
+	+Để đặt tên biến class (class variable), sử dụng ký tự "@@" đứng trước tên biến theo quy ước đặt tên biến cục bộ. Ví dụ: @@my_class_variable.
+
+	+Để đặt tên hằng số (constant), sử dụng ký tự viết hoa cho toàn bộ tên biến. Nếu cần phân cách các từ, sử dụng dấu gạch dưới "_". Ví dụ: MY_CONSTANT.
+
+	+Để đặt tên phương thức (method), sử dụng ký tự chữ thường và phân cách các từ bằng dấu gạch dưới "_". Ví dụ: my_method.
+
+	+Để đặt tên lớp (class), sử dụng ký tự viết hoa cho ký tự đầu tiên của từ đầu tiên trong tên lớp và các từ tiếp theo viết hoa chữ cái đầu tiên. Không sử dụng dấu gạch dưới. Ví dụ: MyClass.
+
+Ruby Pseudo-Variables(biến giả trong ruby):
+	+ self : đối tượng nhận phương thức hiện tại
+	+ true : giá trị đại diện cho true
+	+ false : giá trị đại diện cho false
+	+ nil : giá trị đại diện cho undefined
+	+ __FILE__: Tên file hiện tại
+	+ __LINE__: Số dòng hiện tại trong file
+
+String trong ruby :
+	+ Cách tạo một chuỗi String : my_string = "message", my_string = 'message'
+	+ Các phương thức làm việc với String trong ruby:
+		- .length : độ dài của chuỗi
+		- .empty : kiểm tra xem chuỗi có rỗng 
+		- .slice(start,end) or .slice(start) : để lây các kí từ start --> end trong chuỗi
+		- .chars : có thể chuyển đổi một chuỗi ký tự thành mảng kí tự 
+		- chuyển đổi chữ hoa sang chữ thường : upcase (in hoa)/downcase(in thường)
+		- .capitalize : trả về một chuỗi mới với kí tự đầu được viết hoa
+		- .swapcase : trả về một chuỗi được hoán đổi
+		- .include?("a") : kiểm tra xem trong chuỗi có phần tử a không
+		- .index("a") :trả về vị trí đầu tiên của kỹ tự đó trong chuỗi
+		- .start_witch?("a") :xem chuỗi có bắt đầu bằng kí tự a hay không
+		- .end_witch?("a") : Xem chuỗi có kết thúc bằng kí tự a hay không
+ def là một method
+ 
+ 
