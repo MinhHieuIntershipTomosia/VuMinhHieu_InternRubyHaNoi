@@ -42,6 +42,56 @@ String trong ruby :
 		- .index("a") :trả về vị trí đầu tiên của kỹ tự đó trong chuỗi
 		- .start_witch?("a") :xem chuỗi có bắt đầu bằng kí tự a hay không
 		- .end_witch?("a") : Xem chuỗi có kết thúc bằng kí tự a hay không
+Symbol trong ruby :
+	+  Symbol la gi : Symbol la mot object ma gia tri cua no thuong duoc dai dien cho ten (vi du nhu ten cua khoa trong mang, ten cua phuong thuc trong doi tuong...)
+	+  Khai bao mot Symbol trong ruby bang cac cach sau :
+		- symbol = :hello
+		- symbol = :"hello"
+		- symbol = "hello".intern
+		- symbols = %i(a b c) ==> [:a, :b, :c]
+		- strings = %w(a b c) ==> ["a", "b", "c"]
+	+ chuyen doi giua symbol va string
+	    - chuyen tu symbol sang string: su dung method to_s
+		- chuyen tu string sang symbol: su dung method to_sym
+	+ so sanh giua symbol va string
+		- hieu suat cua symbol xu ly tot hon String
+Mang trong ruby :
+	+ Khai bao mang trong ruby :
+		- a[]
+		- a = Array.new
+		- Gan gia tri cho mang :
+			a = [1,2,3,4,5,6] ==> a = [1,2,3,4,5,6]
+			a = Array.new(3,"1") ==> a = ["1","1","1"]
+		- Mang trong mang
+			a = new Array(3 , Array.new(3,1)) ==> a = [[1,1,1] ,[1,1,1], [1,1,1]]
+	+ truy cap cac phan tu trong mang
+		a = [1, 2, 3, 4, 5]
+		a[0] // tra ve gia tri dau tien 1
+		a[1] // tra ve gia tri 2
+		a[-1] // tra ve gia tri phan tu dau tien dem nguoc lai tu cuoi : 5
+		a[-2] // tra ve gia tri 4
+	+ them phan tu vao mang
+		su dung cac phuong thuc :
+		- .push() :Them phan tu vao cuoi cua mang
+		- .unshift : Them phan tu vao dau mang
+		- .insert(4, "hi") : Them phan tu hi vao vi tri thu 4 cua mang
+	+ Loai bo cac phan tu khoi mang
+		su dung cac phuong thuc :
+		- .pop xoa phan tu cuoi cung cua mang
+		- .shift xoa phan tu dau tien va tra ve gia tri cua phan tu do
+		- delete_at(index) xoa phan tu o vi tri index va tra ve gia tri cua phan tu do
+		- delete(1) : xoa tat ca phan tu co gia tri 1
+	+ Mot so thao tac khac 
+		- compact:loai bo gia tri nil
+		- uniq su dung de lay ra mot mang moi chi chua cac phan tu duy nhat tu mot mang ban dau
+			note:uniq chi thay doi gia tri cuar mang nhung khong update lai mang, !uniq thay doi gia tri cua mang va update lai gia tri do cho mang
+		- reverse method dung de dao nguoc thu tu
+			note: reverse tra ve mot mang co thu tu nguoc lai voi thu tu trong mang cu nhung ko update lai mang mang, reverse! tra ve mot mang voi thu tu dao nguoc nhung update lai mang
+		- each: duyet qua tung phan tu va thuc hien mot hanh dong tren tung phan tu
+		- map: arr.map{dieu kien || bieu thuc} ==> tra ve mot mang ung voi dieu kien hoac bieu thuc
+		- select: tra ra cac gia tri thoa man dieu kien trong block hoac ket qua bieu thuc trong block
+		- reject: bo cac gia tri thoa man dieu kien
+	
  def là một method
  
  
