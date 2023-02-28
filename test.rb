@@ -74,6 +74,96 @@ puts symbols
   print d
   print "\n"
 
+#4.lam viec voi hash
+  # khai bao mot hash
+  hash = {'dog' => 'canine', 'cat' => 'feline', 'donkey' => 'asinine', 12 => 'dodecine'}
+  hash1 = {name: "John", age: 30, city: "New York"}
+  # truy cap den key trong hash bang cach su dung hash[key]
+  hash.default = "tomosia vmhieu"
+  puts hash['dog'] # return canine beacuse key 'dogs' exist value in hash
+  puts hash[ :name] #reutrn "tomosia vmhieu" because :name not exist value in hash then it's return default
+  # compare two hash found key-value has suitable and corresponding (tuong ung va phu hop) in each hash (trong moi hash) size --> (key,value) not improtant index of element in hash
+  h1 = {a:1, b:2}
+  h2 = {a:1, d:3, b:2}
+  print "So sanh h1 voi h2 :"
+  print h1 < h2
+  print "\n"
+  # assigin vaule in hash (gan gia tri cho value trong hash)
+  hashTestAssigin = { "a" => 100, "b" => 200 }
+  hashTestAssigin["a"] = 03102001
+  hashTestAssigin["b"] ="vmhieu"
+  puts hashTestAssigin
+  # clear : remove all key-value has in hash
+  hashTestClear = { "a" => 100, "b" => 200 }
+  hashTestClear.clear
+  puts hashTestClear
+  # delete : delete a key-value return value with key corresponding .if key not found then it's return value default
+  hashTestDelete = { "a" => 100, "b" => 200 }
+  hashTestDelete.delete("a");
+  puts hashTestDelete
+  # keys :  get all keys
+  hashTestKey = { "a" => 100, "b" => 200, "c" => 300 }
+  print hashTestKey.keys
+  print "\n"
+  # values : get all values (lay ra tat ca gia tri)
+  hashTestvalue = { "a" => 100, "b" => 200, "c" => 300 }
+  print hashTestvalue.values
+  print "\n"
+  # each vs each_pair
+  # compare each vs each_pair
+  # each : iterator over each element
+  # each_pair : accsess to each (key-value) of element
+  hashTestEach = {"name" => "Alice", "age" => 30, "city" => "New York"}
+  hashTestEach.each do |key, value|
+    print "#{key} : #{value} ,"
+  end
+  print "\n"
+
+  hashTestEach.each_key do |key|
+    puts key
+  end
+  print "\n"
+
+  hashTestEach.each_value do |value|
+    puts value
+  end
+  #empty : test hash has empty ==> resulut returned true or fasle
+  hashTestEmpty = {}
+  puts  "hash is empty : #{hashTestEmpty.empty?}"
+  #has_key?(key) : test key have in hash? ==> retutrn true or fasle
+  hashTesthas_key = { "a" => 100, "b" => 200 }
+  puts "hash have key a : #{hashTesthas_key.has_key?("a")}"
+  puts "hash have key c : #{hashTesthas_key.has_key?("c")}"
+  # merge in hash : merge two hash with method : hash1.merge(hash2) then return new hash by hash1
+  # shift : remove (key-value) first in hash or remove value default if hash empty
+  # size : return number of pairs (key-value) trong hash
+  # to_a : this method will convert hash to array --> it's a array where (key-value) is sub-array
+  arr = [1,2,3,4,5,6,7,8,9]
+  arr.each do |n|
+    puts "bang cuu chuong #{n}"
+    puts "#{n} * 1 = #{n * 1}"
+    puts "#{n} * 2 = #{n * 2}"
+    puts "#{n} * 3 = #{n * 3}"
+    puts "#{n} * 4 = #{n * 4}"
+    puts "#{n} * 5 = #{n * 5}"
+    puts "#{n} * 6 = #{n * 6}"
+    puts "#{n} * 7 = #{n * 7}"
+    puts "#{n} * 8 = #{n * 8}"
+    puts "#{n} * 9 = #{n * 9}"
+  end
+  #5. Loop in Ruby
+
+  i = 0
+loop do
+    i += 1
+    if i == 5
+      break
+    end
+    puts i
+
+end
+
+
 
 
 
