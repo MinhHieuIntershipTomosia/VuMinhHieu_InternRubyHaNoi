@@ -91,7 +91,39 @@ Mang trong ruby :
 		- map: arr.map{dieu kien || bieu thuc} ==> tra ve mot mang ung voi dieu kien hoac bieu thuc
 		- select: tra ra cac gia tri thoa man dieu kien trong block hoac ket qua bieu thuc trong block
 		- reject: bo cac gia tri thoa man dieu kien
-	
+Hash trong ruby
+	1. concept : 
+	# Khai báo một hash
+	# truy cập đến key trong hash bằng cách sử dụng hash[key] --> nó sẽ trả về giá trị mà key đang nắm giữ trong hash, nếu key không tồn tại trong hash nó sẽ trả về giá trị mặc định của hash
+	# so sánh 2 hash thì hash sẽ so sánh về độ dài trước và sau đó nó sẽ so sánh từng cặp (key-value)
+	# gán giá trị cho hash : hash[key] = 
+	# xóa tất cả các cặp (key-value) có trong hash
+	# xóa 1 cặp (key-value) có trong hash : hash.delete(key) ==> kết quả trả về ta sẽ có được giá trị của value ứng với khóa bị xóa, nếu như khóa không tồn tại nó sẽ trả về giá trị mặc định của hash
+	# lấy ra tất cả các khóa có trong hash : hash.keys ==> kết quả trả về ta sẽ có được một mảng chứa các khóa của hash
+	# lấy ra tất cả các giá trị có trong hash ==> kết quả trả về ta sẽ được một mảng chứa các value của hash
+	# duyệt qua các phần tử và thực hiện 1 việc gì đó trong hash : each, each_pair
+	# kiểm tra xem hash có rỗng hay không hash.empty ==> kết quả trả về sẽ là true hoặc false
+	# kiểm tra trong hash có key này hay không : hash.hash_key?(key) ==> kết quả trả về sẽ là true hoặc false
+	# gộp 2 hash : hash1.merge(hash2) ==> kết quả trả về một hash mới kết hợp của 2 hash nếu có hai cặp (key-value) trùng key thì value của hash1 sẽ bị ghi đè bởi value của hash2
+	# xóa phần tử đầu tiên của hash : hash.shift
+	# lấy số lượng cặp (key-value) có trong hash : hash.size
+	# chuyển đổi hash --> array: hash.to_a ==> kết quả trả về sẽ là một mảng trong mảng đó bao gồm các cặp key-value là một mảng con	
+	# each_oject_with
+Loop trong Ruby
+	# vòng lặp :loop là một vòng lặp vô hạn trong ruby, vòng lặp này sẽ lặp mãi mãi cho đến khi ta sử dụng break để thoát khỏi vòng lặp
+	# vòng lặp for : lặp qua từng phần tử trong collection , cú pháp : for element in conllection  do 
+											#code to be....
+											end
+	# vòng lặp while: việc lặp của vòng lặp while phụ thuộc vào biểu thức điều kiện ,nếu như condition == false thì vòng lặp sẽ dừng lại
+	# vòng lặp until : tương tự như while vòng lặp sẽ phụ thuộc vào biểu thức điều kiện, vòng lặp cho đến khi condition == true thì vòng lặp sẽ dừng lại
+	# vòng lặp each và blocks : tương tư như for được sử dụng với cú pháp 
+					collection.each do |element|
+					# code to be executed
+					end
+
+	note : for ,each được sử dụng khi đã biết số lần lặp
+		while, loop được sử dụng khi chưa biết số lần lặp
+			
  def là một method
  
  
