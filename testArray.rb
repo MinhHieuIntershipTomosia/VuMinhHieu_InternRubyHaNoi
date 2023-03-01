@@ -67,9 +67,25 @@ puts arr.inspect
     puts [nil, false].any? # => false
     puts [].any? #=>false
     # if has block given and no argument ==> return true if all element correct condition in block 
-#append
-#assoc
-#at
-#bsearch
-#bsearch_index
-# puts Array.instance_methods(false).sort.inspect
+#assoc ==>return nil or array
+    #return array when in arr.assoc(value) has a array contain first element == value
+    arr = [{foo: 0} , [2, 4], [4, 5, 6], [4, 5]]
+    puts (arr.assoc(4)).inspect # => [4, 5, 6] becasue [4,5,6] has 4 is first elment == value
+    #return nil when no find element
+    arr = [{foo: 0} , [2, 4], 4 , [2, 5]]
+    puts (arr.assoc(4)).inspect # => nil beacsue not find element
+#at 
+    arr = [:foo, 'bar', 2]
+    puts arr.at(0) # => :foo
+    puts arr.at(2) # => 2
+#bsearch : use find first elemnet according to condition
+    arr = [0, 7, 4, 10, 12]
+    puts arr.bsearch {|x| x >= 10 }
+#bsearch_index use search index first element in array according to condition
+    array = [1, 3, 5, 7, 9, 11]
+    puts array.bsearch_index {|x| x >= 7} # => 3
+#clear : 
+#collect :     
+#combination:
+
+puts Array.instance_methods(false).sort.inspect
