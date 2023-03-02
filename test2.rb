@@ -24,18 +24,29 @@
 #   }
   
 #   puts group_by_owners(files)
-def multiplication_table(row, column)
-    return if row == 10  
-    if column == 10
-        puts "\n"
-        return multiplication_table(row + 1, 1)
-    else
-        printf "#{row} * #{column} = %2d ",row * column
-        return multiplication_table(row , column + 1)
-    end
-  end
+# def multiplication_table(row, column)
+#     return if row == 10  
+#     if column == 10
+#         puts "\n"
+#         return multiplication_table(row + 1, 1)
+#     else
+#         printf "#{row} * #{column} = %2d ",row * column
+#         return multiplication_table(row , column + 1)
+#     end
+#   end
   
-  multiplication_table(1,1)
+#   multiplication_table(1,1)
         
-        
-        
+x = 0
+3.times do
+  x += 1
+end
+
+puts x
+y = 0
+3.times do
+  y += 1
+  x = y
+end
+
+puts(x)

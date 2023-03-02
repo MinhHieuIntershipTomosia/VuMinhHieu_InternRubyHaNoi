@@ -120,10 +120,37 @@ Loop trong Ruby
 					collection.each do |element|
 					# code to be executed
 					end
-
 	note : for ,each được sử dụng khi đã biết số lần lặp
 		while, loop được sử dụng khi chưa biết số lần lặp
-			
+Interator trong ruby
+	1.concept : là công cụ để lặp lại hoặc duyệt qua từng các phần tử trong một mảng hoặc tập hợp
+	2. một số 1 iterator
+		# each : được sử dụng để lặp lại các phần tử trong mảng hoặc chuỗi
+		# times :
+		# map :
+		# select :
+		# each_with_index :
+		# upto :
+		# downto :
+		# step :
+		# each_slice :
+		# cycle :
+	Công dụng của iterator : 
+		# làm cho mã ruby ngắn và dễ lặp hơn so với các phần tử truyền thống
+		# giúp tránh được các lỗi lặp lại , giảm thiểu sự trùng lặp
+		# giúp duyệt qu từng phần tử theo nhiều cách khác nhau và thực hiện nhiều tác vụ khác nhau
+		==> sử dụng Iterators khi bạn muốn lặp qua từng phần tử và thực hiện một hành động cụ thể với từng phần tử của mình
+	Điểm khác nhau giữa Iterators và Vòng lặp :
+		- Iterators : không cần khai báo điều kiện hoặc kiểm tra điều kiện dừng vòng lặp vì chúng sẽ tự động quản lý . Dễ dàng duyệt qua từng phần tử theo nhiều cách khác nhau và thực hiện các tác vụ khác nhau
+		- Vòng lặp : được sử dụng khi bạn muốn lặp qua số lượng phần tử cố định hoặc lặp qua các điều kiện chặt chẽ hơn
+	Một số điểm ở vòng lặp mà Iterators không thực hiện được
+		- vòng lặp vô hạn (vì tất cả Iterators đều có điều kiện dừng)
+		- điều khiển lặp lại chặt chẽ hơn: vòng lặp cho phép bạn kiểm soát trình lặp lại 1 cách chặt chẽ hơn , trong khi đó Iterators các điều kiện kiểm soát đã được định sẵn trong Iterators
+		- Lặp lại qua nhiều mảng hoặc tập hợp : Iterators trong ruby chỉ lặp cho phép lặp qua một mảng duy nhất
+Conditionals trong ruby:
+
+Class trong ruby :
+					
  def là một method
  
  
