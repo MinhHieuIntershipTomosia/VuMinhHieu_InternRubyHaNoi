@@ -66,23 +66,6 @@ puts arr.inspect
     puts [nil, 0, false].any? # => true
     puts [nil, false].any? # => false
     puts [].any? #=>false
-    # if has block given and no argument ==> return true if all element correct condition in block
-    puts [0, 1, 2].any? { |element| element < 3 } # =>true
-    puts [0, 1, 2].any? {|element| element > 2 } # =>false
-    # if argument will check all element has element === argument ==> return true
-    puts ['food', 'drink'].any?(/foo/) # => true
-    puts ['food', 'drink'].any?(/bar/) # => false
-    puts [].any?(/foo/) # => false
-    puts [0, 1, 2].any?(1) # => true
-    puts [0, 1, 2].any?(3) # => false
-#append : add a element at the end a array
-    arr = [:foo, 'bar', 2]
-    arr.push(:baz, :bat) #[:foo, "bar", 2, :baz, :bat]
-    puts arr.inspect
-    # argument of append has maybe a element or a array
-    arr = [:foo, 'bar', 2]
-    arr1 = a.push([:baz, :bat], [:bam, :bad])
-    puts arr1.inspect #[1, 2, 3, 4, 5, [:baz, :bat], [:bam, :bad]]
 #assoc ==>return nil or array
     #return array when in arr.assoc(value) has a array contain first element == value
     arr = [{foo: 0} , [2, 4], [4, 5, 6], [4, 5]]
@@ -103,4 +86,4 @@ puts arr.inspect
 #clear : 
 #collect :     
 #combination:
-# puts Array.instance_methods(false).sort.inspect
+
