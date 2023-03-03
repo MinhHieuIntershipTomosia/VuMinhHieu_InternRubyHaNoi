@@ -1,0 +1,7 @@
+Các chế độ mở file
+r chế độ chỉ đọc, bắt đầu từ đầu file - đây là chế độ mặc định
+r+ chế độ đọc - ghi, bắt đầu từ đầu file
+w chỉ ghi, file đã tồn tại thì bị cắt về rỗng
+w+ chế độ đọc ghi, file tồn tại thì bị cắt về rỗng
+a ghi ghi, nối thêm dữ liệu nếu đã tồn tại
+a+ đọc, ghi nối thêm dữ liệu nếu đã tồn tại
