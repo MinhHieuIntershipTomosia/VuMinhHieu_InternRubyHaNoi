@@ -1,0 +1,1 @@
+puts Hash.instance_methods(false).sort.inspect

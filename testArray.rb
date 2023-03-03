@@ -66,7 +66,6 @@ puts arr.inspect
     puts [nil, 0, false].any? # => true
     puts [nil, false].any? # => false
     puts [].any? #=>false
-    # if has block given and no argument ==> return true if all element correct condition in block 
 #assoc ==>return nil or array
     #return array when in arr.assoc(value) has a array contain first element == value
     arr = [{foo: 0} , [2, 4], [4, 5, 6], [4, 5]]
@@ -88,4 +87,3 @@ puts arr.inspect
 #collect :     
 #combination:
 
-puts Array.instance_methods(false).sort.inspect
