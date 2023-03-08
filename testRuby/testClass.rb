@@ -102,7 +102,30 @@
   average = MathUtils.average(numbers)
   puts "The average of #{numbers} is #{average}."
   # Output: The average of [1, 2, 3, 4, 5] is 3.0.
-  
+
+  #da hinh trong ruby
+  class Animal
+    def print
+      puts "this is animal"
+    end
+  end
+
+  class Cat < Animal
+    def print
+      puts "this is cat"
+    end
+  end
+
+  class Dog
+    def print
+      puts "this is Dog"
+    end
+  end
+
+  cat = Cat.new
+  dog = Dog.new
+  cat.print
+  dog.print
 
   
   
