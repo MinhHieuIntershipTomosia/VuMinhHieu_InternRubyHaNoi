@@ -126,32 +126,62 @@
 # end
 # puts Complement.of_dna("C")
 
+# class Diamond
+#   def self.diamond(str = "A")
+#     diamond_string = "";
+#     arr = ('A'..str).to_a;
+#     n = (arr.length * 2) - 1;
+#     n.times do |i|
+#       space_count = (i - n / 2).abs
+#       asterisk_count = n - space_count * 2
+#       space_center_count = (asterisk_count - 2 > 0)? (asterisk_count - 2) : 0;
+#       #chi ding vi tri in
+#       index = (i- arr.length + 1 > 0)? (arr.length - i -2) : i;
+#       if space_center_count > 0
+#         diamond_string << ('.' * space_count) + arr[index] + ('.' * space_center_count) +  arr[index] + "\n"
+#       else
+#         diamond_string << ('.' * space_count) +  arr[index] + "\n"
+#       end
+#       # # diamond_string << [' ' * space_count, '*' * asterisk_count].join + "\n"
+#     end
 
-class Diamond
-  def self.diamond(str = "A")
-    diamond_string = "";
-    arr = ('A'..str).to_a;
-    n = (arr.length * 2) - 1;
-    n.times do |i|
-      space_count = (i - n / 2).abs
-      asterisk_count = n - space_count * 2
-      space_center_count = (asterisk_count - 2 > 0)? (asterisk_count - 2) : 0;
-      #chi ding vi tri in
-      index = (i- arr.length + 1 > 0)? (arr.length - i -2) : i;
-      puts arr[index]
-      if space_center_count > 0
-        diamond_string << [' ' * space_count, arr[index] , '' * space_center_count , arr[index]].join + "\n"
-      else
-        diamond_string << [' ' * space_count,  arr[index]].join + "\n"
-      end
-      # # diamond_string << [' ' * space_count, '*' * asterisk_count].join + "\n"
-    end
-  
-    return diamond_string
+#     return diamond_string
+#   end
+# end
+
+# puts Diamond.diamond('E')
+
+
+class Attendee
+  def initialize(height)
+    @height = height
+  end
+
+  def issue_pass!(pass_id)
+    @pass_id = pass_id
+  end
+
+  def revoke_pass!
+    @pass_id = nil
+  end
+
+  # Do not edit above methods, add your own methods below.
+
+  def has_pass?
+   bl = @pass_id ? true : false
+    return bl
+  end
+
+  def fits_ride?(ride_minimum_height)
+    bl = (@height >= ride_minimum_height) ? true : false;
+    return bl
+  end
+
+  def allowed_to_ride?(ride_minimum_height)
+    bl = (has_pass? &&  fits_ride?(ride_minimum_height))
+    return bl
   end
 end
-
-puts Diamond.diamond('E')
-
+ p Attendee.new(100).allowed_to_ride?(100)
 
 
