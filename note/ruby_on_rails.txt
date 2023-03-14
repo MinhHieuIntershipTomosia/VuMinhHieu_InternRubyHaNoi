@@ -36,6 +36,14 @@ CHAPTER 2:
 	GET /users/1/edit edit page to edit user with id 1
 	PATCH /users/1 update update user with id 1
 	DELETE /users/1 destroy delete user with id 1
+	
+	note
+	GET: Được dử dụng để yêu cầu tài nguyên phía máy chủ	
+	POST:được sử dụng để gửi dữ liệu đến máy chủ để xử lý. Nó thường được sử dụng để tạo mới một tài nguyên trên máy chủ
+		(post sẽ không đưa dữ liệu lên url mà nó sẽ gửi dữ liệu bên trong phần thân của HTTP)
+	PUT:để cập nhật hoặc thay đổi tài nguyên trên máy chủ 
+	DELETE: được sử dụng để xóa một tài nguyên trên máy chủ
+	PATCH: tương tự như PUT, được sử dụng để cập nhật thay đổi dữ liệu trên máy chủ . Nhưng nó chỉ cập nhật tài nguyên được chỉ định và không thay đổi các trường khác
 5. By referring to Figure 2.11, write out the analogous steps for visiting the
 URL /users/1/edit.
 	-The browser issues a request for the /user/1/edit URL.
@@ -74,6 +82,21 @@ URL /users/1/edit.
 	Rails console.
 CHAPTER 3
 1.rails command shortcut
+	#gengerated controller StaicPages with action help home
+	$ rails generate controller StaticPages home help
+	#remove controller StaticPages with action help home
+	$ rails destroy controller StaticPages home help
+	#create a Model User vs properties name email
+	$ rails generate model User name:string email:string
+	#remove a model User
+	$ rails destroy model User
+	#update version database newest 
+	$ rails db:migrate
+	#
+	$ rails db:rollback
+	#
+	$ rails db:migrate VERSION=0
+	
 	$ rails server 			$ rails s
 	$ rails console 		$ rails c
 	$ rails generate 		$ rails g
@@ -83,3 +106,8 @@ CHAPTER 3
 	$ rails generate controller StaticPages home help			$ rails destroy controller StaticPages home help
 	$ rails generate model User name:string email:string  $ rails destroy model User
 	$ rails db:migrate			$ rails db:rollback			$ rails db:migrate VERSION=0
+3.router
+	#: controller
+	/: url
+
+	
