@@ -31,7 +31,7 @@ Các ghi nhớ về javaScripts
             	    + tham số  truyền vào có thể âm --> nếu như âm nó sẽ hiểu là đếm từ cuối đếm lên
             	    + chỉ truyền và 1 tham số nó sẽ tự hiểu là vị trí end cuối cùng : ví dụ string.slice(5)
             - substring(start, end):
-    		(note substring : tham số truyền vào phải lớn hơn 0)
+    		(note substring : tham số truyền vào phải lớn hơrails console -e testn 0)
             - substr(start, length)
             	( note substr : start có thể là số âm có thể là số dương, length nhất định là số dương)
         + tìm kí tự hoặc xem mã ASSCII của một kí tự :
@@ -59,4 +59,8 @@ Các ghi nhớ về javaScripts
 Note:Nếu có hai hàm trùng tên trong js thì js vẫn sẽ chạy. 
 JS không quan tâm đến số đối số trong các hàm .
 JS chỉ quan tâm đến hàm cuối cùng và sẽ chạy hàm đó
+
+
+
+
 

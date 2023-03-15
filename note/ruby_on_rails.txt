@@ -109,5 +109,18 @@ CHAPTER 3
 3.router
 	#: controller
 	/: url
+CHAPTER 4:
+CHAPTER 5:
+CHAPTER 6:
+	validate email :
+	mã hóa mật khẩu :
+	vòng đời của callback:
+CHAPTER 7:
+	$rails console : cho phép mở 1 irb console để tương tác với ứng dụng rails
+	$rails console -e test : cho phép mở 1 console để tương tác với môi trường thử nghiệm
+	$rails server --environment production : chạy rails serve trên môi trường sản phẩm
+	$ rails db:migrate RAILS_ENV=production : 
+	param: là 1 phần của request khi 1 request gửi từ client đến server sẽ mang theo param (param có thể chứa các thông tin gửi lên url...)và action được gọi đến có thể truy xuất data của param
+
 
 	
