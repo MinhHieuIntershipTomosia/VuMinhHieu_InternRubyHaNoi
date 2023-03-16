@@ -121,6 +121,11 @@ CHAPTER 7:
 	$rails server --environment production : chạy rails serve trên môi trường sản phẩm
 	$ rails db:migrate RAILS_ENV=production : 
 	param: là 1 phần của request khi 1 request gửi từ client đến server sẽ mang theo param (param có thể chứa các thông tin gửi lên url...)và action được gọi đến có thể truy xuất data của param
-
-
+	# hiển thị lỗi trên website
+	.errors.full_messages : hiển thị ra mảng các lỗi
+	.errors.count : hiển thị số lỗi
+	.errors.empty? : kiểm tra xem lỗi có trống hay không
+	.errors.any? kiểm tra xem có lỗi nào xuất hiện hay không ? nếu trả về true thì xuất hiện ít nhất 1 lối , nếu trả về false thì không có lỗi nào xuất hiện
+	#
+	rails db:migrate:reset database => migrate running form scartch
 	
