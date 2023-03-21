@@ -128,5 +128,27 @@ CHAPTER 7:
 	.errors.any? kiểm tra xem có lỗi nào xuất hiện hay không ? nếu trả về true thì xuất hiện ít nhất 1 lối , nếu trả về false thì không có lỗi nào xuất hiện
 	#
 	rails db:migrate:reset database => migrate running form scartch
+	#
+CHAPTER 8:
+	+ khai báo một session :
+	session[:attribute] = value
+	+ Truy cập vào một session
+	vd user_id = session[:user_id]
+	# sự khác nhau giữa find và find_by
+		- find by : cho phép bạn tìm kiếm tới một bản ghi trong cơ sở dữ liệu dựa trên một điều kiện nhất định .Nó trả về bản ghi đầu tiên trong cơ sở dữ liệu mà thỏa mã điều kiện .Nó sẽ trả về bản ghi đầu tiên trong cơ sở dữ liệu thỏa mãn điều kiện , hoặc trả về nil nếu không có điều kiện nào tìm thấy
+		- find : 
+	# sự khác nhau giữa form_with vs form_tag vs form_for
+	
+	#authenticate_token : được tạo ra khi thực hiện các phương thức http post put patch delete khi gửi một yêu cầu http bằng phương thức này rails sẽ tạo ra một authenticate token và gắn vào yêu cầu đó. token này là một chuỗi ngẫu nhiên được tạo ra để đảm bảo tính xác thực  và bảo vệ ứng dụng khỏi các cuộc tấn công
 
+CHAPTER 9:
+	#thực hiện chức năng lưu đăng nhập bằng cách sử dụng cookies
+	+ trong model/users tạo ra các method : 
+	   - Tạo 1 biến : remember_token
+	   - User.new_token : trả về một token ngẫu nhiên
+	   - remember : ghi nhớ người dùng trong cơ sở dữ liệu bằng cách:
+	   	+ tạo ra một mã token bằng cách gọi method User.new_token
+	   	+ update cột :remember_digest bằng giá trị của token mới được tạo ra
+	   - authenticated?(remember_token) : dùng để kiểm tra xem chuỗi token được gửi từ client có khớp với giá trị của cột remember_digest đã được lưu trong database không
+	   - forget : sẽ hủy đi trạng thái đăng nhập của người dùng bằng cách cập nhật cột remember_digest về giá trị nil
 	
