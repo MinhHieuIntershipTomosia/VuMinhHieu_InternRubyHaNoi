@@ -26,3 +26,10 @@ User.create!(name: "Vũ Minh Hiếu",
                activated: true,
                activated_at: Time.zone.now)
 end
+# Tạo các micropost cho một phần của người dùng.
+# micropost là một bài đăng ngắn trên mạng
+users = User.order(:created_at).take(6) # lay ra 6 nguoi dau tien sap xep theo ngay tao
+50.times do
+content = Faker::Lorem.sentence(word_count: 5)
+users.each { |user| user.microposts.create!(content: content) }
+end
