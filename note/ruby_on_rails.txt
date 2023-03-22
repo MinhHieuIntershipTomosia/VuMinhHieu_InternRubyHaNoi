@@ -136,7 +136,7 @@ CHAPTER 8:
 	vd user_id = session[:user_id]
 	# sự khác nhau giữa find và find_by
 		- find by : cho phép bạn tìm kiếm tới một bản ghi trong cơ sở dữ liệu dựa trên một điều kiện nhất định .Nó trả về bản ghi đầu tiên trong cơ sở dữ liệu mà thỏa mã điều kiện .Nó sẽ trả về bản ghi đầu tiên trong cơ sở dữ liệu thỏa mãn điều kiện , hoặc trả về nil nếu không có điều kiện nào tìm thấy
-		- find : 
+		- find : sẽ bắn ra một exception nếu không có bất kì record nào được tìm thấy ==> nó là nguyên nhân dẫn tới việc server bị cash
 	# sự khác nhau giữa form_with vs form_tag vs form_for
 	
 	#authenticate_token : được tạo ra khi thực hiện các phương thức http post put patch delete khi gửi một yêu cầu http bằng phương thức này rails sẽ tạo ra một authenticate token và gắn vào yêu cầu đó. token này là một chuỗi ngẫu nhiên được tạo ra để đảm bảo tính xác thực  và bảo vệ ứng dụng khỏi các cuộc tấn công
@@ -151,4 +151,40 @@ CHAPTER 9:
 	   	+ update cột :remember_digest bằng giá trị của token mới được tạo ra
 	   - authenticated?(remember_token) : dùng để kiểm tra xem chuỗi token được gửi từ client có khớp với giá trị của cột remember_digest đã được lưu trong database không
 	   - forget : sẽ hủy đi trạng thái đăng nhập của người dùng bằng cách cập nhật cột remember_digest về giá trị nil
+	 + trong helper/sesions_helper:
+	   - remember(user): có 2 bước 
+	   	+ gọi tới user.remember để tạo một token và lưu giá trị vào cột remember_digest
+	   	+ tạo ra 2 cookies :user_id, :remember_token : 
+	   	  - user_id : tạo ra một cookie với thời gian sống lên đến 20 năm và mã hóa used_id đó
+	   	  - remember_token: truy cập vào giá trị của biến remember_token của User
+	  - current_user: phương thức này sẽ kiểm tra session trước rồi mới tới cookies
+	  	+ đầu tiên sẽ kiểm tra id người dùng xem đã lưu trong session chưa nếu có ==> trả về người dùng đó
+	  	+ kiểm tra cookies xem user_id đã được lưu trong cookie chưa .Nếu có sé tìm ra người dùng có id tương ứng và kiểm tra xem rember_token xem có khớp với remember_digest trong cơ sở dữ liệu không.nếu cookie hợp lệ sẽ đăng nhập bằng phương thức login và gán người dung cho biến @current_user.
+	  - forget(user) : xóa user người dùng ==> cập nhật lại côt remember_digest bằng  nil , xóa cookie :user_id , :remember_token
+CHAPTER 10: Cập nhật hiển thị và xóa người dùng
+	#cập nhật người dùng
+	#phân quyền bắt người dùng phải đăng nhập trước khi làm các việc sửa, xóa
+	1.
+	  before_action :logged_in_user, only: [:edit, :update] : 1 phương thức để kiểm tra xem người dùng đã đăng nhập khi thực hiện hành động sửa chưa
+	  logged_in_user sẽ kiểm tra xem nguời dùng đã đăng nhập chưa nếu chưa đăng nhập thì bắt phải đăng nhập rồi mới cho sửa thông tin
+	2.
+	kiểm tra xem người đang sửa có phải sửa thông tin của mình không, tránh việc một nguời sửa thông tin của người khác
+	- nếu đúng người dùng đang đăng nhập thì mới cho sửa 
+	- nếu không đúng người dùng thì sẽ không cho sửa mà đưa về trang chủ
+	3.
+	hiển thị tất cả người dùng
+	# phân trang 
+	gem 'facker' dùng để tạo dữ liệu giả lập  --> clone 1 list dữ liệu phục vụ cho việc phân trang
+	gem 'will_paginate', gem 'bootstrap-will_paginate' là 2 thư viện phục vụ cho việc phân trang trong rails
+	@users = User.paginate(page: params[:page]) mặc định sẽ lấy 30 sản phẩm trên 1 trang ,và nếu muốn chỉ định số sản phẩm trên 1 trang thì làm như ví dụ
+	vd 10 sản phẩm trên 1 trang @products = Product.all.paginate(page: params[:page], per_page: 10)
+	4.
+	# Xóa người dùng
+CHAPTER 11: Kích hoạt người dùng
+	# kích hoạt tài khoản bằng cách gửi email
+	# làm chức năng quên mật khẩu
+
+	  
+	  
+	 
 	
