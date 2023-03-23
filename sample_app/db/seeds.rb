@@ -31,5 +31,6 @@ end
 users = User.order(:created_at).take(6) # lay ra 6 nguoi dau tien sap xep theo ngay tao
 50.times do
 content = Faker::Lorem.sentence(word_count: 5)
-users.each { |user| user.microposts.create!(content: content) }
+title = Faker::Name.name
+users.each { |user| user.microposts.create!(content: content, title: title) }
 end
