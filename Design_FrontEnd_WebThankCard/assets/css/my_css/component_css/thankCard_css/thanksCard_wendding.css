@@ -1,0 +1,17 @@
+/**
+* Css Thanks Card Wendding
+*/
+.thanksCardWendding{
+    background: url('../../../../image/thanksCard_bg/thanksCard_Wendding.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    padding-bottom: 50%;
+}
+
+.thanksCardWendding__container{
+    text-align: center;
+    position: relative;
+    padding: 0 100px ;
+    top: 100px
+}
