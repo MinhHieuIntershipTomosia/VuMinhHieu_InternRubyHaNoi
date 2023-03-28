@@ -9,7 +9,7 @@ class MicropostsController < ApplicationController
 
   def create
     @micropost = current_user.microposts.create(micropost_params)
-    if @micropost.save
+    if @micropost
       flash[:success] = "Micropost created!"
       redirect_to root_url
     else
