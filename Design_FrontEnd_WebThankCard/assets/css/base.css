@@ -1,0 +1,50 @@
+:root {
+    --outline-input-form-thanksCard-color:1px solid #8b3dff;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.6rem;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+/**
+* CSS thanks Card
+*/
+
+.thanksCard{
+    max-width: 700px;
+    max-height: 700px;
+}
+
+.thanksCard--bg{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+    padding-bottom: 50%;
+}
+
+/**
+* input
+*/
+
+.inputCustom {
+    padding: 10px 6px;
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.inputCustom:focus{
+    outline: var(--outline-input-form-thanksCard-color);
+}
