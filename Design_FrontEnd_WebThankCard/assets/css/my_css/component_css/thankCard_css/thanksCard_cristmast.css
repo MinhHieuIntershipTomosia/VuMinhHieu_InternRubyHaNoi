@@ -1,0 +1,89 @@
+.thanksCardCristmast{
+    background: url('../../../../image/thanksCard_bg/thanksCards_HappyCristmast.png');    
+}
+
+.thanksCardCristmast__container {
+    width: 100%;
+    padding: 40px 50px 0;
+    text-align: center;
+}
+
+.thanksCardCristmast__title{
+    width: 400px;
+    margin: 51px auto 0;
+    padding: 12px;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 2.3px;
+    text-transform: uppercase;    
+    color: #fff;
+    max-height: 50px;
+
+    -webkit-line-clamp: 2;
+}
+
+
+.thanksCardCristmast__Content{
+    margin-top: 52px;
+    color: #657672;
+    font-size: 50px;
+    line-height: 52px;
+    transform: rotate(-10.1957deg);
+    width: 275.395px;
+    height: 156.549px;
+    max-height: 160px;
+    position: relative;
+    right: -170px;
+    bottom: 33px;
+    font-family: 'Playfair Display', serif;
+    -webkit-line-clamp: 3;
+
+}
+
+
+.thanksCardCristmast__description{
+    width: 400px;
+    padding: 4px 12px;
+    margin: 5px auto 0;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 2.3px;
+    text-transform: uppercase;
+    color: #fff;
+    max-height: 70px;
+    -webkit-line-clamp: 3;
+}
+
+
+    
+.thanksCardCristmast__title[contenteditable]:empty::before {
+    content: "Mời bạn nhập tiêu đề";
+    color: gray;
+    font-size: 30px;
+    align-content: center;
+}
+
+.thanksCardCristmast__Content[contenteditable]:empty::before {
+    content: "mời bạn nhập nội dung";
+    color: gray;
+    line-height: 66px;
+    font-size: 40px;    
+}
+
+.thanksCardCristmast__description[contenteditable]:empty::before {
+    content: "Người gửi";
+    color: gray;
+}
+
+.thanksCardCristmast__Content.inputCustom{
+    width: 300px;
+    min-width: 300px;
+    padding: 4px 12px;
+}
+
+
+.thanksCardCristmast__title.inputCustom,.thanksCardCristmast__description.inputCustom{
+    width: 500px;
+    min-width: 400px;
+    padding: 4px 12px;
+}
