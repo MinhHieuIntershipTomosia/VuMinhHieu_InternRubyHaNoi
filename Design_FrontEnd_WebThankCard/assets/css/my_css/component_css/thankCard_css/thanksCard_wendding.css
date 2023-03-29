@@ -1,17 +1,106 @@
 /**
 * Css Thanks Card Wendding
 */
-.thanksCardWendding{
+.thanksCardWendding {
     background: url('../../../../image/thanksCard_bg/thanksCard_Wendding.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
-    padding-bottom: 50%;
 }
 
-.thanksCardWendding__container{
+.thanksCardWendding__container {
+    width: 100%;
+    height: 100%;
     text-align: center;
-    position: relative;
-    padding: 0 100px ;
-    top: 100px
+    padding: 80px 100px 0;
+    color: rgb(255, 252, 237);
+}
+
+.thanksCardWendding__title {
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 1.28px;
+    line-height: 20px;
+    text-transform: uppercase;
+    /**
+    *
+    */
+    background: transparent;
+    color: #fff;
+    border: none;
+    padding: 4px 24px;
+    min-height: 40px;
+    max-height: 62px;
+    /**
+    *
+    */
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.thanksCardWendding__Content {
+    font-size: 77px;
+    line-height: 80px;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: none;
+    margin-top: 30px;
+    padding: 0 37px;
+    text-align: center;
+    max-height: 180px;
+    /**
+    *
+    */
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.thanksCardWendding__description {
+    margin: 43px 21px 0;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1.28px;
+    height: fit-content;
+    max-height: 70px;
+    /**
+    *
+    */
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.inputCustom.thanksCardWendding__description {
+    padding: 10px 50px;
+    margin: 20px 0 0;
+}
+
+.inputCustom.thanksCardWendding__title {
+    padding: 10px 40px;
+}
+
+.thanksCardWendding__title[contenteditable]:empty::before {
+    content: "Mời bạn nhập tiêu đề";
+    color: gray;
+}
+
+.thanksCardWendding__Content[contenteditable]:empty::before {
+    content: "Mời bạn nhập nội dung";
+    color: gray;
+}
+
+.thanksCardWendding__description[contenteditable]:empty::before {
+    content: "Mời bạn nhập mô tả        ";
+    color: gray;
 }
