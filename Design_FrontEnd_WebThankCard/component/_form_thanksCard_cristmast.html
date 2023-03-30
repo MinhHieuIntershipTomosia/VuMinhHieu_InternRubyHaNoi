@@ -2,31 +2,193 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form thanks card wendding</title>
-    <!-- Bootstrap core CSS -->
-    <link href="../assets/libary/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Component Css -->
-    <link rel="stylesheet" href="../assets/css/my_css/component_css/thankCard_css/thanksCard_cristmast.css" />
-    <link rel="stylesheet" href="../assets/css/base.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form thanks card wendding</title>
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/libary/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Component Css -->
+  <link rel="stylesheet" href="../assets/css/my_css/component_css/thankCard_css/thanksCard_cristmast.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/my_css/component_css/component.css">
+
 </head>
 
 <body>
-    <div class="container my-5">
-        <form action="" class="thanksCard">
-            <div class="thanksCard--bg thanksCardCristmast">
-                <div class="thanksCardCristmast__container">
-                    <p class="inputCustom thanksCardCristmast__title" role="textbox" contenteditable></p>
-                    <h1 class="inputCustom thanksCardCristmast__Content" role="textbox" contenteditable></h1>
-                    <p class="inputCustom thanksCardCristmast__description" role="textbox" contenteditable></p>
+  <div class="container my-5">
+    <form action="" class="thanksCard">
+      <div class="container-mulitSelect">
+        <div class="select-btn">
+          <input class="btn-text" placeholder="User Reciver">
+          <span class="arrow-dwn">
+            <i class="fa-solid fa-chevron-down"></i>
+          </span>
+        </div>
+
+        <ul class="list-items">
+          <li class="item">
+            <span class="checkbox">
+              <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">
+              <img src="../assets/image/beach.jpg" alt="" class="users_avatar">
+              <p class="users_name">Vu Minh Hieu</p>
+            </span>
+          </li>
+          <li class="item">
+            <span class="checkbox">
+              <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">
+              <img src="../assets/image/beach.jpg" alt="" class="users_avatar">
+              <p class="users_name">Vu Minh Hieu</p>
+            </span>
+          </li>
+          <li class="item">
+            <span class="checkbox">
+              <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">
+              <img src="../assets/image/beach.jpg" alt="" class="users_avatar">
+              <p class="users_name">Vu Minh Hieu</p>
+            </span>
+          </li>
+          <li class="item">
+            <span class="checkbox">
+              <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">
+              <img src="../assets/image/beach.jpg" alt="" class="users_avatar">
+              <p class="users_name">Vu Minh Hieu</p>
+            </span>
+          </li>
+          <li class="item">
+            <span class="checkbox">
+              <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">
+              <img src="../assets/image/beach.jpg" alt="" class="users_avatar">
+              <p class="users_name">Vu Minh Hieu</p>
+            </span>
+          </li>
+          <li class="item">
+            <span class="checkbox">
+              <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">
+              <img src="../assets/image/beach.jpg" alt="" class="users_avatar">
+              <p class="users_name">Vu Minh Hieu</p>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="thanksCard--bg thanksCardCristmast">
+        <div class="thanksCardCristmast__container">
+          <p class="inputCustom thanksCardCristmast__title" role="textbox" contenteditable></p>
+          <h1 class="inputCustom thanksCardCristmast__Content" role="textbox" contenteditable></h1>
+          <p class="inputCustom thanksCardCristmast__description" role="textbox" contenteditable></p>
+        </div>
+      </div>
+      <div class="thanksCard__image">
+        <p class="thanksCard__image-title">Add Images</p>
+        <div class="d-flex flex-row bd-highlight mb-3 thanksCard__image-list">
+          <div class="thanksCard__image-item col-3 list-inline-item">
+            <div>
+              <div class="mb-4 d-flex justify-content-center">
+                <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                  style="width: 100%" />
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="btn btn-primary btn-rounded">
+                  <label class="form-label text-white m-1" for="customFile1">Add Image</label>
+                  <input type="file" class="form-control d-none" id="customFile1" />
                 </div>
+              </div>
             </div>
-        </form>
-    </div>
-    <!-- Bootstrap core JS -->
-    <script src="../assets/libary/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+          </div>
+          <div class="thanksCard__image-item col-3 list-inline-item">
+            <div>
+              <div class="mb-4 d-flex justify-content-center">
+                <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                  style="width: 100%" />
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="btn btn-primary btn-rounded">
+                  <label class="form-label text-white m-1" for="customFile1">Add Image</label>
+                  <input type="file" class="form-control d-none" id="customFile1" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="thanksCard__image-item col-3 list-inline-item">
+            <div>
+              <div class="mb-4 d-flex justify-content-center">
+                <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                  style="width: 100%" />
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="btn btn-primary btn-rounded">
+                  <label class="form-label text-white m-1" for="customFile1">Add Image</label>
+                  <input type="file" class="form-control d-none" id="customFile1" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="thanksCard__image-item col-3 list-inline-item">
+            <div>
+              <div class="mb-4 d-flex justify-content-center">
+                <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                  style="width: 100%" />
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="btn btn-primary btn-rounded">
+                  <label class="form-label text-white m-1" for="customFile1">Add Image</label>
+                  <input type="file" class="form-control d-none" id="customFile1" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+  <!-- Load jQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+
+  <!-- Bootstrap core JS -->
+  <script src="../assets/libary/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const selectBtn = document.querySelector(".select-btn"),
+      items = document.querySelectorAll(".item");
+
+    selectBtn.addEventListener("click", () => {
+      selectBtn.classList.toggle("open");
+    });
+
+    items.forEach(item => {
+      item.addEventListener("click", () => {
+        item.classList.toggle("checked");
+
+        let checked = document.querySelectorAll(".checked"),
+          btnText = document.querySelector(".btn-text");
+
+        if (checked && checked.length > 0) {
+          btnText.value = `${checked.length} Selected`;
+        } else {
+          btnText.innerText = "Select Language";
+        }
+      });
+    })
+
+  </script>
 </body>
 
 </html>
