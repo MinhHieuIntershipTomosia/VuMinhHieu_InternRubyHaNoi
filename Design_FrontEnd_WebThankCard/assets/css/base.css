@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&family=Playfair+Display:ital,wght@1,500;1,700&display=swap');
+
 :root {
     --outline-input-form-thanksCard-color:1px solid #8b3dff;
 }
@@ -14,20 +16,31 @@ body {
     box-sizing: border-box;
 }
 
+
 /**
 * CSS thanks Card
 */
 
 .thanksCard{
     max-width: 700px;
-    max-height: 700px;
+    max-height: 500px;
+    overflow: hidden;
+    letter-spacing: 1.28px;
 }
 
 .thanksCard--bg{
     background-repeat: no-repeat;
-    background-size: contain;
     background-position: top center;
     padding-bottom: 50%;
+    background-size: contain;
+}
+
+.thanksCard--maxline{
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    display: -webkit-box;
 }
 
 /**
