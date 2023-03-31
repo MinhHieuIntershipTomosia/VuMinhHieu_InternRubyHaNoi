@@ -1,4 +1,3 @@
-
 .thanksCardHelp {
     background: url('../../../../image/thanksCard_bg/ThanksCard_Help.png');
 }
@@ -21,7 +20,7 @@
     -webkit-line-clamp: 2;
 }
 
-.thanksCardHelp__description{
+.thanksCardHelp__description {
     white-space: pre-line;
     font-size: 15px;
     line-height: 18px;
@@ -30,7 +29,7 @@
     padding-right: 12px;
 }
 
-.thanksCardHelp__underwrite{
+.thanksCardHelp__underwrite {
     font-size: 30px;
     line-height: 33px;
     font-style: italic;
@@ -51,7 +50,7 @@
     content: "mời bạn nhập nội dung";
     color: gray;
     line-height: 66px;
-    font-size: 40px;    
+    font-size: 40px;
 }
 
 .thanksCardHelp__underwrite[contenteditable]:empty::before {
@@ -59,6 +58,34 @@
     color: gray;
 }
 
-.inputCustom.thanksCardHelp__description{
+.inputCustom.thanksCardHelp__description {
     height: 240px;
+}
+
+/**
+* Css post
+*/
+
+.posts--css .thanksCardHelp__container{
+    padding: 0;
+}
+
+.posts--css .thanksCardHelp__title {
+    margin: 0 auto;
+    letter-spacing: 0.8px;
+    width: 240px;
+    font-size: 26px;
+    line-height: 28px;
+    margin-top: 12px;
+}   
+
+.posts--css .thanksCardHelp__description {
+    max-height: 220px;
+}
+
+.posts--css .thanksCardHelp__underwrite {
+    position: relative;
+    font-size: 13px;
+    line-height: 16px;
+    top: 12px;
 }

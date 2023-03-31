@@ -33,7 +33,7 @@ body {
     padding-bottom: 50%;
     background-size: contain;
     max-height: 500px;
-
+    min-height: 350px;
 }
 
 .thanksCard--maxline{
