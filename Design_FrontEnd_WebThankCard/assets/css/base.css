@@ -45,6 +45,22 @@ body {
 }
 
 /**
+* ThanksCard image
+*/
+
+.thanksCard__image-title{
+    width: 100%;
+    background-color:  rgba(0,0,0,0.05);
+    padding: 4px 12px;
+    border-radius: 4px;
+    color: gray;
+}
+
+.thanksCard__image-list{
+    overflow: hidden;
+}
+
+/**
 * input
 */
 

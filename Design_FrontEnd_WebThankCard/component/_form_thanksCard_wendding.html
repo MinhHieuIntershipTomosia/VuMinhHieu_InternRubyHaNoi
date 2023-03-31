@@ -11,11 +11,24 @@
   <!-- Component Css -->
   <link rel="stylesheet" href="../assets/css/my_css/component_css/thankCard_css/thanksCard_wendding.css" />
   <link rel="stylesheet" href="../assets/css/base.css" />
+
+  <!-- Jquery CSS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+    integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <!-- Multi-select CSS + JS  -->
+  <script type="text/javascript" src="../assets/libary/multi-select/mock.js"></script>
+  <link rel="stylesheet" type="text/css" href="../assets/libary/multi-select/jquery.dropdown.css">
+  <script src="../assets/libary/multi-select/jquery.dropdown.js"></script>
 </head>
 
 <body>
   <div class="container my-5">
     <form action="" class="thanksCard">
+      <div class="dropdown-sin-2 mb-2">
+        <select style="display:none" multiple placeholder="User Recevier"></select>
+      </div>
       <div class="thanksCard--bg thanksCardWendding">
         <div class="thanksCardWendding__container">
           <p class="inputCustom thanksCardWendding__title" role="textbox" contenteditable></p>
@@ -23,10 +36,98 @@
           <p class="inputCustom thanksCardWendding__description" role="textbox" contenteditable></p>
         </div>
       </div>
+      <div class="thanksCard__image">
+        <p class="thanksCard__image-title">Add Images</p>
+        <div class="d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list">
+          <div class="thanksCard__image-item col-3 list-inline-item">
+            <div>
+              <div class="mb-4 d-flex justify-content-center">
+                <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                  style="width: 100%" />
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="btn btn-primary btn-rounded">
+                  <label class="form-label text-white m-1" for="customFile1">Add Image</label>
+                  <input type="file" class="form-control d-none" id="customFile1" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="thanksCard__image-item col-3 list-inline-item">
+            <div>
+              <div class="mb-4 d-flex justify-content-center">
+                <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                  style="width: 100%" />
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="btn btn-primary btn-rounded">
+                  <label class="form-label text-white m-1" for="customFile2">Add Image</label>
+                  <input type="file" class="form-control d-none" id="customFile2" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="thanksCard__image-item col-3 list-inline-item">
+            <div>
+              <div class="mb-4 d-flex justify-content-center">
+                <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                  style="width: 100%" />
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="btn btn-primary btn-rounded">
+                  <label class="form-label text-white m-1" for="customFile3">Add Image</label>
+                  <input type="file" class="form-control d-none" id="customFile3" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="thanksCard__image-item col-3 list-inline-item">
+            <div>
+              <div class="mb-4 d-flex justify-content-center">
+                <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                  style="width: 100%" />
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="btn btn-primary btn-rounded">
+                  <label class="form-label text-white m-1" for="customFile4">Add Image</label>
+                  <input type="file" class="form-control d-none" id="customFile4" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="submit">Send</button>
+      </div>
     </form>
   </div>
   <!-- Bootstrap core JS -->
   <script src="../assets/libary/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    var Random = Mock.Random;
+    const users = [
+      { userid: 1, email: 'example1@example.com', name: 'John Doe' },
+      { userid: 2, email: 'example2@example.com', name: 'Jane Doe' },
+      { userid: 3, email: 'example3@example.com', name: 'Bob Smith' }
+    ];
+
+    const jsonString = JSON.stringify({
+      data: users.map(user => ({
+        name: user.name + '(' + user.email + ')',
+        id: user.userid,
+        disabled: false,
+        groupName: 'Group Name',
+        // groupId: Math.floor(Math.random() * 4) + 1,
+        selected: false
+      }))
+    });
+
+    $('.dropdown-sin-2').dropdown({
+      data: JSON.parse(jsonString).data,
+      input: '<input type="text" maxLength="20" placeholder="Search">'
+    });
+  </script>
 </body>
 
 </html>

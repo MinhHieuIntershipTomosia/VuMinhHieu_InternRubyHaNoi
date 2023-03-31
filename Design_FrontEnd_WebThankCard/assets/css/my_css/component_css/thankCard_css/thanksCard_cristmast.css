@@ -105,3 +105,10 @@
   margin-top: 40px;
   right: -70px;
 }
+
+.posts--css .thanksCardCristmast__description{
+  position: relative;
+  font-size: 13px;
+  line-height: 16px;
+  top: -30px;
+}
