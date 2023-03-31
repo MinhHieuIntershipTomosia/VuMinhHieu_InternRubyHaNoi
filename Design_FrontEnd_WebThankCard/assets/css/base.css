@@ -23,7 +23,6 @@ body {
 
 .thanksCard{
     max-width: 700px;
-    max-height: 500px;
     overflow: hidden;
     letter-spacing: 1.28px;
 }
@@ -33,6 +32,8 @@ body {
     background-position: top center;
     padding-bottom: 50%;
     background-size: contain;
+    max-height: 500px;
+
 }
 
 .thanksCard--maxline{
@@ -60,4 +61,8 @@ body {
 
 .inputCustom:focus{
     outline: var(--outline-input-form-thanksCard-color);
+}
+
+.posts--css .thanksCard--bg{
+    padding-bottom: 3%;
 }
