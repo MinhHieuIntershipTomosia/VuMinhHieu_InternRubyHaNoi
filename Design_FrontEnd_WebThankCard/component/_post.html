@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Post</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link href="../assets/libary/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="../assets/css/my_css/component_css/_post.css" />
   <link rel="stylesheet" href="../assets/css/my_css/component_css/thankCard_css/thanksCard_cristmast.css" />
   <link rel="stylesheet" href="../assets/css/my_css/component_css/thankCard_css/thanksCard_help.css" />
@@ -26,17 +26,16 @@
       <div class="col-lg-6">
         <div class="card mb-4">
           <div class="card-body">
-            <div class="media mb-3">
-              <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="d-block ui-w-40 rounded-circle"
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="d-block ui-w-40 rounded-circle mx-2"
                 alt="" />
-              <div class="media-body ml-3">
+              <div class="d-flex flex-column ml-3">
                 Kenneth Frazier
                 <div class="text-muted small">3 days ago</div>
               </div>
             </div>
-            <!-- <a href="javascript:void(0)" class="ui-rect ui-bg-cover"
-                            style="background-image: url('https://bootdey.com/img/Content/avatar/avatar3.png');"></a> -->
-            <!-- <div class="thanksCard">
+
+            <div class="thanksCard">
               <div class="thanksCard--bg thanksCardCristmast">
                 <div class="thanksCardCristmast__container">
                   <p class="thanksCardCristmast__title thanksCard--maxline">
@@ -50,7 +49,7 @@
                   </p>
                 </div>
               </div>
-            </div> -->
+            </div>
             <!-- <div class="thanksCard">
               <div class="thanksCard--bg thanksCardHelp">
                 <div class="thanksCardHelp__container">
@@ -67,15 +66,24 @@
 
                     Sự giúp đỡ của bạn rất có ý nghĩa
                     với chúng tôi.
+                    Chúng tôi rất trân trọng những lời
+                    chia buồn và sự chu đáo của bạn
+                    trong thời gian khó khăn này.
+
+                    Hãy giữ Bà Oanh trong suy nghĩ và
+                    lời cầu nguyện của bạn.
+
+                    Sự giúp đỡ của bạn rất có ý nghĩa
+                    với chúng tôi.
                   </p>
                   <p class="thanksCard--maxline thanksCardHelp__underwrite">
-                    Gia đình bà Oanh Gia đình bà OanhGia đình bà Oanh
+                    Gia đình bà Oanh Gia đình bà OanhGia đình bà OanhGia đình bà Oanh Gia đình bà OanhGia đình bà Oanh
                   </p>
                 </div>
                 <div style="clear: both"></div>
               </div>
             </div> -->
-            <div class="thanksCard">
+            <!-- <div class="thanksCard">
               <div class="thanksCard--bg thanksCardWendding">
                 <div class="thanksCardWendding__container">
                   <p class="thanksCardWendding__title thanksCard--maxline">Đám Cưới Của Thành & Kim</p>
@@ -84,7 +92,7 @@
                     bạn trong ngày đặc biệt này. Chúng tôi hi vọng bạn đã có một bữa tiệc vui vẻ!</p>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="card-comment">
             <div class="new-comment">
@@ -99,7 +107,10 @@
               </form>
             </div>
             <div class="card-all-comment">
-              <h2 class="carr-all-comment__title">All Comment</h2>
+              <p class="card-all-no-comment">
+                this ThanksCard don't comment
+              </p>
+              <!-- <h2 class="carr-all-comment__title">All Comment</h2>
               <ul class="comment-list">
                 <li class="comment-item">
                   <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="comment-item_img">
@@ -140,11 +151,11 @@
                     <span class="comment-content__time">3 ngay truoc</span>
                   </div>
                 </li>
-              </ul>
+              </ul> -->
             </div>
           </div>
           <div class="card-footer">
-            <a href="javascript:void(0)" class="d-inline-block text-muted ml-3">
+            <a href="javascript:void(0)" class="d-inline-block text-muted ml-3 text-decoration-none">
               <strong>12</strong> <small class="align-middle">Comments</small>
             </a>
           </div>
@@ -153,10 +164,10 @@
       <!-- <div class="col-lg-6">
         <div class="card mb-4">
           <div class="card-body">
-            <div class="media mb-3">
+            <div class="d-flex mb-3">
               <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="d-block ui-w-40 rounded-circle"
                 alt="" />
-              <div class="media-body ml-3">
+              <div class="d-flex-body ml-3">
                 Kenneth Frazier
                 <div class="text-muted small">3 days ago</div>
               </div>
@@ -194,9 +205,8 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+  <script src="../assets/libary/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

@@ -80,5 +80,7 @@ body {
 }
 
 .posts--css .thanksCard--bg{
-    padding-bottom: 3%;
+    padding-bottom: 0%;
+    background-size: cover;
+    min-height: 450px;
 }
