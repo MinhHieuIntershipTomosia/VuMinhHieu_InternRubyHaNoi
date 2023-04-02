@@ -1,28 +1,24 @@
-body {
-    background: #eee;
-}
-
 .posts-content {
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 .ui-w-40 {
-    width: 40px !important;
-    height: auto;
+	width: 40px !important;
+	height: auto;
 }
 
 .default-style .ui-bordered {
-    border: 1px solid rgba(24, 28, 33, 0.06);
+	border: 1px solid rgba(24, 28, 33, 0.06);
 }
 
 .ui-bg-cover {
-    background-color: transparent;
-    background-position: center center;
-    background-size: cover;
+	background-color: transparent;
+	background-position: center center;
+	background-size: cover;
 }
 
 .ui-rect {
-    padding-top: 50% !important;
+	padding-top: 50% !important;
 }
 
 .ui-rect,
@@ -30,10 +26,10 @@ body {
 .ui-rect-60,
 .ui-rect-67,
 .ui-rect-75 {
-    position: relative !important;
-    display: block !important;
-    padding-top: 100% !important;
-    width: 100% !important;
+	position: relative !important;
+	display: block !important;
+	padding-top: 100% !important;
+	width: 100% !important;
 }
 
 .d-flex,
@@ -42,27 +38,128 @@ body {
 .media> :not(.media-body),
 .jumbotron,
 .card {
-    -ms-flex-negative: 1;
-    flex-shrink: 1;
+	-ms-flex-negative: 1;
+	flex-shrink: 1;
 }
 
 .bg-dark {
-    background-color: rgba(24, 28, 33, 0.9) !important;
+	background-color: rgba(24, 28, 33, 0.9) !important;
 }
 
 .card-footer,
 .card hr {
-    border-color: rgba(24, 28, 33, 0.06);
+	border-color: rgba(24, 28, 33, 0.06);
 }
 
 .ui-rect-content {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
+	position: absolute !important;
+	top: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	left: 0 !important;
 }
 
 .default-style .ui-bordered {
-    border: 1px solid rgba(24, 28, 33, 0.06);
+	border: 1px solid rgba(24, 28, 33, 0.06);
+}
+
+
+/**
+* New Commment
+*/
+.new-comment {
+	width: 100%;
+	overflow: hidden;
+	padding: 0 12px;
+}
+
+.new-comment_title {
+	font-size: 18px;
+	padding: 6px 12px;
+	background-color: rgba(0, 0, 0, 0.05);
+	border-radius: 4px;
+}
+
+.new-comment-form {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	overflow: hidden;
+	padding: 0 12px;
+}
+
+.new-comment__input {
+	flex: 1;
+	margin: 0;
+	max-width: 400px;
+}
+
+.new-comment__input textarea {
+	resize: none;
+}
+
+/**
+* CSS list Comment
+*/
+.card-all-comment {
+	padding: 0 12px;
+
+}
+.comment-list{
+	height: 600px;
+    overflow-y: auto;
+}
+.comment-list::-webkit-scrollbar {
+    display: none; /* cho Chrome, Safari, and Opera */
+}
+
+.carr-all-comment__title {
+	font-size: 18px;
+	padding: 4px 12px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05)  ;
+}
+
+.comment-item {
+	list-style: none;
+	/* height: 70px; */
+	/* overflow: hidden; */
+	margin-bottom: 8px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	margin-left: 12px;
+	display: flex;
+	align-items: flex-start;
+}
+
+.comment-item_img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.comment-content {
+	margin-left: 18px;
+}
+
+.comment-content__userName {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 6px;
+
+}
+
+.comment-content__text {
+	margin-bottom: 3px;
+	width: 100%;
+	max-height: 200px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	-webkit-line-clamp: 8;
+	text-align: justify;
+}
+
+.comment-content__time{
+	color: #AAAAAA;
+    font-size: 12px;
+    padding-right: 10px;
+    font-weight: 600;
 }
