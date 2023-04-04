@@ -9,7 +9,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: minhlahieu0310
+  password: muiminmo
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -19,4 +19,5 @@ development:
 test:
   <<: *default
   database: projectThanksCard_app_test
+
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_04_102010) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_04_160853) do
   create_table "categories", charset: "utf8mb3", force: :cascade do |t|
     t.string "category_name"
     t.datetime "created_at", null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_04_102010) do
     t.bigint "users_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "thanks_cards_id"
+    t.bigint "thanks_cards_id", null: false
     t.index ["thanks_cards_id"], name: "index_comments_on_thanks_cards_id"
     t.index ["users_id"], name: "index_comments_on_users_id"
   end
@@ -52,13 +52,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_04_102010) do
   end
 
   create_table "users_receivers", charset: "utf8mb3", force: :cascade do |t|
-    t.integer "thanksCard_id"
-    t.integer "users_id"
+    t.bigint "thanks_cards_id", null: false
+    t.bigint "users_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["thanks_cards_id"], name: "index_users_receivers_on_thanks_cards_id"
+    t.index ["users_id"], name: "index_users_receivers_on_users_id"
   end
 
+  add_foreign_key "comments", "thanks_cards", column: "thanks_cards_id"
   add_foreign_key "comments", "users", column: "users_id"
   add_foreign_key "thanks_cards", "categories", column: "categories_id"
   add_foreign_key "thanks_cards", "users", column: "users_id"
+  add_foreign_key "users_receivers", "thanks_cards", column: "thanks_cards_id"
+  add_foreign_key "users_receivers", "users", column: "users_id"
 end
