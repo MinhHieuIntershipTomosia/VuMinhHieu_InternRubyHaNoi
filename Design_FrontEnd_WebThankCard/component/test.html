@@ -1,174 +1,450 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-/*the container must be positioned relative:*/
-.custom-select {
-  position: relative;
-  font-family: Arial;
-}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="../assets/libary/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/page/page.css">
+  <link rel="stylesheet" href="../assets/css/component_css/component.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <style>
+    body {
+      margin-top: 20px;
+      background: #eee;
+    }
 
-.custom-select select {
-  display: none; /*hide original SELECT element:*/
-}
+    /* Rounded sliders */
+    /*-------------------------------------------------------------------*/
+    /* === Email === */
+    /* Mail Sidebar */
+    @media (max-width: 769px) {
+      .email-wrapper .mail-sidebar {
+        position: relative;
+      }
+    }
 
-.select-selected {
-  background-color: DodgerBlue;
-}
+    @media (max-width: 767.98px) {
+      .email-wrapper .mail-sidebar {
+        position: fixed;
+        z-index: 99;
+        background: #ffffff;
+        width: 45%;
+        min-width: 300px;
+        left: -100%;
+        display: block;
+        transition: 0.4s ease;
+        -webkit-transition: 0.4s ease;
+        -moz-transition: 0.4s ease;
+      }
+    }
 
-/*style the arrow inside the select element:*/
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
+    .email-wrapper .mail-sidebar .menu-bar {
+      width: 100%;
+      float: right;
+      height: 100%;
+      min-height: 100%;
+    }
 
-/*point the arrow upwards when the select box is open (active):*/
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
-}
+    @media (max-width: 767.98px) {
+      .email-wrapper .mail-sidebar .menu-bar {
+        min-height: 100vh;
+        max-height: 100%;
+        height: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+    }
 
-/*style the items (options), including the selected item:*/
-.select-items div,.select-selected {
-  color: #ffffff;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-  user-select: none;
-}
+    .email-wrapper .mail-sidebar .menu-bar .menu-items {
+      padding: 0;
+      margin-bottom: 0;
+      height: auto;
+      list-style-type: none;
+    }
 
-/*style items (options):*/
-.select-items {
-  position: absolute;
-  background-color: DodgerBlue;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
+    .email-wrapper .mail-sidebar .menu-bar .menu-items li {
+      padding: 10px 15px;
+      transition: 0.4s;
+      position: relative;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+    }
 
-/*hide the items when the select box is closed:*/
-.select-hide {
-  display: none;
-}
+    .email-wrapper .mail-sidebar .menu-bar .menu-items li:hover {
+      background: rgba(240, 244, 249, 0.8);
+    }
 
-.select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-</style>
-</head>     
+    .email-wrapper .mail-sidebar .menu-bar .menu-items li a {
+      color: #303a40;
+      font-size: 0.75rem;
+      text-decoration: none;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .menu-items li a i {
+      margin-right: 8px;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .menu-items li.active {
+      background: #e6e9ed;
+      border-radius: 4px;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .menu-items li.active a {
+      color: #464dee;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .menu-items li.compose:hover {
+      background: transparent;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .online-status {
+      margin-top: 1rem;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .online-status .chat {
+      font-size: 0.75rem;
+      color: #464dee;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .online-status .status {
+      height: 10px;
+      width: 10px;
+      border-radius: 100%;
+      display: inline-flex;
+      justify-content: flex-start;
+      transform: translateX(-43px) translateY(2px);
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .online-status .status:after {
+      font-size: 12px;
+      color: #2e383e;
+      margin: -5px 0 0 18px;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .online-status .status.offline {
+      background: #ef5958;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .online-status .status.offline:after {
+      content: "Offline";
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .online-status .status.online {
+      background: #0ddbb9;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .online-status .status.online:after {
+      content: "Online";
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .profile-list {
+      padding: 10px 0;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item {
+      border-bottom: 1px solid #e9e9e9;
+      padding: 6px 0;
+      display: block;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item:last-child {
+      border-bottom: 0;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a {
+      text-decoration: none;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .pro-pic {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+      padding: 0;
+      width: 20%;
+      max-width: 40px;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .pro-pic img {
+      max-width: 100%;
+      width: 100%;
+      border-radius: 100%;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user {
+      width: 100%;
+      padding: 5px 10px 0 15px;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-name {
+      font-weight: 400;
+      font-size: 0.75rem;
+      line-height: 1;
+      color: #000000;
+    }
+
+    .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-designation {
+      font-size: calc(0.75rem - 0.1rem);
+      margin-bottom: 0;
+    }
+
+    .email-wrapper .sidebar.open {
+      left: 0;
+    }
+
+    /* Mail List Container */
+    .email-wrapper .mail-list-container {
+      border-left: 1px solid #e9e9e9;
+      height: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .email-wrapper .mail-list-container a {
+      text-decoration: none;
+    }
+
+    .email-wrapper .mail-list-container .mail-list {
+      border-bottom: 1px solid #e9e9e9;
+      display: flex;
+      flex-direction: row;
+      padding: 10px 15px;
+      width: 100%;
+    }
+
+    .email-wrapper .mail-list-container .mail-list:last-child {
+      border-bottom: none;
+    }
+
+    .email-wrapper .mail-list-container .mail-list .form-check {
+      margin-top: 12px;
+      width: 11%;
+      min-width: 20px;
+    }
+
+    .email-wrapper .mail-list-container .mail-list .content {
+      width: 83%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .email-wrapper .mail-list-container .mail-list .content .sender-name {
+      font-size: 0.75rem;
+      font-weight: 400;
+      max-width: 95%;
+    }
+
+    .email-wrapper .mail-list-container .mail-list .content .message_text {
+      margin: 0;
+      max-width: 93%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .email-wrapper .mail-list-container .mail-list .details {
+      width: 5.5%;
+    }
+
+    .email-wrapper .mail-list-container .mail-list .details .date {
+      text-align: right;
+      margin: auto 15px auto 0;
+      white-space: nowrap;
+    }
+
+    .email-wrapper .mail-list-container .mail-list .details i {
+      margin: auto 0;
+      color: #ddd;
+    }
+
+    .email-wrapper .mail-list-container .mail-list .details i.favorite {
+      color: #fcd539;
+    }
+
+    .email-wrapper .mail-list-container .mail-list.new_mail {
+      background: #e6e9ed;
+    }
+
+    .email-wrapper .mail-list-container .mail-list.new_mail .details .date {
+      color: #000000;
+    }
+
+    /* Message Content */
+    .email-wrapper .message-body .sender-details {
+      padding: 20px 15px 0;
+      border-bottom: 1px solid #e9e9e9;
+      display: -webkit-flex;
+      display: flex;
+    }
+
+    .email-wrapper .message-body .sender-details .details {
+      padding-bottom: 0;
+    }
+
+    .email-wrapper .message-body .sender-details .details .msg-subject {
+      font-weight: 600;
+    }
+
+    .email-wrapper .message-body .sender-details .details .sender-email {
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .email-wrapper .message-body .sender-details .details .sender-email i {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 1px 0 7px;
+    }
+
+    .email-wrapper .message-body .message-content {
+      padding: 50px 15px;
+    }
+
+    .email-wrapper .message-body .attachments-sections ul {
+      list-style: none;
+      border-top: 1px solid #e9e9e9;
+      padding: 30px 15px 20px;
+    }
+
+    .email-wrapper .message-body .attachments-sections ul li {
+      padding: 10px;
+      margin-right: 20px;
+      border: 1px solid #e9e9e9;
+      border-radius: 5px;
+    }
+
+    .email-wrapper .message-body .attachments-sections ul li .thumb {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .email-wrapper .message-body .attachments-sections ul li .thumb i {
+      font-size: 30px;
+      margin: 0;
+      color: #2e383e;
+    }
+
+    .email-wrapper .message-body .attachments-sections ul li .details p.file-name {
+      display: block;
+      margin-bottom: 0;
+      color: #2e383e;
+    }
+
+    .email-wrapper .message-body .attachments-sections ul li .details .buttons .file-size {
+      margin-right: 10px;
+      margin-bottom: 0;
+      font-size: 13px;
+    }
+
+    .email-wrapper .message-body .attachments-sections ul li .details .buttons a {
+      font-size: 13px;
+      margin-right: 10px;
+    }
+
+    .email-wrapper .message-body .attachments-sections ul li .details .buttons a:last-child {
+      margin-right: 0;
+    }
+  </style>
+</head>
 
 <body>
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css">
 
-<h2>Custom Select</h2>
-
-<!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
-<div class="custom-select" style="width:200px;">
-  <select>
-    <option value="0">Select car:</option>
-    <option value="1">Audi</option>
-    <option value="2">BMW</option>
-    <option value="3">Citroen</option>
-    <option value="4">Ford</option>
-    <option value="5">Honda</option>
-    <option value="6">Jaguar</option>
-    <option value="7">Land Rover</option>
-    <option value="8">Mercedes</option>
-    <option value="9">Mini</option>
-    <option value="10">Nissan</option>
-    <option value="11">Toyota</option>
-    <option value="12">Volvo</option>
-  </select>
-</div>
-
-<script>
-var x, i, j, l, ll, selElmnt, a, b, c;
-/*look for any elements with the class "custom-select":*/
-x = document.getElementsByClassName("custom-select");
-l = x.length;
-for (i = 0; i < l; i++) {
-  selElmnt = x[i].getElementsByTagName("select")[0];
-  ll = selElmnt.length;
-  /*for each element, create a new DIV that will act as the selected item:*/
-  a = document.createElement("DIV");
-  a.setAttribute("class", "select-selected");
-  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-  x[i].appendChild(a);
-  /*for each element, create a new DIV that will contain the option list:*/
-  b = document.createElement("DIV");
-  b.setAttribute("class", "select-items select-hide");
-  for (j = 1; j < ll; j++) {
-    /*for each option in the original select element,
-    create a new DIV that will act as an option item:*/
-    c = document.createElement("DIV");
-    c.innerHTML = selElmnt.options[j].innerHTML;
-    c.addEventListener("click", function(e) {
-        /*when an item is clicked, update the original select box,
-        and the selected item:*/
-        var y, i, k, s, h, sl, yl;
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        sl = s.length;
-        h = this.parentNode.previousSibling;
-        for (i = 0; i < sl; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            yl = y.length;
-            for (k = 0; k < yl; k++) {
-              y[k].removeAttribute("class");
-            }
-            this.setAttribute("class", "same-as-selected");
-            break;
-          }
-        }
-        h.click();
-    });
-    b.appendChild(c);
-  }
-  x[i].appendChild(b);
-  a.addEventListener("click", function(e) {
-      /*when the select box is clicked, close any other select boxes,
-      and open/close the current select box:*/
-      e.stopPropagation();
-      closeAllSelect(this);
-      this.nextSibling.classList.toggle("select-hide");
-      this.classList.toggle("select-arrow-active");
-    });
-}
-function closeAllSelect(elmnt) {
-  /*a function that will close all select boxes in the document,
-  except the current select box:*/
-  var x, y, i, xl, yl, arrNo = [];
-  x = document.getElementsByClassName("select-items");
-  y = document.getElementsByClassName("select-selected");
-  xl = x.length;
-  yl = y.length;
-  for (i = 0; i < yl; i++) {
-    if (elmnt == y[i]) {
-      arrNo.push(i)
-    } else {  
-      y[i].classList.remove("select-arrow-active");
-    }
-  }
-  for (i = 0; i < xl; i++) {
-    if (arrNo.indexOf(i)) {
-      x[i].classList.add("select-hide");
-    }
-  }
-}
-/*if the user clicks anywhere outside the select box,
-then close all select boxes:*/
-document.addEventListener("click", closeAllSelect);
-</script>
-
+  <div class="container">
+    <div class="content-wrapper">
+      <div class="email-wrapper wrapper">
+        <div class="row align-items-stretch">
+          <div class="mail-view d-none d-md-block col-md-9 col-lg-7 bg-white">
+            <div class="row">
+              <div class="col-md-12 mb-4 mt-4">
+                <div class="btn-toolbar">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i
+                        class="mdi mdi-reply text-primary me-1"></i> Reply</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i
+                        class="mdi mdi-reply-all text-primary me-1"></i>Reply All</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i
+                        class="mdi mdi-share text-primary me-1"></i>Forward</button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i
+                        class="mdi mdi-attachment text-primary me-1"></i>Attach</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><i
+                        class="mdi mdi-delete text-primary me-1"></i>Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message-body">
+              <div class="sender-details">
+                <img class="img-sm rounded-circle me-3"
+                  src="http://www.urbanui.com/dashflat/template/images/faces/face11.jpg" alt="">
+                <div class="details">
+                  <p class="msg-subject">
+                    Weekly Update - Week 19 (May 8, 2017 - May 14, 2017)
+                  </p>
+                  <p class="sender-email">
+                    Sarah Graves
+                    <a href="#">itsmesarah268@gmail.com</a>
+                    &nbsp;<i class="mdi mdi-account-multiple-plus"></i>
+                  </p>
+                </div>
+              </div>
+              <div class="container my-5">
+                <div class="thanksCard">
+                  <div class="thanksCard--bg thanksCardCristmast">
+                    <div class="thanksCardCristmast__container">
+                      <p class="thanksCardCristmast__title thanksCard--maxline">gửi đến bạn bè và người thân </p>
+                      <h1 class="thanksCardCristmast__Content thanksCard--maxline">Cảm ơn bạn đã đến!</h1>
+                      <p class="thanksCardCristmast__description thanksCard--maxline">chúc mọi người một mùa giáng sinh
+                        an lành & tươi !</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="attachments-sections">
+                <ul>
+                  <li>
+                    <div class="thumb"><i class="mdi mdi-file-pdf"></i></div>
+                    <div class="details">
+                      <p class="file-name">Seminar Reports.pdf</p>
+                      <div class="buttons">
+                        <p class="file-size">678Kb</p>
+                        <a href="#" class="view">View</a>
+                        <a href="#" class="download">Download</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="thumb"><i class="mdi mdi-file-image"></i></div>
+                    <div class="details">
+                      <p class="file-name">Product Design.jpg</p>
+                      <div class="buttons">
+                        <p class="file-size">1.96Mb</p>
+                        <a href="#" class="view">View</a>
+                        <a href="#" class="download">Download</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
