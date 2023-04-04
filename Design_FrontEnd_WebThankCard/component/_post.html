@@ -8,13 +8,12 @@
   <title>Post</title>
   <link href="../assets/libary/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="../assets/css/my_css/component_css/_post.css" />
-  <link rel="stylesheet" href="../assets/css/my_css/component_css/thankCard_css/thanksCard_cristmast.css" />
-  <link rel="stylesheet" href="../assets/css/my_css/component_css/thankCard_css/thanksCard_help.css" />
-  <link rel="stylesheet" href="../assets/css/my_css/component_css/thankCard_css/thanksCard_wendding.css" />
+  <link rel="stylesheet" href="../assets/css/component_css/_post.css" />
+  <link rel="stylesheet" href="../assets/css/component_css/thankCard_css/thanksCard_cristmast.css" />
+  <link rel="stylesheet" href="../assets/css/component_css/thankCard_css/thanksCard_help.css" />
+  <link rel="stylesheet" href="../assets/css/component_css/thankCard_css/thanksCard_wendding.css" />
 
   <link rel="stylesheet" href="../assets/css/base.css" />
-  <link rel="stylesheet" href="../assets/css/responsive/responsive.css" />
   <style>
 
   </style>
@@ -164,39 +163,141 @@
       <div class="col-lg-6">
         <div class="card mb-4">
           <div class="card-body">
-            <div class="d-flex mb-3">
-              <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="d-block ui-w-40 rounded-circle"
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="d-block ui-w-40 rounded-circle mx-2"
                 alt="" />
-              <div class="d-flex-body ml-3">
+              <div class="d-flex flex-column ml-3">
                 Kenneth Frazier
                 <div class="text-muted small">3 days ago</div>
               </div>
             </div>
 
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Phasellus finibus commodo bibendum. Vivamus laoreet blandit
-              odio, vel finibus quam dictum ut.
-            </p>
-            <a href="javascript:void(0)" class="ui-rect ui-bg-cover" style="
-                  background-image: url('https://bootdey.com/img/Content/avatar/avatar1.png');
-                "></a>
+            <div class="thanksCard">
+              <div class="thanksCard--bg thanksCardCristmast">
+                <div class="thanksCardCristmast__container">
+                  <p class="thanksCardCristmast__title thanksCard--maxline">
+                    gửi đến bạn bè và người thân
+                  </p>
+                  <h1 class="thanksCardCristmast__Content thanksCard--maxline">
+                    Cảm ơn bạn đã đến!
+                  </h1>
+                  <p class="thanksCardCristmast__description thanksCard--maxline">
+                    chúc mọi người một mùa giáng sinh an lành & tươi !
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="thanksCard">
+              <div class="thanksCard--bg thanksCardHelp">
+                <div class="thanksCardHelp__container">
+                  <h1 class="thanksCard--maxline thanksCardHelp__title">
+                    Xin cảm ơn Xin cảm ơn Xin cảm ơn
+                  </h1>
+                  <p class="thanksCard--maxline thanksCardHelp__description">
+                    Chúng tôi rất trân trọng những lời
+                    chia buồn và sự chu đáo của bạn
+                    trong thời gian khó khăn này.
+
+                    Hãy giữ Bà Oanh trong suy nghĩ và
+                    lời cầu nguyện của bạn.
+
+                    Sự giúp đỡ của bạn rất có ý nghĩa
+                    với chúng tôi.
+                    Chúng tôi rất trân trọng những lời
+                    chia buồn và sự chu đáo của bạn
+                    trong thời gian khó khăn này.
+
+                    Hãy giữ Bà Oanh trong suy nghĩ và
+                    lời cầu nguyện của bạn.
+
+                    Sự giúp đỡ của bạn rất có ý nghĩa
+                    với chúng tôi.
+                  </p>
+                  <p class="thanksCard--maxline thanksCardHelp__underwrite">
+                    Gia đình bà Oanh Gia đình bà OanhGia đình bà OanhGia đình bà Oanh Gia đình bà OanhGia đình bà Oanh
+                  </p>
+                </div>
+                <div style="clear: both"></div>
+              </div>
+            </div> -->
+            <!-- <div class="thanksCard">
+              <div class="thanksCard--bg thanksCardWendding">
+                <div class="thanksCardWendding__container">
+                  <p class="thanksCardWendding__title thanksCard--maxline">Đám Cưới Của Thành & Kim</p>
+                  <h1 class="thanksCardWendding__Content thanksCard--maxline">Cảm ơn bạn đã đến!</h1>
+                  <p class="thanksCardWendding__description thanksCard--maxline">Chúc tôi rất cảm kích sự hiện diện của
+                    bạn trong ngày đặc biệt này. Chúng tôi hi vọng bạn đã có một bữa tiệc vui vẻ!</p>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <div class="card-comment">
+            <div class="new-comment">
+              <h2 class="new-comment_title">New Comment</h2>
+              <form class="new-comment-form  mt-3 mb-4">
+                <a class="pull-left" href="#"><img src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                    class="d-block ui-w-40 rounded-circle" alt=""></a>
+                <div class="form-group col-xs-12 col-sm-9 col-lg-10 new-comment__input">
+                  <textarea class="form-control " id="message" placeholder="Your message" required=""></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Comment</button>
+              </form>
+            </div>
+            <div class="card-all-comment">
+              <p class="card-all-no-comment">
+                this ThanksCard don't comment
+              </p>
+              <!-- <h2 class="carr-all-comment__title">All Comment</h2>
+              <ul class="comment-list">
+                <li class="comment-item">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="comment-item_img">
+                  <div class="comment-content">
+                    <p class="comment-content__userName">Vu Minh Hieu</p>
+                    <p class="thanksCard--maxline comment-content__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+                      adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
+                      amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+                      ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <span class="comment-content__time">3 ngay truoc</span>
+                  </div>
+                </li>
+                <li class="comment-item">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="comment-item_img">
+                  <div class="comment-content">
+                    <p class="comment-content__userName">Vu Minh Hieu</p>
+                    <p class="thanksCard--maxline comment-content__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+                      adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
+                      amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+                      ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <span class="comment-content__time">3 ngay truoc</span>
+                  </div>
+                </li>
+                <li class="comment-item">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="comment-item_img">
+                  <div class="comment-content">
+                    <p class="comment-content__userName">Vu Minh Hieu</p>
+                    <p class="thanksCard--maxline comment-content__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+                      adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
+                      amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+                      ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <span class="comment-content__time">3 ngay truoc</span>
+                  </div>
+                </li>
+              </ul> -->
+            </div>
           </div>
           <div class="card-footer">
-            <a href="javascript:void(0)" class="d-inline-block text-muted">
-              <small class="align-middle"> <strong>123</strong> Likes</small>
-            </a>
-            <a href="javascript:void(0)" class="d-inline-block text-muted ml-3">
-              <small class="align-middle">
-                <strong>12</strong> Comments</small>
-            </a>
-            <a href="javascript:void(0)" class="d-inline-block text-muted ml-3">
-              <i class="ion ion-md-share align-middle"></i>&nbsp;
-              <small class="align-middle">Repost</small>
+            <a href="javascript:void(0)" class="d-inline-block text-muted ml-3 text-decoration-none">
+              <strong>12</strong> <small class="align-middle">Comments</small>
             </a>
           </div>
         </div>
-      </div>     
+      </div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

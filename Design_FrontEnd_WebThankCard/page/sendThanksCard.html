@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../assets/css/page/home.css">
+  <link href="../assets/libary/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/css/component_css/headers.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/component_css/_post.css" />
+  <link rel="stylesheet" href="../assets/css/component_css/thankCard_css/thanksCard_cristmast.css" />
+  <link rel="stylesheet" href="../assets/css/component_css/thankCard_css/thanksCard_help.css" />
+  <link rel="stylesheet" href="../assets/css/component_css/thankCard_css/thanksCard_wendding.css" />
+  <link rel="stylesheet" href="../assets/css/base.css">
+
+  <link rel="stylesheet" href="../assets/css/page/sendThanksCard.css">
+  <link rel="stylesheet" href="../assets/css/component_css/listMail.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- begin header -->
+    <header id="header" class="p-3 text-dark">
+      <div class="d-flex flex-wrap align-items-center justify-content-between justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none header__logo-link">
+          <img src="https://www.tomosia.com/img/logo/company-logo-dark@2x.png" style="width: 160px; height: 30px;">
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 header-nav-link text-secondary">Home</a></li>
+          <li><a href="#" class="nav-link px-2 header-nav-link link-dark">Send</a></li>
+          <li><a href="#" class="nav-link px-2 header-nav-link link-dark">Recevier</a></li>
+          <li><a href="#" class="nav-link px-2 header-nav-link link-dark">Report</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-white" placeholder="Search..." aria-label="Search">
+        </form>
+
+        <div class="text-end">
+          <button type="button" class="btn btn-light text-dark me-2">Login</button>
+          <button type="button" class="btn btn-primary">Sign-up</button>
+        </div>
+      </div>
+    </header><!-- end header -->
+    <!-- begin main -->
+    <main id="main">
+      <div id="sidebar">
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-light"
+          style="width: 280px; height: 100%; border-right: 1px solid #ccc;">
+          <p class="d-flex align-items-center mb-3  me-md-auto link-dark text-decoration-none">
+            <span class="fs-4">ThanksCard Send</span>
+          </p>
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item ">
+              <a href="#" class="nav-link active" aria-current="page">
+                <i class="fa-solid fa-list-ul me-2"></i>
+                List Send ThanksCard
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link link-dark text-dark">
+                <i class="fa-sharp fa-solid fa-plus me-2"></i>
+                Add Send ThanksCard
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- begin contennt  -->
+      <div id="content">
+        <!-- begin content main -->
+        <div id="content-main">
+          <!-- <!==begin list send thanksCard ==>
+          <div id="list-send-thanksCard">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-body bg-primary text-white mailbox-widget pb-0">
+                    <h2 class="text-white pb-3">Your Mailbox</h2>
+                  </div>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade active show" id="inbox" aria-labelledby="inbox-tab" role="tabpanel">
+                      <div>
+                        <div class="row p-4 no-gutters align-items-center">
+                          <div class="col-sm-12 col-md-6">
+                            <h3 class="font-light mb-0"><i class="ti-email mr-2"></i>350
+                              Unread emails</h3>
+                          </div>
+                          <div class="col-sm-12 col-md-6 justify-content-end d-flex">
+                            <ul class="list-inline dl mb-0 float-left float-md-right">
+                              <li class="list-inline-item text-info me-3">
+                                <a href="#" class="text-decoration-none">
+                                  <button class="btn btn-circle btn-success text-white me-2" href="javascript:void(0)">
+                                    <i class="fa fa-plus"></i>
+                                  </button>
+                                  <span class="ml-2 font-normal text-dark">Compose</span>
+                                </a>
+                              </li>
+                              <li class="list-inline-item text-danger">
+                                <a href="#" class="text-decoration-none">
+                                  <button class="btn btn-circle btn-danger text-white me-2" href="javascript:void(0)">
+                                    <i class="fa fa-trash"></i>
+                                  </button>
+                                  <span class="ml-2 font-normal text-dark">Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <!== Mail list==>
+                        <div class="table-responsive">
+                          <table class="table email-table no-wrap table-hover v-middle mb-0 font-14">
+                            <tbody>
+                              <!== row ==>
+                              <tr>
+                                <!== label ==>
+                                <td class="p-3">
+                                  <div class="custom-control custom-checkbox">
+                                    <input class="form-check-input mt-0" type="checkbox" value=""
+                                      aria-label="Checkbox for following text input">
+                                    <label class="custom-control-label" for="cst1">&nbsp;</label>
+                                  </div>
+                                </td>
+                                <!== star ==>
+                                <td></td>
+                                <td>
+                                  <span class="mb-0 text-muted">Vu Minh Hieu</span>
+                                </td>
+                                <!== Message ==>
+                                <td>
+                                  <a class="link text-decoration-none" href="javascript: void(0)">
+                                    <span class="text-dark">Thank You because
+                                      comming here</span>
+                                  </a>
+                                </td>
+                                <!== Attachment ==>
+                                <td><i class="fa fa-paperclip text-muted"></i></td>
+                                <!== Time ==>
+                                <td class="text-muted">May 13</td>
+                              </tr>
+                              <!== row ==>
+                              <tr>
+                                <!== label ==>
+                                <td class="p-3">
+                                  <div class="custom-control custom-checkbox">
+                                    <input class="form-check-input mt-0" type="checkbox" value=""
+                                      aria-label="Checkbox for following text input">
+                                    <label class="custom-control-label" for="cst2">&nbsp;</label>
+                                  </div>
+                                </td>
+                                <!== star ==>
+                                <td></td>
+                                <!== User ==>
+                                <td>
+                                  <span class="mb-0 text-muted">Genelia Roshan</span>
+                                </td>
+                                <!== Message ==>
+                                <td>
+                                  <a class="link text-decoration-none" href="javascript: void(0)">
+                                    <span class="text-dark">Inquiry about license
+                                      for Admin </span>
+                                  </a>
+                                </td>
+                                <!== Attachment ==>
+                                <td><i class="fa fa-paperclip text-muted"></i></td>
+                                <!== Time ==>
+                                <td class="text-muted">May 13</td>
+                              </tr>
+                              <!== row ==>
+                              <tr>
+                                <!== label ==>
+                                <td class="p-3">
+                                  <div class="custom-control custom-checkbox">
+                                    <input class="form-check-input mt-0" type="checkbox" value=""
+                                      aria-label="Checkbox for following text input">
+                                    <label class="custom-control-label" for="cst3">&nbsp;</label>
+                                  </div>
+                                </td>
+                                <!== star ==>
+                                <td></td>
+                                <!== User ==>
+                                <td class="user-name max-texts">
+                                  <span class="mb-0 text-muted font-light">Ritesh
+                                    Deshmukh</span>
+                                </td>
+                                <!== Message ==>
+                                <td>
+                                  <a class="link text-decoration-none" href="javascript: void(0)">
+                                    <span class="font-light text-dark">Bitbucket
+                                      (commit Pushed) by Ritesh</span>
+                                  </a>
+                                </td>
+                                <!== Attachment ==>
+                                <td><i class="fa fa-paperclip text-muted"></i></td>
+                                <!== Time ==>
+                                <td class="text-muted font-light">May 13</td>
+                              </tr>
+                              <!== row ==>
+                              <tr class="">
+                                <!== label ==>
+                                <td class="p-3">
+                                  <div class="custom-control custom-checkbox">
+                                    <input class="form-check-input mt-0" type="checkbox" value=""
+                                      aria-label="Checkbox for following text input">
+                                    <label class="custom-control-label" for="cst4">&nbsp;</label>
+                                  </div>
+                                </td>
+                                <!== star ==>
+                                <td></td>
+                                <!== User ==>
+                                <td>
+                                  <span class="mb-0 text-muted font-light">Akshay
+                                    Kumar</span>
+                                </td>
+                                <!== Message ==>
+                                <td>
+                                  <a class="link text-decoration-none" href="javascript: void(0)">
+                                    <span class="font-light text-dark">Perspiciatis
+                                      unde omnis- iste Lorem ipsum</span>
+                                  </a>
+                                </td>
+                                <!== Attachment ==>
+                                <td><i class="fa fa-paperclip text-muted"></i></td>
+                                <!== Time ==>
+                                <td class="text-muted font-light">May 9</td>
+                              </tr>
+                              <!== row ==>
+                              <tr class="">
+                                <!== label ==>
+                                <td class="p-3">
+                                  <div class="custom-control custom-checkbox">
+                                    <input class="form-check-input mt-0" type="checkbox" value=""
+                                      aria-label="Checkbox for following text input">
+                                    <label class="custom-control-label" for="cst5">&nbsp;</label>
+                                  </div>
+                                </td>
+                                <!== star ==>
+                                <td></td>
+                                <!== User ==>
+                                <td>
+                                  <span class="mb-0 text-muted font-light">John
+                                    Abraham</span>
+                                </td>
+                                <!== Message ==>
+                                <td>
+                                  <a class="link text-decoration-none" href="javascript: void(0)">
+                                    <span class="font-light text-dark">Lorem ipsum
+                                      perspiciatis- unde omnis</span>
+                                  </a>
+                                </td>
+                                <!== Attachment ==>
+                                <td><i class="fa fa-paperclip text-muted"></i></td>
+                                <!== Time ==>
+                                <td class="text-muted font-light">Mar 10</td>
+                              </tr>
+                              <!== row ==>
+                              <tr class="">
+                                <!== label ==>
+                                <td class="p-3">
+                                  <div class="custom-control custom-checkbox">
+                                    <input class="form-check-input mt-0" type="checkbox" value=""
+                                      aria-label="Checkbox for following text input">
+                                    <label class="custom-control-label" for="cst6">&nbsp;</label>
+                                  </div>
+                                </td>
+                                <!== star ==>
+                                <td></td>
+                                <!== User ==>
+                                <td>
+                                  <span class="mb-0 text-muted font-light">Akshay
+                                    Kumar</span>
+                                </td>
+                                <!== Message ==>
+                                <td>
+                                  <a class="link text-decoration-none" href="javascript: void(0)">
+                                    <span class="font-light text-dark">Lorem ipsum
+                                      perspiciatis - unde</span>
+                                  </a>
+                                </td>
+                                <!== Attachment ==>
+                                <td><i class="fa fa-paperclip text-muted"></i></td>
+                                <!== Time ==>
+                                <td class="text-muted font-light">Mar 09</td>
+                              </tr>
+                              <!== row ==>
+                              <tr class="">
+                                <!== label ==>
+                                <td class="p-3">
+                                  <div class="custom-control custom-checkbox">
+                                    <input class="form-check-input mt-0" type="checkbox" value=""
+                                      aria-label="Checkbox for following text input">
+                                    <label class="custom-control-label" for="cst7">&nbsp;</label>
+                                  </div>
+                                </td>
+                                <!== star ==>
+                                <td></td>
+                                <!== User ==>
+                                <td>
+                                  <span class="mb-0 text-muted font-light">Hanna
+                                    Gover</span>
+                                </td>
+                                <!== Message ==>
+                                <td>
+                                  <a class="link text-decoration-none" href="javascript: void(0)">
+                                    <span class="font-light text-dark"> Unde omnis
+                                      Lorem ipsum perspiciatis</span>
+                                  </a>
+                                </td>
+                                <!== Attachment ==>
+                                <td><i class="fa fa-paperclip text-muted"></i></td>
+                                <!== Time ==>
+                                <td class="text-muted font-light">Mar 09</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="sent" aria-labelledby="sent-tab" role="tabpanel">
+                      <div class="row p-3 text-dark">
+                        <div class="col-md-6">
+                          <h3 class="font-light">Lets check profile</h3>
+                          <h4 class="font-light">you can use it with the small code</h4>
+                        </div>
+                        <div class="col-md-6 text-right">
+                          <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+                            arcu. In enim justo, rhoncus ut,
+                            imperdiet a.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="spam" aria-labelledby="spam-tab" role="tabpanel">
+                      <div class="row p-3 text-dark">
+                        <div class="col-md-6">
+                          <h3 class="font-light">Come on you have a lot message</h3>
+                          <h4 class="font-light">you can use it with the small code</h4>
+                        </div>
+                        <div class="col-md-6 text-right">
+                          <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+                            arcu. In enim justo, rhoncus ut,
+                            imperdiet a.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="delete" aria-labelledby="delete-tab" role="tabpanel">
+                      <div class="row p-3 text-dark">
+                        <div class="col-md-6">
+                          <h3 class="font-light">Just do Settings</h3>
+                          <h4 class="font-light">you can use it with the small code</h4>
+                        </div>
+                        <div class="col-md-6 text-right">
+                          <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+                            arcu. In enim justo, rhoncus ut,
+                            imperdiet a.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!== end list send thanksCard ==> -->
+
+          <div id="newThanksCard">
+            <div class="newThanksCard__select d-flex align-items-center">
+              <h2 class="newThanksCard__title">select option ThanksCard:</h2>
+              <ul class="newThanksCard__list d-flex">
+                <li id="1" class="newThanksCard__item btn btn-primary me-3 active">ThanksCard Wendding</li>
+                <li id="2" class="newThanksCard__item btn btn-primary me-3">ThanksCard Helping</li>
+                <li id="3" class="newThanksCard__item btn btn-primary me-3">ThanksCard Cirtmast</li>
+              </ul>
+            </div>
+            <div id="newThanksCard__form">
+              <div class="container my-5 d-flex justify-content-center">
+                <form action="" class="thanksCard" id="thanksCard__form">
+                  <div class="dropdown-sin-2 mb-2">
+                    <select style="display:none" multiple placeholder="User Recevier"></select>
+                  </div>
+                  <div id="thanksCard--selected">
+                    <div class="thanksCard--bg thanksCardWendding">
+                      <div class="thanksCardWendding__container">
+                        <p class="inputCustom thanksCardWendding__title" role="textbox" contenteditable></p>
+                        <h1 class="inputCustom thanksCardWendding__Content" role="textbox" contenteditable></h1>
+                        <p class="inputCustom thanksCardWendding__description" role="textbox" contenteditable></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="thanksCard__image">
+                    <p class="thanksCard__image-title">Add Images</p>
+                    <div class="d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list">
+                      <div class="thanksCard__image-item col-3 list-inline-item">
+                        <div>
+                          <div class="mb-4 d-flex justify-content-center">
+                            <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                              style="width: 100%" />
+                          </div>
+                          <div class="d-flex justify-content-center">
+                            <div class="btn btn-primary btn-rounded">
+                              <label class="form-label text-white m-1" for="customFile1">Add Image</label>
+                              <input type="file" class="form-control d-none" id="customFile1" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="thanksCard__image-item col-3 list-inline-item">
+                        <div>
+                          <div class="mb-4 d-flex justify-content-center">
+                            <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                              style="width: 100%" />
+                          </div>
+                          <div class="d-flex justify-content-center">
+                            <div class="btn btn-primary btn-rounded">
+                              <label class="form-label text-white m-1" for="customFile2">Add Image</label>
+                              <input type="file" class="form-control d-none" id="customFile2" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="thanksCard__image-item col-3 list-inline-item">
+                        <div>
+                          <div class="mb-4 d-flex justify-content-center">
+                            <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                              style="width: 100%" />
+                          </div>
+                          <div class="d-flex justify-content-center">
+                            <div class="btn btn-primary btn-rounded">
+                              <label class="form-label text-white m-1" for="customFile3">Add Image</label>
+                              <input type="file" class="form-control d-none" id="customFile3" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="thanksCard__image-item col-3 list-inline-item">
+                        <div>
+                          <div class="mb-4 d-flex justify-content-center">
+                            <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                              style="width: 100%" />
+                          </div>
+                          <div class="d-flex justify-content-center">
+                            <div class="btn btn-primary btn-rounded">
+                              <label class="form-label text-white m-1" for="customFile4">Add Image</label>
+                              <input type="file" class="form-control d-none" id="customFile4" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="submit">Send</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end content main -->
+        <!-- begin footer -->
+        <footer id="footer">
+          <footer style="background-color: #3e4551; color: aliceblue;">
+            <div class="container p-4">
+              <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4">
+                  <img src="https://www.tomosia.com/img/logo/company-logo-light@2x.png" class="mb-3"
+                    style="width: 160px; height: 30px;">
+                  <p>
+                    Tomosia, the company and customers create new value and light up happiness
+                  </p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                  <h5 class="mb-3 text-white" style="letter-spacing: 2px;">Product</h5>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                      <a href="#!" class="text-decoration-none text-white">Thank Card</a>
+                    </li>
+                    <li class="mb-1">
+                      <a href="#!" class="text-decoration-none text-white">Thank Card</a>
+                    </li>
+                    <li class="mb-1">
+                      <a href="#!" class="text-decoration-none text-white">Thank Card</a>
+                    </li>
+                    <li>
+                      <a href="#!" class="text-decoration-none text-white">Thank Card</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                  <h5 class="mb-1 text-white" style="letter-spacing: 2px;">opening hours</h5>
+                  <table class="table text-white" style="border-color: #666;">
+                    <tbody>
+                      <tr>
+                        <td>Mon - Fri:</td>
+                        <td>8am - 7pm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2023 TOMOSIA VIETNAM COMPANY LIMITED COPYRIGHT REGISTERED.
+            </div>
+            <!-- Copyright -->
+          </footer>
+        </footer><!-- end footer -->
+      </div><!-- end content-->
+    </main><!-- end main -->
+  </div>
+  <script src="../assets/js/select-option-thanksCard.js"></script>
+</body>
+
+</html>
