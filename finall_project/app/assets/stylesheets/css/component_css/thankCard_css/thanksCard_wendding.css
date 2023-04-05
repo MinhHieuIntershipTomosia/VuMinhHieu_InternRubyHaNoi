@@ -1,0 +1,124 @@
+/**
+* Css Thanks Card Wendding
+*/
+.thanksCardWendding {
+    background: url('../../../image/thanksCard_bg/thanksCard_Wendding.png');
+}
+
+.thanksCardWendding__container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 80px 100px 0;
+    color: rgb(255, 252, 237);
+}
+
+.thanksCardWendding__title {
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+    /**
+    *
+    */
+    background: transparent;
+    color: #fff;
+    border: none;
+    padding: 4px 24px;
+    min-height: 40px;
+    max-height: 62px;
+    /**
+    *
+    */
+    -webkit-line-clamp: 3;
+}
+
+.thanksCardWendding__Content {
+    font-size: 77px;
+    line-height: 80px;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: none;
+    margin-top: 30px;
+    padding: 0 37px;
+    text-align: center;
+    max-height: 180px;
+    /**
+    *
+    */
+    -webkit-line-clamp: 2;
+}
+
+.thanksCardWendding__description {
+    margin: 43px 21px 0;
+    font-weight: 400;
+    font-style: normal;
+    height: fit-content;
+    max-height: 70px;
+    /**
+    *
+    */
+    -webkit-line-clamp: 2;
+}
+
+.inputCustom.thanksCardWendding__description {
+    padding: 10px 50px;
+    margin: 20px 0 0;
+}
+
+.inputCustom.thanksCardWendding__title {
+    padding: 10px 40px;
+}
+
+.thanksCardWendding__title[contenteditable]:empty::before {
+    content: "Mời bạn nhập tiêu đề";
+    color: gray;
+}
+
+.thanksCardWendding__Content[contenteditable]:empty::before {
+    content: "Mời bạn nhập nội dung";
+    color: gray;
+}
+
+.thanksCardWendding__description[contenteditable]:empty::before {
+    content: "Mời bạn nhập mô tả        ";
+    color: gray;
+}
+
+/**
+* form send thanksCard
+*/
+
+/**
+* Css post
+*/
+
+.posts--css .thanksCardWendding__container {
+    padding: 36px 0 0;
+}
+
+.posts--css .thanksCardWendding__title {
+    margin: 0 auto;
+    letter-spacing: 0.8px;
+    width: 400px;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.posts--css .thanksCardWendding__Content {
+    font-size: 40px;
+    line-height: 44px;
+    min-height: 120px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.posts--css .thanksCardWendding__description {
+    font-size: 14px;
+    line-height: 16px;
+    width: 400px;
+    margin: 0 auto;
+}

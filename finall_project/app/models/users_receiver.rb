@@ -1,0 +1,2 @@
+class UsersReceiver < ApplicationRecord
+end
