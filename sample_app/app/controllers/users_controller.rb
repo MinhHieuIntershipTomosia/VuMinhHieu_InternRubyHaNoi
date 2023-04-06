@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     redirect_to root_url and return unless @user.activated # => Case(1)
-    @microposts = @user.microposts.paginate(page: params[:page], per_page: 8) # => Case(2)
+    @microposts_s = @user.microposts.paginate(page: params[:page], per_page: 8) # => Case(2)
     # render template: 'users/show', layout: false
   end
 
