@@ -1,0 +1,46 @@
+<%#= render partial: 'thanks_card/post_thanks_card', collection: @thanks_card %>
+<% @thanks_card.each do |items| %>
+  <div class="container posts-content posts--css">
+    <div class="row">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <div class="col-lg-6">
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <%= gravatar_for items.user%>
+                <div class="d-flex flex-column ml-3">
+                  <%= items.user.full_name %>
+                  <div class="text-muted small">3 days ago</div>
+                </div>
+              </div>
+
+              <!--begin thanksCard-->
+              <div class="thanksCard" id="thanksCard-<%= items.id %>">
+                <%= render partial: 'thanks_card/thanks_card', locals: { thanks_card: items } %>        
+              </div><!--end thanksCard -->
+              
+            </div>
+            <div class="card-comment">
+
+              <!--begin form new comment-->
+              <div class="new-comment">
+                <%= render partial: 'thanks_card/form_create_new_comment', locals: { user: items.user } %>  
+              </div><!--end form new comment-->
+
+              <!--begin view all comment-->
+              <div class="card-all-comment">
+                <%= render 'thanks_card/comment_thanks_card' %>
+              </div><!--end view all comment-->
+            </div>
+            <div class="card-footer">
+              <a href="javascript:void(0)"
+                          class="d-inline-block text-muted ml-3 text-decoration-none">
+                <strong>12</strong> <small class="align-middle">Comments</small>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
