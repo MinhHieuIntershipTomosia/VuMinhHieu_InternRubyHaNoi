@@ -1,5 +1,5 @@
 .thanksCardCristmast {
-  background: url('../../../image/thanksCard_bg/thanksCards_HappyCristmast.png');
+  background-image: url('thanksCards_HappyCristmast.png');
 }
 
 .thanksCardCristmast__container {

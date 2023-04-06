@@ -5,7 +5,7 @@ class CreateThanksCards < ActiveRecord::Migration[7.0]
       t.string :content
       t.text :description
       t.references :categories, null: false, foreign_key: true
-      t.references :users, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
