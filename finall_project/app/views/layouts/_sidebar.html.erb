@@ -1,3 +1,5 @@
+
+<% if logged_in? %>
 <div id="sidebar">
   <div class="d-flex flex-column flex-shrink-0 p-3 bg-light"
           style="width: 280px; height: 100%; border-right: 1px solid #ccc;">
@@ -28,3 +30,8 @@
     </ul>
   </div>
 </div>
+<% else %>
+  <div>
+  
+  </div>
+<% end %>

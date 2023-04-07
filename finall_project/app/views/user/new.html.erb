@@ -1,33 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "css/page/login.css" %>
-    <%= javascript_importmap_tags %>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row g-0 mt-5 mb-5 height-100">
-        <div class="col-md-6">
-          <div class="bg-dark p-4 h-100 sidebar">
-            <ul class="chart-design">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <%= render "user/form_singup" %>
-        </div>
+    
+<div class="container" style="margin-bottom: 9rem">
+  <div class="row g-0 mt-5 mb-5 height-100">
+    <div class="col-md-6">
+      <div class="bg-dark p-4 h-100 sidebar">
+        <ul class="chart-design">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
     </div>
-  </body>
-</html>
+    <div class="col-md-6">
+      <%= render "form_singup" %>
+    </div>
+  </div>
+</div>
