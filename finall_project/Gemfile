@@ -29,6 +29,8 @@ gem "jbuilder"
 
 # my sql
 gem 'mysql2'
+# bycryt  
+gem 'bcrypt'
 
 gem "jquery-rails"
 gem "bootstrap"

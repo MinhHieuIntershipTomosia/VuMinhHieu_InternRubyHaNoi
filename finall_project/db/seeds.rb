@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 User.create!(full_name: "Vũ Minh Hiếu",
-             user_name: "minhhieu0310",
              email: "vuluy3000@gmail.com",
              phoneNumber: "0868259241",
-             password: "123456")
+             password: "123456",
+             password_confirmation: "123456")
 user = User.find(1)
 
 3.times do
