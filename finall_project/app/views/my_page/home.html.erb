@@ -13,24 +13,23 @@
                   <div class="text-muted small">3 days ago</div>
                 </div>
               </div>
-
               <!--begin thanksCard-->
               <div class="thanksCard" id="thanksCard-<%= items.id %>">
-                <%= render partial: 'thanks_card/thanks_card', locals: { thanks_card: items } %>        
-              </div><!--end thanksCard -->
-              
+                <%= render partial: 'thanks_card/thanks_card', locals: { thanks_card: items } %>
+              </div>
+              <!--end thanksCard -->
             </div>
             <div class="card-comment">
-
               <!--begin form new comment-->
               <div class="new-comment">
-                <%= render partial: 'thanks_card/form_create_new_comment', locals: { user: items.user } %>  
-              </div><!--end form new comment-->
-
+                <%= render partial: 'thanks_card/form_create_new_comment', locals: { user: items.user } %>
+              </div>
+              <!--end form new comment-->
               <!--begin view all comment-->
               <div class="card-all-comment">
                 <%= render 'thanks_card/comment_thanks_card' %>
-              </div><!--end view all comment-->
+              </div>
+              <!--end view all comment-->
             </div>
             <div class="card-footer">
               <a href="javascript:void(0)"

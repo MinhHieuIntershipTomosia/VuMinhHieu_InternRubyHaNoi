@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :user
   resources :thanks_card
   root 'my_page#home'
+  resources :account_activations, only: [:edit]
 end
