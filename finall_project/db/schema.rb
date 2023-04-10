@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_07_091321) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_09_062759) do
   create_table "categories", charset: "utf8mb3", force: :cascade do |t|
     t.string "category_name"
     t.datetime "created_at", null: false
@@ -47,7 +47,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_07_091321) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "remember_token_user"
+    t.string "user_remember_token"
+    t.string "activation_remember_token"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["phoneNumber"], name: "index_users_on_phoneNumber", unique: true
   end

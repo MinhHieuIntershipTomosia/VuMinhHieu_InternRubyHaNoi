@@ -1,37 +1,75 @@
-
 <% if logged_in? %>
-<div id="sidebar">
-  <div class="d-flex flex-column flex-shrink-0 p-3 bg-light"
+  <div id="sidebar">
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light"
           style="width: 280px; height: 100%; border-right: 1px solid #ccc;">
-    <p class="d-flex align-items-center mb-3  me-md-auto link-dark text-decoration-none">
-      <span class="fs-4">Category ThanhsCard</span>
-    </p>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item ">
-        <a href="#" class="nav-link active" aria-current="page">
-          All ThanksCard
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          ThanksCard Wendding
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          ThanksCard Cristmast
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          ThansCard Help
-        </a>
-      </li>
-    </ul>
+      <%#if @action_name.nil? || @action_name == "home"%>
+      <%if params[:action].nil? || params[:action] == "home"%>
+        <p class="d-flex align-items-center mb-3  me-md-auto link-dark text-decoration-none">
+          <span class="fs-4">Category ThanhsCard</span>
+        </p>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item ">
+            <a href="#" class="nav-link active" aria-current="page">
+              All ThanksCard
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark">
+              ThanksCard Wendding
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark">
+              ThanksCard Cristmast
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark">
+              ThansCard Help
+            </a>
+          </li>
+        </ul>
+      <% elsif params[:action] == "send_thanks_card" %>
+        <p class="d-flex align-items-center mb-3  me-md-auto link-dark text-decoration-none">
+          <span class="fs-4">ThanksCard Send</span>
+        </p>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item ">
+            <%= link_to send_path, class: "nav-link active", current: "page" do %>
+              <%= tag.i(class: "fas fa-list-ul me-2") %>
+              List Send ThanksCard
+            <% end %>
+          </li>
+          <li>
+            <%= link_to sendnew_path, class: "nav-link link-dark text-dark", current: "page" do %>
+              <%= tag.i(class: "fa-sharp fa-solid fa-plus me-2") %>
+              Add Send ThanksCard
+            <% end %>
+          </li>
+        </ul>
+      <% elsif params[:action] == "send_new_thanks_card"%>
+        <p class="d-flex align-items-center mb-3  me-md-auto link-dark text-decoration-none">
+          <span class="fs-4">ThanksCard Send</span>
+        </p>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item border-0">
+            <%= link_to send_path, class: "nav-link link-dark text-dark", current: "page" do %>
+              <%= tag.i(class: "fas fa-list-ul me-2") %>
+              List Send ThanksCard
+            <% end %>
+          </li>
+          <li>
+            <%= link_to sendnew_path, class: "nav-link active", current: "page" do %>
+              <%= tag.i(class: "fa-sharp fa-solid fa-plus me-2") %>
+              Add Send ThanksCard
+            <% end %>
+          </li>
+        </ul>
+      <% else %>
+      <% end %>
+    </div>
   </div>
-</div>
 <% else %>
   <div>
-  
   </div>
 <% end %>
