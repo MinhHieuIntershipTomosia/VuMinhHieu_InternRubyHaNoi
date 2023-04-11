@@ -9,7 +9,9 @@ User.create!(full_name: "Vũ Minh Hiếu",
              email: "vuluy3000@gmail.com",
              phoneNumber: "0868259241",
              password: "123456",
-             password_confirmation: "123456")
+             password_confirmation: "123456",
+             activated: true,
+             activated_at: Time.zone.now)
 user = User.find(1)
 
 3.times do

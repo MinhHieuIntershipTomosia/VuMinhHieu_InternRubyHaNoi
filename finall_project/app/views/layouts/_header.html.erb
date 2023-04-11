@@ -5,8 +5,12 @@
     </a>
     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
       <% if logged_in?%>
-        <li><a href="#" class="nav-link px-2 header-nav-link text-secondary">Home</a></li>
-        <li><a href="#" class="nav-link px-2 header-nav-link link-dark">Send</a></li>
+        <li>
+          <%= link_to "Home", root_path, class: "nav-link px-2 header-nav-link link-dark #{'text-secondary ' if( params[:action].nil? || params[:action] == "home")}" %>
+        </li>
+        <li>
+          <%= link_to "Send", send_path, class: "nav-link px-2 header-nav-link link-dark #{'text-secondary ' if( params[:action] =="send_thanks_card" || params[:action] == "send_new_thanks_card")}" %>
+        </li>
         <li><a href="#" class="nav-link px-2 header-nav-link link-dark">Recevier</a></li>
         <li><a href="#" class="nav-link px-2 header-nav-link link-dark">Report</a></li>
       <% end %>
