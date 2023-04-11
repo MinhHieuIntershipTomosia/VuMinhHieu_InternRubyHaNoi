@@ -7,6 +7,8 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css' %>
+    <%= javascript_include_tag 'https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js' %>
   </head>
   <body>
     <div class="app-container">
@@ -20,7 +22,7 @@
         <div id="content">
           <div id="content-main">
             <% flash.each do |message_type, message| %>
-            <%#= binding.pry%>
+              <%#= binding.pry%>
               <div class="mt-2 ms-2 me-2 alert alert-<%= message_type %>"><%= message %></div>
             <% end %>
             <%= yield %>

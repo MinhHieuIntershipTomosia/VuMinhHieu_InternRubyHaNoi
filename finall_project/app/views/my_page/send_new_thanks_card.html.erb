@@ -1,4 +1,3 @@
-          
 <div id="newThanksCard">
   <div class="newThanksCard__select d-flex align-items-center">
     <h2 class="newThanksCard__title">select option ThanksCard:</h2>
@@ -10,84 +9,91 @@
   </div>
   <div id="newThanksCard__form">
     <div class="container my-5 d-flex justify-content-center">
-      <form action="" class="thanksCard" id="thanksCard__form">
-        <div class="dropdown-sin-2 mb-2">
-          <select style="display:none" multiple placeholder="User Recevier"></select>
-        </div>
-        <div id="thanksCard--selected">
-          <div class="thanksCard--bg thanksCardWendding">
-            <div class="thanksCardWendding__container">
-              <p class="inputCustom thanksCardWendding__title" role="textbox" contenteditable></p>
-              <h1 class="inputCustom thanksCardWendding__Content" role="textbox" contenteditable></h1>
-              <p class="inputCustom thanksCardWendding__description" role="textbox" contenteditable></p>
-            </div>
+      <%= form_with(model:@thankscard, url: thanks_card_index_path, local: true, html: { class: "thanksCard", id: "thanksCard__form" }) do |f| %>
+          <div class="mb-4">
+            <select name="select-user" id="select-user" multiple >
+              <% @users.each do |items| %>
+                <option value="<%= items.id %>"><%= items.full_name %>(<%= items.email %>)</option>
+              <% end %>
+            </select>
           </div>
-        </div>
-        <div class="thanksCard__image">
-          <p class="thanksCard__image-title">Add Images</p>
-          <div class="d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list">
-            <div class="thanksCard__image-item col-3 list-inline-item">
-              <div>
-                <div class="mb-4 d-flex justify-content-center">
-                  <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
-                              style="width: 100%" />
-                </div>
-                <div class="d-flex justify-content-center">
-                  <div class="btn btn-primary btn-rounded">
-                    <label class="form-label text-white m-1" for="customFile1">Add Image</label>
-                    <input type="file" class="form-control d-none" id="customFile1" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="thanksCard__image-item col-3 list-inline-item">
-              <div>
-                <div class="mb-4 d-flex justify-content-center">
-                  <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
-                              style="width: 100%" />
-                </div>
-                <div class="d-flex justify-content-center">
-                  <div class="btn btn-primary btn-rounded">
-                    <label class="form-label text-white m-1" for="customFile2">Add Image</label>
-                    <input type="file" class="form-control d-none" id="customFile2" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="thanksCard__image-item col-3 list-inline-item">
-              <div>
-                <div class="mb-4 d-flex justify-content-center">
-                  <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
-                              style="width: 100%" />
-                </div>
-                <div class="d-flex justify-content-center">
-                  <div class="btn btn-primary btn-rounded">
-                    <label class="form-label text-white m-1" for="customFile3">Add Image</label>
-                    <input type="file" class="form-control d-none" id="customFile3" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="thanksCard__image-item col-3 list-inline-item">
-              <div>
-                <div class="mb-4 d-flex justify-content-center">
-                  <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
-                              style="width: 100%" />
-                </div>
-                <div class="d-flex justify-content-center">
-                  <div class="btn btn-primary btn-rounded">
-                    <label class="form-label text-white m-1" for="customFile4">Add Image</label>
-                    <input type="file" class="form-control d-none" id="customFile4" />
-                  </div>
-                </div>
+          <div id="thanksCard--selected">
+            <div class="thanksCard--bg thanksCardWendding">
+              <div class="thanksCardWendding__container">
+                <%= f.hidden_field :title ,id: "thankscard__title"%> 
+                <%= f.hidden_field :content , id: "thankscard__content" %>
+                <%= f.hidden_field :description, id: "thankscard_description" %>
+                <p class="inputCustom thanksCardWendding__title" id="text-thankscard-title" role="textbox" contenteditable></p>
+                <h1 class="inputCustom thanksCardWendding__Content" id="text-thankscard-content" role="textbox" contenteditable></h1>
+                <p class="inputCustom thanksCardWendding__description" id="text-thankscard-description" role="textbox" contenteditable></p>
               </div>
             </div>
           </div>
-        </div>
-        <div class="d-grid gap-2">
-          <button class="btn btn-primary" type="submit">Send</button>
-        </div>
-      </form>
+          <div class="thanksCard__image">
+            <p class="thanksCard__image-title">Add Images</p>
+            <div class="d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list">
+              <div class="thanksCard__image-item col-3 list-inline-item">
+                <div>
+                  <div class="mb-4 d-flex justify-content-center">
+                    <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                              style="width: 100%" />
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <div class="btn btn-primary btn-rounded">
+                      <label class="form-label text-white m-1" for="customFile1">Add Image</label>
+                      <input type="file" class="form-control d-none" id="customFile1" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="thanksCard__image-item col-3 list-inline-item">
+                <div>
+                  <div class="mb-4 d-flex justify-content-center">
+                    <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                              style="width: 100%" />
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <div class="btn btn-primary btn-rounded">
+                      <label class="form-label text-white m-1" for="customFile2">Add Image</label>
+                      <input type="file" class="form-control d-none" id="customFile2" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="thanksCard__image-item col-3 list-inline-item">
+                <div>
+                  <div class="mb-4 d-flex justify-content-center">
+                    <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                              style="width: 100%" />
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <div class="btn btn-primary btn-rounded">
+                      <label class="form-label text-white m-1" for="customFile3">Add Image</label>
+                      <input type="file" class="form-control d-none" id="customFile3" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="thanksCard__image-item col-3 list-inline-item">
+                <div>
+                  <div class="mb-4 d-flex justify-content-center">
+                    <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
+                              style="width: 100%" />
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <div class="btn btn-primary btn-rounded">
+                      <label class="form-label text-white m-1" for="customFile4">Add Image</label>
+                      <input type="file" class="form-control d-none" id="customFile4" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="submit">Send</button>
+          </div>
+      <% end %>
     </div>
   </div>
 </div>

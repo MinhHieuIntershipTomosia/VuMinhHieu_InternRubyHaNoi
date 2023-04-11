@@ -38,6 +38,7 @@ gem "sassc-rails"
 gem 'pry-rails', :group => :development
 
 gem "font-awesome-sass"
+gem 'multi-select-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
