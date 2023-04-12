@@ -1,1 +1,1 @@
-new MultiSelectTag('select-user')  // id
+new MultiSelectTag('selectuser')  // id

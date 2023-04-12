@@ -26,5 +26,5 @@ users = User.find(1)
   title = Faker::Name.name
   cate_id = rand(1..3)
   description = "With this change, creating a new book for a particular author is easier:With this change, creating a new book for a particular author is easier:" 
-  users.thanks_cards.create!(content: content, title: title, description: description, categories_id:  cate_id) 
+  users.thanks_card.create!(content: content, title: title, description: description, categories_id:  cate_id) 
 end
