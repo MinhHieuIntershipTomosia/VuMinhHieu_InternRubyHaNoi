@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :thanks_card
   has_many :comments
+  has_many :users_receiver
   before_create :create_activation_token
   before_save :downcase_email
 

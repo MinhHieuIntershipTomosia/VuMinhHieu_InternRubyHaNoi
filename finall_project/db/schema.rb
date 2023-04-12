@@ -31,11 +31,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_09_062759) do
     t.string "title"
     t.string "content"
     t.text "description"
-    t.bigint "categories_id", null: false
+    t.bigint "category_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["categories_id"], name: "index_thanks_cards_on_categories_id"
+    t.index ["category_id"], name: "index_thanks_cards_on_category_id"
     t.index ["user_id"], name: "index_thanks_cards_on_user_id"
   end
 
@@ -66,7 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_09_062759) do
 
   add_foreign_key "comments", "thanks_cards"
   add_foreign_key "comments", "users"
-  add_foreign_key "thanks_cards", "categories", column: "categories_id"
+  add_foreign_key "thanks_cards", "categories"
   add_foreign_key "thanks_cards", "users"
   add_foreign_key "users_receivers", "thanks_cards"
   add_foreign_key "users_receivers", "users"

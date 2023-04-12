@@ -1,11 +1,16 @@
-class ThanksCardController < ApplicationController 
+class ThanksCardController < ApplicationController
+
   def index
   end
 
+
   def create
     puts request.POST
+    @category = Category.find(params[:thanks_card][:category])
     @thankscard = current_user.thanks_card.build(thankscard_params)
-    if @thankscard.save 
+    @thankscard.category = @category
+    if @thankscard.save
+      @thankscard.create_user_receiver(params[:thanks_card][:user_receiver_id])
       flash[:success] = "ThanksCard send success!"
       redirect_to send_url
     else
@@ -13,7 +18,8 @@ class ThanksCardController < ApplicationController
     end
   end
 
-  private 
+  private
+
   def thankscard_params
     params.require(:thanks_card).permit(:title, :content, :description)
   end
