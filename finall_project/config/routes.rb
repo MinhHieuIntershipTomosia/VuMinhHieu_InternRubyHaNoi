@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :user
   resources :thanks_card
+  resources :users_receiver, only: [:show]
   resources :account_activations, only: [:edit]
 end
