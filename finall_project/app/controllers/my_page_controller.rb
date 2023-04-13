@@ -7,8 +7,8 @@ class MyPageController < ApplicationController
     end
 
     def send_new_thanks_card
-        # @user = User.where.not(id: current_user.id)
-        @users = User.all
+        @users = User.where.not(id: current_user.id)
+        # @users = User.all
         @thankscard = ThanksCard.new
         puts "list user : #{@users.count}"
     end

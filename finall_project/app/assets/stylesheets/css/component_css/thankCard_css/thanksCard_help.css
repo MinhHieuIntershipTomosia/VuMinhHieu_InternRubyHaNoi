@@ -59,7 +59,9 @@
 }
 
 .inputCustom.thanksCardHelp__description {
-    height: 240px;
+    height: 200px;
+    font-size: 16px;
+    line-height: 18px;
 }
 
 /**
