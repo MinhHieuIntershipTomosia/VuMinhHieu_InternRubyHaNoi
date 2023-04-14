@@ -1,0 +1,20 @@
+<div class="col-lg-12 d-flex justify-content-center ">
+  <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center">
+    <div class="py-2 px-4 border-bottom d-none d-lg-block bg-light mt-4 w-75">
+      <div class="d-flex align-items-center py-1">
+        <div class="position-relative">
+          <%= gravatar_for @thankscard.user%>
+        </div>
+        <div class="flex-grow-1 pl-3"> <strong><%= @thankscard.user.full_name %></strong>
+          <div class="text-muted small"><em>to: { <%= lst_name_userreceiver @thankscard%> }, on:<%=@thankscard.created_at.strftime("%d/%m/%Y")%></em></div>
+        </div>
+        <div> </div>
+      </div>
+    </div>
+    <div class="container my-5">
+      <div class="thanksCard">
+        <%= render partial: 'thanks_card/thanks_card', locals: { thanks_card: @thankscard } %>
+      </div>
+    </div>
+  </div>
+</div>

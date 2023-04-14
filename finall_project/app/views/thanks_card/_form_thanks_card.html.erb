@@ -17,9 +17,11 @@
     <div style="clear: both;"></div>
   </div>
 <% else %>
-  <div class="thanksCardCristmast__container">
-    <p class="inputCustom thanksCardCristmast__title" id="text-thankscard-title" role="textbox" contenteditable=""><%= thanks_card.title%></p>
-    <h1 class="inputCustom thanksCardCristmast__Content" id="text-thankscard-content" role="textbox" contenteditable=""><%= thanks_card.content%></h1>
-    <p class="inputCustom thanksCardCristmast__description" id="text-thankscard-description" role="textbox" contenteditable=""><%= thanks_card.description%></p>
+  <div class="thanksCard--bg thanksCardCristmast" data-value="3" id="thankscard-category">
+    <div class="thanksCardCristmast__container">
+      <p class="inputCustom thanksCardCristmast__title" id="text-thankscard-title" role="textbox" contenteditable=""><%= thanks_card.title%></p>
+      <h1 class="inputCustom thanksCardCristmast__Content" id="text-thankscard-content" role="textbox" contenteditable=""><%= thanks_card.content%></h1>
+      <p class="inputCustom thanksCardCristmast__description" id="text-thankscard-description" role="textbox" contenteditable=""><%= thanks_card.description%></p>
+    </div>
   </div>
 <% end %>

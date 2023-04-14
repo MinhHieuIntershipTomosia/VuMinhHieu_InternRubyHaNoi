@@ -9,7 +9,7 @@
   </div>
   <div id="newThanksCard__form">
     <div class="container my-5 d-flex justify-content-center">
-      <%= form_with(model: @thankscard, url: thanks_card_index_path, local: true, html: { class: "thanksCard", id: "thanksCard__form", method: "post" }) do |f| %>
+      <%= form_with(model: @thankscard, url: thanks_card_path, local: true, html: { class: "thanksCard", id: "thanksCard__form" }) do |f| %>
         <%= render 'error/error_message', object: f.object %>
         <div>
           <%= f.hidden_field :title ,id: "thankscard__title"%>
@@ -88,3 +88,8 @@
     </div>
   </div>
 </div>
+<%#= javascript_include_tag "multi-selection.js" %>
+<%#= javascript_include_tag "multi-select-tag.js" %>
+<%= javascript_include_tag "select-option-thanksCard.js" %>
+<%= javascript_include_tag "multi-selection.js" %>
+<%= javascript_include_tag "getdata_thankscard.js" %>

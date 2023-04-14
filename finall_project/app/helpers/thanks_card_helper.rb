@@ -5,4 +5,12 @@ module ThanksCardHelper
       redirect_to sendnew_url
     end
   end
+
+  def lst_name_userreceiver(thanks_card)
+    if !thanks_card.nil?
+      users_receiver = thanks_card.users_receiver
+      user_receiver_names = users_receiver.map { |item| item.user.full_name }
+      users_receiver_string = user_receiver_names.join(", ")
+    end
+  end
 end

@@ -29,7 +29,7 @@
             </a>
           </li>
         </ul>
-      <% elsif params[:action] == "send_thanks_card" ||  @action_name == "show UsersReciver"%>
+      <% elsif params[:action] == "send_thanks_card" ||  @siderbar == "send"%>
         <p class="d-flex align-items-center mb-3  me-md-auto link-dark text-decoration-none">
           <span class="fs-4">ThanksCard Send</span>
         </p>
@@ -47,7 +47,7 @@
             <% end %>
           </li>
         </ul>
-      <% elsif params[:action] == "send_new_thanks_card" || @action_name == "error_new_thanks_card"%>
+      <% elsif params[:action] == "send_new_thanks_card" || @siderbar == "sendnew"%>
         <p class="d-flex align-items-center mb-3  me-md-auto link-dark text-decoration-none">
           <span class="fs-4">ThanksCard Send</span>
         </p>
@@ -70,6 +70,4 @@
     </div>
   </div>
 <% else %>
-  <div>
-  </div>
 <% end %>

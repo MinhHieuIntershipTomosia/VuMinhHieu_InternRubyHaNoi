@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   delete "/logout", to: "session#destroy"
   get "send", to: "my_page#send_thanks_card"
   get "sendnew", to: "my_page#send_new_thanks_card"
+  get "thankscardelete", to: "my_page#getall_tkcard_delete"
+  get "receiver", to: "my_page#receiver"
+
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

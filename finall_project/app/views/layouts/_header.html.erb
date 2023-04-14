@@ -11,7 +11,9 @@
         <li>
           <%= link_to "Send", send_path, class: "nav-link px-2 header-nav-link link-dark #{'text-secondary ' if( params[:action] =="send_thanks_card" || params[:action] == "send_new_thanks_card")}" %>
         </li>
-        <li><a href="#" class="nav-link px-2 header-nav-link link-dark">Recevier</a></li>
+        <li>
+          <%= link_to "Recevier", receiver_path, class: "nav-link px-2 header-nav-link link-dark #{'text-secondary ' if( params[:action] == "receiver")}" %>
+        </li>
         <li><a href="#" class="nav-link px-2 header-nav-link link-dark">Report</a></li>
       <% end %>
     </ul>
