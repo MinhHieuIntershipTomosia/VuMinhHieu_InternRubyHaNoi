@@ -12,11 +12,26 @@ User.create!(full_name: "Vũ Minh Hiếu",
              password_confirmation: "123456",
              activated: true,
              activated_at: Time.zone.now)
+User.create!(full_name: "Ngô Minh Hiếu",
+             email: "ngohieu2000@gmail.com",
+             phoneNumber: "0868259261",
+             password: "123456",
+             password_confirmation: "123456",
+             activated: true,
+             activated_at: Time.zone.now)
+User.create!(full_name: "Vũ Tuấn Hoàng",
+             email: "vuhoang3000@gmail.com",
+             phoneNumber: "0868259271",
+             password: "123456",
+             password_confirmation: "123456",
+             activated: true,
+             activated_at: Time.zone.now)
+user = User.find(1)
 user = User.find(1)
 
 3.times do
-    content = Faker::Lorem.sentence(word_count: 5)
-    Category.create!(category_name: content)
+  content = Faker::Lorem.sentence(word_count: 5)
+  Category.create!(category_name: content)
 end
 
 users = User.find(1)
@@ -25,6 +40,7 @@ users = User.find(1)
   content = Faker::Lorem.sentence(word_count: 5)
   title = Faker::Name.name
   cate_id = rand(1..3)
-  description = "With this change, creating a new book for a particular author is easier:With this change, creating a new book for a particular author is easier:" 
-  users.thanks_card.create!(content: content, title: title, description: description, category_id:  cate_id) 
+  description = "With this change, creating a new book for a particular author is easier:With this change, creating a new book for a particular author is easier:"
+  thankscard = users.thanks_card.create!(content: content, title: title, description: description, category_id: cate_id)
+  thankscard.users_receiver.create!(user_id: rand(2..3))
 end

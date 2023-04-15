@@ -1,5 +1,5 @@
 <!--begin list send thanksCard -->
-<div id="list-send-thanksCard" style="padding: 12px;">
+<div id="list-receiver-thanksCard" style="padding: 12px;">
   <div class="row">
     <div class="col-md-12">
       <div class="card">
@@ -10,10 +10,10 @@
               <a class="nav-link active" id="inbox-tab" data-bs-toggle="tab" aria-controls="inbox" href="#inbox"
                   role="tab" aria-selected="true">
                 <span class="d-block d-md-none"><i class="ti-email"></i></span>
-                <span class="d-none d-md-block"> SENT</span>
+                <span class="d-none d-md-block">RECEIVER</span>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item"> 
               <a class="nav-link" id="delete-tab" data-bs-toggle="tab" href="#delete" role="tab" aria-controls="delete" aria-selected="false">
                 <span class="d-block d-md-none"><i class="ti-trash"></i></span>
                 <span class="d-none d-md-block">DELETED</span>
@@ -24,7 +24,7 @@
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade active show" id="inbox" aria-labelledby="inbox-tab" role="tabpanel">
             <div>
-              <%= render partial: 'thanks_card/list_thanks_card', locals: { thanks_card: @thankscard } %>
+              <%#= render partial: 'thanks_card/list_thanks_card', locals: { thanks_card: @thankscard } %>
             </div>
           </div>
           <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="delete-tab">
@@ -36,4 +36,3 @@
 </div>
 
 <!-- end list send thanksCard -->
-<%= javascript_include_tag "ajax_get_all_thankscard_delete.js" %>

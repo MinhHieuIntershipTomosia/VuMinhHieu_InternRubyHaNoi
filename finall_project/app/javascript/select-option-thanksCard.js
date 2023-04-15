@@ -3,12 +3,12 @@ try {
   let lstBtnSelect = document.getElementsByClassName('newThanksCard__item');
   for (const item of lstBtnSelect) {
     item.addEventListener('click', function () {
-      emtyAttributeThanksCard();  
       const bl = item.classList.contains('active');
       if (!bl) {
         thanksCard.innerHTML = ''
         const itemsId = item.id;
         checkIdOption(itemsId);
+        emtyAttributeThanksCard();
         item.parentNode.querySelector('.newThanksCard__item.active').classList.remove('active')
         item.classList.add('active')
         getdata('text-thankscard-title', 'thankscard__title')
@@ -20,10 +20,11 @@ try {
   }
 
   function emtyAttributeThanksCard() {
-    document.getElementById('thankscard__title').value = ""
-    document.getElementById('thankscard__content').value = ""
-    document.getElementById('thankscard__description').value = ""
     document.getElementById('thankscard__category_id').value = ""
+    document.getElementById('text-thankscard-title').innerHTML = document.getElementById('thankscard__title').value
+    document.getElementById('text-thankscard-content').innerHTML = document.getElementById('thankscard__content').value
+    document.getElementById('text-thankscard-description').innerHTML = document.getElementById('thankscard__description').value
+
   }
 
   function checkIdOption(itemsId) {

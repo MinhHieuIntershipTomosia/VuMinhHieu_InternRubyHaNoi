@@ -2,38 +2,22 @@
   <div class="newThanksCard__select d-flex align-items-center">
     <h2 class="newThanksCard__title">select option ThanksCard:</h2>
     <ul class="newThanksCard__list d-flex">
-      <li id="1" class="newThanksCard__item btn btn-primary me-3 active">ThanksCard Wendding</li>
-      <li id="2" class="newThanksCard__item btn btn-primary me-3">ThanksCard Helping</li>
-      <li id="3" class="newThanksCard__item btn btn-primary me-3">ThanksCard Cirtmast</li>
+      <li id="1" class="newThanksCard__item btn btn-primary me-3 <%= 'active' if @thankscard.category_id == 1 %>">ThanksCard Wendding</li>
+      <li id="2" class="newThanksCard__item btn btn-primary me-3 <%= 'active' if @thankscard.category_id == 2 %>">ThanksCard Helping</li>
+      <li id="3" class="newThanksCard__item btn btn-primary me-3 <%= 'active' if @thankscard.category_id == 3 %>">ThanksCard Cirtmast</li>
     </ul>
   </div>
   <div id="newThanksCard__form">
     <div class="container my-5 d-flex justify-content-center">
-      <%= form_with(model: @thankscard, url: thanks_card_index_path, local: true, html: { class: "thanksCard", id: "thanksCard__form", method: "post" }) do |f| %>
+      <%= form_with(model: @thankscard, url: thanks_card_path, local: true, html: { class: "thanksCard", id: "thanksCard__form" }) do |f| %>
         <%= render 'error/error_message', object: f.object %>
-        <div class="mb-4">
-          <%= f.hidden_field :user_receiver_id ,id: "select_user_id"%>
-          <select name="selectuser" id="selectuser" multiple >
-            <% if !@users.nil? %>
-              <% @users.each do |items| %>
-                <option value="<%= items.id %>"><%= items.full_name %>(<%= items.email %>)</option>
-              <% end %>
-            <% end %>
-          </select>
-        </div>
         <div>
           <%= f.hidden_field :title ,id: "thankscard__title"%>
           <%= f.hidden_field :content , id: "thankscard__content" %>
           <%= f.hidden_field :description, id: "thankscard__description" %>
           <%= f.hidden_field :category   ,id: "thankscard__category_id"%>
           <div id="thanksCard--selected">
-            <div class="thanksCard--bg thanksCardWendding" data-value="1" id="thankscard-category">
-              <div class="thanksCardWendding__container">
-                <p class="inputCustom thanksCardWendding__title" id="text-thankscard-title" role="textbox" contenteditable></p>
-                <h1 class="inputCustom thanksCardWendding__Content" id="text-thankscard-content" role="textbox" contenteditable></h1>
-                <p class="inputCustom thanksCardWendding__description" id="text-thankscard-description" role="textbox" contenteditable></p>
-              </div>
-            </div>
+            <%= render partial: 'thanks_card/form_thanks_card', locals: { thanks_card: @thankscard } %>
           </div>
         </div>
         <div class="thanksCard__image">
@@ -104,9 +88,8 @@
     </div>
   </div>
 </div>
-
-<%= javascript_include_tag "multi-selection.js" %>
-<%= javascript_include_tag "multi-select-tag.js" %>
+<%#= javascript_include_tag "multi-selection.js" %>
+<%#= javascript_include_tag "multi-select-tag.js" %>
 <%= javascript_include_tag "select-option-thanksCard.js" %>
 <%= javascript_include_tag "multi-selection.js" %>
 <%= javascript_include_tag "getdata_thankscard.js" %>

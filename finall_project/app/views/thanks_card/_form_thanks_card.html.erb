@@ -1,0 +1,27 @@
+<% if thanks_card.category_id == 1 %>
+  <div class="thanksCard--bg thanksCardWendding" data-value="1" id="thankscard-category">
+    <div class="thanksCardWendding__container">
+      <p class="inputCustom thanksCardWendding__title" id="text-thankscard-title" role="textbox" contenteditable><%= thanks_card.title%></p>
+      <h1 class="inputCustom thanksCardWendding__Content" id="text-thankscard-content" role="textbox" contenteditable><%= thanks_card.content%></h1>
+      <p class="inputCustom thanksCardWendding__description" id="text-thankscard-description" role="textbox" contenteditable><%= thanks_card.description%></p>
+    </div>
+  </div>
+<% elsif thanks_card.category_id == 2 %>
+  <div class="thanksCard--bg thanksCardHelp" data-value="2" id="thankscard-category">
+    <div class="thanksCardHelp__container">
+      <h1 class="inputCustom thanksCardHelp__title" id="text-thankscard-title" role="textbox" contenteditable=""><%= thanks_card.title%></h1>
+      <p class="inputCustom thanksCardHelp__description" id="text-thankscard-description" role="textbox" contenteditable=""><%= thanks_card.description%></p>
+      <p class="inputCustom thanksCardHelp__underwrite" id="text-thankscard-content" role="textbox" contenteditable=""><%= thanks_card.content%></p>
+      <p></p>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+<% else %>
+  <div class="thanksCard--bg thanksCardCristmast" data-value="3" id="thankscard-category">
+    <div class="thanksCardCristmast__container">
+      <p class="inputCustom thanksCardCristmast__title" id="text-thankscard-title" role="textbox" contenteditable=""><%= thanks_card.title%></p>
+      <h1 class="inputCustom thanksCardCristmast__Content" id="text-thankscard-content" role="textbox" contenteditable=""><%= thanks_card.content%></h1>
+      <p class="inputCustom thanksCardCristmast__description" id="text-thankscard-description" role="textbox" contenteditable=""><%= thanks_card.description%></p>
+    </div>
+  </div>
+<% end %>

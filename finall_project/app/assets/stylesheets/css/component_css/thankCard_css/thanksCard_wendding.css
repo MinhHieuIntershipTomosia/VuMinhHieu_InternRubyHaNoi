@@ -36,18 +36,15 @@
 }
 
 .thanksCardWendding__Content {
-    font-size: 77px;
-    line-height: 80px;
+    font-size: 64px;
+    line-height: 69px;
     font-style: italic;
     font-weight: 700;
     text-transform: none;
     margin-top: 30px;
     padding: 0 37px;
     text-align: center;
-    max-height: 190px;
-    /**
-    *
-    */
+    max-height: 210px;
     -webkit-line-clamp: 3;
 }
 
