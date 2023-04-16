@@ -10,7 +10,9 @@
                 <%= gravatar_for items.user%>
                 <div class="d-flex flex-column ml-3">
                   <%= items.user.full_name %>
-                  <div class="text-muted small">3 days ago</div>
+                  <div class="text-muted small">
+                    created at:<%=items.created_at.strftime("%d/%m/%Y")%>
+                  </div>
                 </div>
               </div>
               <!--begin thanksCard-->
@@ -27,14 +29,14 @@
               <!--end form new comment-->
               <!--begin view all comment-->
               <div class="card-all-comment">
-                <%= render 'thanks_card/comment_thanks_card' %>
+                <%= render partial: 'comment/comment', locals: { comment: items.comments } %>
               </div>
               <!--end view all comment-->
             </div>
             <div class="card-footer">
               <a href="javascript:void(0)"
                           class="d-inline-block text-muted ml-3 text-decoration-none">
-                <strong>12</strong> <small class="align-middle">Comments</small>
+                <strong><%=items.comments.count %></strong> <small class="align-middle">Comments</small>
               </a>
             </div>
           </div>

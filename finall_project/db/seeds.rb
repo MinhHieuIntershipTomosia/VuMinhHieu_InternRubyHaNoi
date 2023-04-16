@@ -26,8 +26,7 @@ User.create!(full_name: "Vũ Tuấn Hoàng",
              password_confirmation: "123456",
              activated: true,
              activated_at: Time.zone.now)
-user = User.find(1)
-user = User.find(1)
+
 
 3.times do
   content = Faker::Lorem.sentence(word_count: 5)
@@ -35,6 +34,8 @@ user = User.find(1)
 end
 
 users = User.find(1)
+users2 = User.find(2)
+
 
 10.times do
   content = Faker::Lorem.sentence(word_count: 5)
@@ -43,4 +44,23 @@ users = User.find(1)
   description = "With this change, creating a new book for a particular author is easier:With this change, creating a new book for a particular author is easier:"
   thankscard = users.thanks_card.create!(content: content, title: title, description: description, category_id: cate_id)
   thankscard.users_receiver.create!(user_id: rand(2..3))
+end
+
+15.times do
+  content = Faker::Lorem.sentence(word_count: 5)
+  title = Faker::Name.name
+  cate_id = rand(1..3)
+  description = "With this change, creating a new book for a particular author is easier:With this change, creating a new book for a particular author is easier:"
+  thankscard = users2.thanks_card.create!(content: content, title: title, description: description, category_id: cate_id)
+  thankscard.users_receiver.create!(user_id: [1, 3].sample)
+end
+
+10.times do
+  content = Faker::Lorem.sentence(word_count: 5)
+  comment = users2.comments.create!(comment_content: content, thanks_card_id: rand(1..25))
+end
+
+10.times do
+  content = Faker::Lorem.sentence(word_count: 5)
+  comment = users.comments.create!(comment_content: content, thanks_card_id: rand(1..25))
 end

@@ -6,8 +6,8 @@ class MyPageController < ApplicationController
   def send_thanks_card
     # @thankscard = ThanksCard.where("user_id = ? and", current_user.id)
     @thankscard = ThanksCard.where(user_id: current_user.id, delete_status: false)
-    @thankscard = @thankscard.sort_by{|thankscard| (Time.zone.now - thankscard.updated_at).to_i}
-    @user_receivers = @thankscard.map {|thankscard| thankscard.users_receiver }.flatten
+    @thankscard = @thankscard.sort_by { |thankscard| (Time.zone.now - thankscard.updated_at).to_i }
+    @user_receivers = @thankscard.map { |thankscard| thankscard.users_receiver }.flatten
     puts @thankscard.count
   end
 
@@ -19,11 +19,19 @@ class MyPageController < ApplicationController
   end
 
   def receiver
-    
+    @user_receivers = UsersReceiver.where(user_id: current_user.id, delete_status: false, users_receivers_delete: false)
+    @siderbar = "userreceiver"
   end
 
   def getall_tkcard_delete
     @thankscard = ThanksCard.where(user_id: current_user.id, delete_status: true)
-    render partial: 'thanks_card/list_thanks_card', locals: { thanks_card: @thankscard }
+    @thankscard = @thankscard.sort_by { |thankscard| (Time.zone.now - thankscard.updated_at).to_i }
+    render partial: "thanks_card/list_thanks_card", locals: { thanks_card: @thankscard }
+  end
+
+  def getall_tkcardreceiver_delete
+    @user_receivers = UsersReceiver.where(user_id: current_user.id, delete_status: false, users_receivers_delete: true)
+    @user_receivers = @user_receivers.sort_by { |user_receiver| (Time.zone.now - user_receiver.updated_at).to_i }
+    render partial: "thanks_card/list_thanks_card_receiver", locals: { user_receivers: @user_receivers }
   end
 end
