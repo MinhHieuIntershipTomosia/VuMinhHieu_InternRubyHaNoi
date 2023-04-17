@@ -34,4 +34,5 @@ class MyPageController < ApplicationController
     @user_receivers = @user_receivers.sort_by { |user_receiver| (Time.zone.now - user_receiver.updated_at).to_i }
     render partial: "thanks_card/list_thanks_card_receiver", locals: { user_receivers: @user_receivers }
   end
+
 end

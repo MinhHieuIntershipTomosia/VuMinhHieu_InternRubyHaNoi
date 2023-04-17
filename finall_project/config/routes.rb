@@ -11,13 +11,13 @@ Rails.application.routes.draw do
   get "receiver", to: "my_page#receiver"
   get "receiverdelete", to: "my_page#getall_tkcardreceiver_delete"
 
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
   resources :user
   resources :thanks_card
+  resources :comment
   resources :users_receiver, only: [:show, :destroy]
   resources :account_activations, only: [:edit]
 end
