@@ -1,0 +1,30 @@
+<% if comment.nil? || comment.count == 0%>
+  <p class="card-all-no-comment">
+    this ThanksCard don't comment
+  </p>
+<% else %>
+  <h2 class="carr-all-comment__title">All Comment</h2>
+  <ul class="comment-list">
+    <% comment.each do |items| %>
+      <li class="comment-item">
+        <%= gravatar_for items.user%>
+        <div class="comment-content">
+          <p class="comment-content__userName"><%=items.user.full_name%></p>
+          <p class="thanksCard--maxline comment-content__text">
+            <%=items.comment_content%>
+          </p>
+          <span class="comment-content__time">
+            <%= time_ago_in_words(items.updated_at) %>
+            <% if items.created_at !=  items.updated_at%>
+              <% if !items.delete_status %>
+                <p class="m-0"> Updated <%= time_ago_in_words(items.updated_at) %> ago. </p>
+              <% else %>
+                <p class="m-0"> Delete <%= time_ago_in_words(items.updated_at) %> ago. </p>
+              <%end%>
+            <% end %>
+          </span>
+        </div>
+      </li>
+    <%end%>
+  </ul>
+<% end %>

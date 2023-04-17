@@ -65,6 +65,18 @@
             <% end %>
           </li>
         </ul>
+      <% elsif @siderbar == "userreceiver"%>
+        <p class="d-flex align-items-center mb-3  me-md-auto link-dark text-decoration-none">
+          <span class="fs-4">ThanksCard Send</span>
+        </p>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item border-0">
+            <%= link_to receiver_path, class: "nav-link active", current: "page" do %>
+              <%= tag.i(class: "fas fa-list-ul me-2") %>
+              List Receiver ThanksCard
+            <% end %>
+          </li>
+        </ul>
       <% else %>
       <% end %>
     </div>

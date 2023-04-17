@@ -1,0 +1,100 @@
+<% if params[:action] == "receiver" %>
+  <div class="row p-4 no-gutters align-items-center">
+    <div class="col-sm-12 col-md-6">
+      <h3 class="font-light mb-0">
+        <i class="ti-email mr-2"></i>
+        <%=user_receivers.count%>
+        ThanksCard Receiver
+      </h3>
+    </div>
+    <div class="col-sm-12 col-md-6 justify-content-end d-flex">
+    </div>
+  </div>
+<% else %>
+  <div class="row p-4 no-gutters align-items-center">
+    <div class="col-sm-12 col-md-6">
+      <h3 class="font-light mb-0">
+        <i class="ti-email mr-2"></i>
+        <%=user_receivers.count%>
+        ThanksCard Receiver Delete
+      </h3>
+    </div>
+    <div class="col-sm-12 col-md-6 justify-content-end d-flex">
+      <ul class="list-inline dl mb-0 float-left float-md-right"></ul>
+    </div>
+  </div>
+<% end %>
+<!-- Mail list-->
+<!-- Mail list-->
+<% if !user_receivers.nil? %>
+  <div class="table-responsive">
+    <table class="table email-table no-wrap table-hover v-middle mb-0 font-14">
+      <thead>
+        <!-- row -->
+        <tr>
+          <!-- label -->
+          <!-- star -->
+          <td></td>
+          <td>
+            <span class="mb-0 text-dark fs-4" style="line-height:40px">User Send</span>
+          </td>
+          <!-- Message -->
+          <td>
+            <a class="link text-decoration-none" href="javascript: void(0)">
+              <span class="text-dark fs-4" style="line-height:40px">Title</span>
+            </a>
+          </td>
+          <!-- Attachment -->
+          <td>
+            <p class="fs-4 m-0" style="line-height:40px">Option</p>
+          </td>
+          <!-- Time -->
+          <td class="text-dark fs-4" style="line-height:40px">Sent date</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% user_receivers.each do |items| %>
+          <!-- row -->
+          <tr>
+            <!-- label -->
+            <!-- star -->
+            <td></td>
+            <td>
+              <span class="mb-0 text-dark"><%= items.thanks_card.user.full_name%></span>
+            </td>
+            <!-- Message -->
+            <td>
+              <a class="link text-decoration-none" href="javascript: void(0)">
+                <span class="text-dark"><%=items.thanks_card.title%></span>
+              </a>
+            </td>
+            <!-- Attachment -->
+            <% if !items.delete_status %>
+              <td>
+                <%= link_to items, class: "text-decoration-none text-dark ms-2 me-2" do %>
+                  <%= tag.i(class: "fa-solid fa-eye") %>
+                <% end %>
+                <%= link_to items, method: :delete, data: { confirm: "You sure?" }, class: "text-decoration-none text-dark" do %>
+                  <%= tag.i(class: "fa-sharp fa-solid fa-trash") %>
+                <% end %>
+              </td>
+            <%end%>
+            <!-- Time -->
+            <td class="text-muted">
+              <%=items.created_at.strftime("%d/%m/%Y")%>
+              <% if items.created_at !=  items.updated_at%>
+                <% if !items.delete_status %>
+                  <p class="m-0"> Updated <%= time_ago_in_words(items.updated_at) %> ago. </p>
+                <% else %>
+                  <p class="m-0"> Delete <%= time_ago_in_words(items.updated_at) %> ago. </p>
+                <%end%>
+              <% end %>
+            </td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <div></div>
+<% end %>
