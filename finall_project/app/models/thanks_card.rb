@@ -3,6 +3,7 @@ class ThanksCard < ApplicationRecord
   belongs_to :category
   has_many :comments
   has_many :users_receiver
+  has_many_attached :image
   validates :user, presence: true
   validates :content, presence: true, length: { maximum: 150 }
   validates :title, presence: true, length: { maximum: 100 }
