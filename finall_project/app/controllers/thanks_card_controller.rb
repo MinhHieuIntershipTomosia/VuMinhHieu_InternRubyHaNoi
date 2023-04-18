@@ -9,6 +9,12 @@ class ThanksCardController < ApplicationController
     @category = Category.find(params[:thanks_card][:category])
     @thankscard = current_user.thanks_card.build(thankscard_params)
     @thankscard.category = @category
+    puts "Image la"
+    puts params[:thanks_card][:image1].nil?
+    puts params[:thanks_card][:image2].nil?
+    puts params[:thanks_card][:image3].nil?
+    puts params[:thanks_card][:image4].nil?
+
     if @thankscard.save
       @thankscard.create_user_receiver(params[:thanks_card][:user_receiver_id])
       flash[:success] = "ThanksCard send success!"

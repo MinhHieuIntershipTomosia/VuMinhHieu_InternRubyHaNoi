@@ -24,7 +24,7 @@
             <div class="card-comment">
               <!--begin form new comment-->
               <div class="new-comment">
-                <%= render partial: 'thanks_card/form_create_new_comment', locals: { user: items.user } %>
+                <%= render partial: 'comment/form_comment', locals: { user: items.user, thanks_card_id: items.id } %>
               </div>
               <!--end form new comment-->
               <!--begin view all comment-->
@@ -45,3 +45,4 @@
     </div>
   </div>
 <% end %>
+<%= javascript_include_tag "ajax_comment.js" %>
