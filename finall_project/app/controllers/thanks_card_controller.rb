@@ -9,13 +9,11 @@ class ThanksCardController < ApplicationController
     @category = Category.find(params[:thanks_card][:category])
     @thankscard = current_user.thanks_card.build(thankscard_params)
     @thankscard.category = @category
-    puts "Image la"
-    puts params[:thanks_card][:image1].nil?
-    puts params[:thanks_card][:image2].nil?
-    puts params[:thanks_card][:image3].nil?
-    puts params[:thanks_card][:image4].nil?
-
+    puts "vmhieu"
+    puts params[:thanks_card][:image]
     if @thankscard.save
+      old_updated_at = @thankscard.created_at
+      @thankscard.update(updated_at: old_updated_at)
       @thankscard.create_user_receiver(params[:thanks_card][:user_receiver_id])
       flash[:success] = "ThanksCard send success!"
       redirect_to send_url
@@ -39,6 +37,11 @@ class ThanksCardController < ApplicationController
     @thankscard = ThanksCard.find(params[:id])
     @category = Category.find(params[:thanks_card][:category])
     @thankscard.category = @category
+    @thankscard.image.purge
+    @thankscard.image.attach(params[:thanks_card][:image1])
+    @thankscard.image.attach(params[:thanks_card][:image2])
+    @thankscard.image.attach(params[:thanks_card][:image3])
+    @thankscard.image.attach(params[:thanks_card][:image4])
     if @thankscard.update(thankscard_params)
       flash[:success] = "ThanksCard update success"
       redirect_to send_url
@@ -54,7 +57,6 @@ class ThanksCardController < ApplicationController
     @thankscard.update(delete_status: true)
     redirect_to send_url
   end
-
 
   private
 

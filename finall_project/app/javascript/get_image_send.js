@@ -1,18 +1,43 @@
-function getImage(image ,btn) {
-  let coverPreview = document.getElementById(image);
-  let cover = document.getElementById(btn);
-  coverPreview.addEventListener('click', _ => cover.click());
-  cover.addEventListener("change", _ => {
-    let file = cover.files[0];
-    let reader = new FileReader();
-    reader.onload = function () {
-      coverPreview.src = reader.result;
+//= require jquery
+
+const imagePreviews = document.querySelectorAll('#thanksCard__image img.h-124.w-100');
+const uploadInputs = document.querySelectorAll('#thanksCard__image input.customFile');
+
+function lstimage() {
+  const files = [];
+  uploadInputs.forEach(element => {
+    const fileList = element.files;
+    for (let i = 0; i < fileList.length; i++) {
+      files.push(fileList[i])
     }
-    reader.readAsDataURL(file);
   });
+
+  const dataTransfer = new DataTransfer();
+  files.forEach(file => {
+    dataTransfer.items.add(file);
+  });
+
+  const fileList = dataTransfer.files;
+  document.querySelector('input#lstimage').files = fileList;
 }
 
-getImage('img1','customFile1')
-getImage('img2','customFile2')
-getImage('img3','customFile3')
-getImage('img4','customFile4')
+imagePreviews.forEach((imagePreview, index) => {
+  const uploadInput = uploadInputs[index];
+
+  uploadInput.addEventListener('change', () => {
+    const file = uploadInput.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function () {
+      imagePreview.src = reader.result;
+    }
+
+    reader.readAsDataURL(file);
+    lstimage();
+  });
+});
+lstimage();
+
+
+
+
