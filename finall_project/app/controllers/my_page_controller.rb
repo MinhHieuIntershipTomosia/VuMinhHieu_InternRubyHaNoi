@@ -20,6 +20,7 @@ class MyPageController < ApplicationController
 
   def receiver
     @user_receivers = UsersReceiver.where(user_id: current_user.id, delete_status: false, users_receivers_delete: false)
+    @user_receivers = @user_receivers.sort_by { |items| (Time.zone.now - items.thanks_card.updated_at).to_i }
     @siderbar = "userreceiver"
   end
 

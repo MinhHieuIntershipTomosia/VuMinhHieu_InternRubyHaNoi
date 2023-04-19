@@ -20,67 +20,86 @@
             <%= render partial: 'thanks_card/form_thanks_card', locals: { thanks_card: @thankscard } %>
           </div>
         </div>
-        <div class="thanksCard__image">
-          <p class="thanksCard__image-title">Add Images</p>
-          <div class="d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list">
-            <div class="thanksCard__image-item col-3 list-inline-item">
-              <div>
-                <div class="mb-4 d-flex justify-content-center">
-                  <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
-                              style="width: 100%" />
+        <% if (@thankscard.image.count != 0 && !@thankscard.image.nil?) %>
+          <div class="thanksCard__image">
+            <p class="thanksCard__image-title">Add Images</p>
+            <div class="d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list">
+              <% @thankscard.image.each do |items| %>
+                <div class="thanksCard__image-item col-3 list-inline-item">
+                  <div>
+                    <div class="mb-4 d-flex justify-content-center">
+                      <%= image_tag(items, class: "h-124 w-100", id: "img#{items.id}" )%>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                      <div class="btn btn-primary btn-rounded">
+                        <label class="form-label text-white m-1" for="customFile<%=items.id%>">Add Image</label>
+                        <%= f.file_field :"image#{items.id}", class: "form-control d-none", id: "customFile#{items.id}"%>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="d-flex justify-content-center">
-                  <div class="btn btn-primary btn-rounded">
-                    <label class="form-label text-white m-1" for="customFile1">Add Image</label>
-                    <input type="file" class="form-control d-none" id="customFile1" />
+              <%end%>
+            </div>
+          </div>
+        <%else%>
+          <div class="thanksCard__image">
+            <p class="thanksCard__image-title">Add Images</p>
+            <div class="d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list">
+              <div class="thanksCard__image-item col-3 list-inline-item">
+                <div>
+                  <div class="mb-4 d-flex justify-content-center">
+                    <%= image_tag("https://mdbootstrap.com/img/Photos/Others/placeholder.jpg", class: "h-124 w-100", id: "img1")%>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <div class="btn btn-primary btn-rounded">
+                      <label class="form-label text-white m-1" for="customFile1">Add Image</label>
+                      <%= f.file_field :image1, class: "form-control d-none", id: "customFile1"%>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="thanksCard__image-item col-3 list-inline-item">
-              <div>
-                <div class="mb-4 d-flex justify-content-center">
-                  <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
-                              style="width: 100%" />
-                </div>
-                <div class="d-flex justify-content-center">
-                  <div class="btn btn-primary btn-rounded">
-                    <label class="form-label text-white m-1" for="customFile2">Add Image</label>
-                    <input type="file" class="form-control d-none" id="customFile2" />
+              <div class="thanksCard__image-item col-3 list-inline-item">
+                <div>
+                  <div class="mb-4 d-flex justify-content-center">
+                    <%= image_tag("https://mdbootstrap.com/img/Photos/Others/placeholder.jpg", class: "h-124 w-100", id: "img2")%>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <div class="btn btn-primary btn-rounded">
+                      <label class="form-label text-white m-1" for="customFile2">Add Image</label>
+                      <%= f.file_field :image2, class: "form-control d-none", id: "customFile2"%>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="thanksCard__image-item col-3 list-inline-item">
-              <div>
-                <div class="mb-4 d-flex justify-content-center">
-                  <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
-                              style="width: 100%" />
-                </div>
-                <div class="d-flex justify-content-center">
-                  <div class="btn btn-primary btn-rounded">
-                    <label class="form-label text-white m-1" for="customFile3">Add Image</label>
-                    <input type="file" class="form-control d-none" id="customFile3" />
+              <div class="thanksCard__image-item col-3 list-inline-item">
+                <div>
+                  <div class="mb-4 d-flex justify-content-center">
+                    <%= image_tag("https://mdbootstrap.com/img/Photos/Others/placeholder.jpg", class: "h-124 w-100", id: "img3")%>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <div class="btn btn-primary btn-rounded">
+                      <label class="form-label text-white m-1" for="customFile3">Add Image</label>
+                      <%= f.file_field :image3, class: "form-control d-none", id: "customFile3"%>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="thanksCard__image-item col-3 list-inline-item">
-              <div>
-                <div class="mb-4 d-flex justify-content-center">
-                  <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder"
-                              style="width: 100%" />
-                </div>
-                <div class="d-flex justify-content-center">
-                  <div class="btn btn-primary btn-rounded">
-                    <label class="form-label text-white m-1" for="customFile4">Add Image</label>
-                    <input type="file" class="form-control d-none" id="customFile4" />
+              <div class="thanksCard__image-item col-3 list-inline-item">
+                <div>
+                  <div class="mb-4 d-flex justify-content-center">
+                    <%= image_tag("https://mdbootstrap.com/img/Photos/Others/placeholder.jpg", class: "h-124 w-100", id: "img4")%>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <div class="btn btn-primary btn-rounded">
+                      <label class="form-label text-white m-1" for="customFile4">Add Image</label>
+                      <%= f.file_field :image4, class: "form-control d-none", id: "customFile4"%>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
         <div class="d-grid gap-2">
           <button class="btn btn-primary" type="submit">Send</button>
         </div>
@@ -89,7 +108,8 @@
   </div>
 </div>
 <%#= javascript_include_tag "multi-selection.js" %>
-<%#= javascript_include_tag "multi-select-tag.js" %>
-<%= javascript_include_tag "select-option-thanksCard.js" %>
-<%= javascript_include_tag "multi-selection.js" %>
 <%= javascript_include_tag "getdata_thankscard.js" %>
+<%= javascript_include_tag "select-option-thanksCard.js" %>
+<%= javascript_include_tag "multi-select-tag.js" %>
+<%= javascript_include_tag "get_image_send.js" %>
+<%#= javascript_include_tag "multi-selection.js" %>

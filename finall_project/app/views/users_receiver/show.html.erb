@@ -15,6 +15,24 @@
       <div class="thanksCard">
         <%= render partial: 'thanks_card/thanks_card', locals: { thanks_card: @users_receiver.thanks_card } %>
       </div>
+      <% if (@users_receiver.thanks_card.image.count != 0 && !@users_receiver.thanks_card.image.nil?) %>
+        <div class="thanksCard__image">
+          <p class="thanksCard__image-title">Images Send</p>
+          <div class="d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list">
+            <% @users_receiver.thanks_card.image.each do |items| %>
+              <div class="thanksCard__image-item col-3 list-inline-item">
+                <div>
+                  <div class="mb-4 d-flex justify-content-center">
+                    <%= image_tag(items, class: "h-124 w-100", id: "img1")%>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
