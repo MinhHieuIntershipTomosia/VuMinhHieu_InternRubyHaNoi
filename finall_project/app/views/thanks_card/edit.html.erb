@@ -21,9 +21,11 @@
           </div>
         </div>
         <% if (@thankscard.image.count != 0 && !@thankscard.image.nil?) %>
-          <div class="thanksCard__image">
-            <p class="thanksCard__image-title">Add Images</p>
-            <div class="d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list">
+          <div class="thanksCard__image position-relative" id="thanksCard__image">
+            <p class="thanksCard__image-title">Edit Images</p>
+            <div class=" d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list">
+              <%= f.file_field :image, class: "d-none", multiple: true , id: "lstimage"%>
+              <%= f.hidden_field :edit, id: "lstimage-edit"%>
               <% @thankscard.image.each do |items| %>
                 <div class="thanksCard__image-item col-3 list-inline-item">
                   <div>
@@ -31,20 +33,26 @@
                       <%= image_tag(items, class: "h-124 w-100", id: "img#{items.id}" )%>
                     </div>
                     <div class="d-flex justify-content-center">
-                      <div class="btn btn-primary btn-rounded">
-                        <label class="form-label text-white m-1" for="customFile<%=items.id%>">Add Image</label>
-                        <%= f.file_field :"image#{items.id}", class: "form-control d-none", id: "customFile#{items.id}"%>
-                      </div>
+                        <%= f.file_field :images, class: "form-control d-none customFile", id: "inputfile-#{items.id}"%>
                     </div>
                   </div>
                 </div>
               <%end%>
             </div>
+            <% if (@thankscard.image.count > 4) %>
+              <button class="control prev" type="button" >
+                <span class="control-icon"><i class="fa-sharp fa-solid fa-chevron-left"></i></span>
+              </button>
+              <button class="control next" type="button" >
+                <span class="control-icon"><i class="fa-solid fa-chevron-right"></i></span>
+              </button>
+            <% end %>
           </div>
         <%else%>
-          <div class="thanksCard__image">
+          <div class="thanksCard__image" id="thanksCard__image">
             <p class="thanksCard__image-title">Add Images</p>
             <div class="d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list">
+              <%= f.file_field :image, class: "d-none", multiple: true , id: "lstimage"%>
               <div class="thanksCard__image-item col-3 list-inline-item">
                 <div>
                   <div class="mb-4 d-flex justify-content-center">
@@ -53,7 +61,7 @@
                   <div class="d-flex justify-content-center">
                     <div class="btn btn-primary btn-rounded">
                       <label class="form-label text-white m-1" for="customFile1">Add Image</label>
-                      <%= f.file_field :image1, class: "form-control d-none", id: "customFile1"%>
+                      <%= f.file_field :images, class: "form-control d-none customFile", id: "customFile1"%>
                     </div>
                   </div>
                 </div>
@@ -66,7 +74,7 @@
                   <div class="d-flex justify-content-center">
                     <div class="btn btn-primary btn-rounded">
                       <label class="form-label text-white m-1" for="customFile2">Add Image</label>
-                      <%= f.file_field :image2, class: "form-control d-none", id: "customFile2"%>
+                      <%= f.file_field :images, class: "form-control d-none customFile", id: "customFile2"%>
                     </div>
                   </div>
                 </div>
@@ -79,7 +87,7 @@
                   <div class="d-flex justify-content-center">
                     <div class="btn btn-primary btn-rounded">
                       <label class="form-label text-white m-1" for="customFile3">Add Image</label>
-                      <%= f.file_field :image3, class: "form-control d-none", id: "customFile3"%>
+                      <%= f.file_field :images, class: "form-control d-none customFile", id: "customFile3"%>
                     </div>
                   </div>
                 </div>
@@ -92,7 +100,7 @@
                   <div class="d-flex justify-content-center">
                     <div class="btn btn-primary btn-rounded">
                       <label class="form-label text-white m-1" for="customFile4">Add Image</label>
-                      <%= f.file_field :image4, class: "form-control d-none", id: "customFile4"%>
+                      <%= f.file_field :images, class: "form-control d-none customFile", id: "customFile4"%>
                     </div>
                   </div>
                 </div>
@@ -111,5 +119,7 @@
 <%= javascript_include_tag "getdata_thankscard.js" %>
 <%= javascript_include_tag "select-option-thanksCard.js" %>
 <%= javascript_include_tag "multi-select-tag.js" %>
-<%= javascript_include_tag "get_image_send.js" %>
+<%= javascript_include_tag "get_image_edit.js" %>
+<%= javascript_include_tag "view_image_send.js" %>
+
 <%#= javascript_include_tag "multi-selection.js" %>

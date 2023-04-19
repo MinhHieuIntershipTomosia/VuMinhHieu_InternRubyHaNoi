@@ -309,7 +309,9 @@
 .email-wrapper .message-body .attachments-sections ul .thanksCard__image-item:hover{
   border: 1px solid #464dee;
 }
-
+.email-wrapper .message-body .attachments-sections ul .thanksCard__image-item:last-child{
+  margin-right: 0;
+}
 .email-wrapper .message-body .attachments-sections ul li .thumb {
   display: inline-block;
   margin-right: 10px;

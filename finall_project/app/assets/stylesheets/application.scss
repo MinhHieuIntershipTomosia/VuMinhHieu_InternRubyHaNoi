@@ -30,7 +30,7 @@ body {
 }
 
 :root {
-    --outline-input-form-thanksCard-color:1px solid #8b3dff;
+  --outline-input-form-thanksCard-color: 1px solid #8b3dff;
 }
 
 
@@ -38,44 +38,44 @@ body {
 * CSS thanks Card
 */
 
-.thanksCard{
-    max-width: 700px;
-    overflow: hidden;
-    letter-spacing: 1.28px;
-    margin: 0 auto;
+.thanksCard {
+  max-width: 700px;
+  overflow: hidden;
+  letter-spacing: 1.28px;
+  margin: 0 auto;
 }
 
-.thanksCard--bg{
-    background-repeat: no-repeat;
-    background-position: top center;
-    padding-bottom: 50%;
-    background-size: contain;
-    max-height: 500px;
-    min-height: 350px;
+.thanksCard--bg {
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding-bottom: 50%;
+  background-size: contain;
+  max-height: 500px;
+  min-height: 350px;
 }
 
-.thanksCard--maxline{
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    display: -webkit-box;
+.thanksCard--maxline {
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  display: -webkit-box;
 }
 
 /**
 * ThanksCard image
 */
 
-.thanksCard__image-title{
-    width: 100%;
-    background-color:  rgba(0,0,0,0.05);
-    padding: 4px 12px;
-    border-radius: 4px;
-    color: gray;
+.thanksCard__image-title {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 4px 12px;
+  border-radius: 4px;
+  color: gray;
 }
 
-.thanksCard__image-list{
-    overflow: hidden;
+.thanksCard__image-list {
+  overflow: hidden;
 }
 
 /**
@@ -83,28 +83,80 @@ body {
 */
 
 .inputCustom {
-    padding: 10px 6px;
-    display: block;
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    pointer-events: unset;
-    cursor: pointer;
+  padding: 10px 6px;
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  pointer-events: unset;
+  cursor: pointer;
 }
 
-.inputCustom:focus{
-    outline: var(--outline-input-form-thanksCard-color);
+.inputCustom:focus {
+  outline: var(--outline-input-form-thanksCard-color);
 }
 
-.posts--css .thanksCard--bg{
-    padding-bottom: 0%;
-    background-size: cover;
-    min-height: 450px;
+.posts--css .thanksCard--bg {
+  padding-bottom: 0%;
+  background-size: cover;
+  min-height: 450px;
 }
 
-.h-124{
-    height: 124px;
-    max-height: 124px;
-    min-height: 124px;
+.h-124 {
+  height: 124px;
+  max-height: 124px;
+  min-height: 124px;
+}
+
+/**
+*
+*/
+
+
+.control-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  font-size: 2rem;
+  opacity: 0.4;
+}
+
+.control:hover .control-icon{
+  opacity: 1;
+}
+
+.control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  text-align: center;
+  background: none;
+  border: 0;
+  opacity: 0.5;
+  transition: opacity 0.15s
+}
+
+.next{
+  right: 0;
+  flex-direction: row-reverse;
+}
+
+.prev{
+  left: 0;
+}
+
+/**
+*
+*/
+
+.close-image{
+  top: 0;
+  right: 0;
+  z-index: 1;
+  font-size: 10px;
 }
