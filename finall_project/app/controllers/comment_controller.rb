@@ -4,11 +4,16 @@ class CommentController < ApplicationController
     @comment = current_user.comments.build(comment_content: params[:comment][:message])
     @comment.thanks_card = @thankscard
     if @comment.save
-      @comments = @thankscard.comments
-      render partial: "comment/comment", locals: { comment: @comments }
+      render partial: "comment/comment", locals: { comment: @comment }
     else
-      @comments = @thankscard.comment
-      render partial: "comment/comment", locals: { comment: @comments }
+      @comments = @thankscard.comments
+      render partial: "comment/comment", collection: @comments 
     end
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_content: params[:comment][:message])
+    render partial: "comment/comment", locals: { comment: @comment }
   end
 end

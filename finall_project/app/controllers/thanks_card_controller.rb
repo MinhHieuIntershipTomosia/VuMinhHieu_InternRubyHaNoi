@@ -20,6 +20,7 @@ class ThanksCardController < ApplicationController
       redirect_to send_url
     else
       @users = User.where.not(id: current_user.id)
+      @siderbar = "sendnew"
       render "my_page/send_new_thanks_card"
     end
   end
@@ -38,10 +39,11 @@ class ThanksCardController < ApplicationController
     @thankscard = ThanksCard.find(params[:id])
     @category = Category.find(params[:thanks_card][:category])
     @thankscard.category = @category
-    debugger
     arr = params[:thanks_card][:edit].split(",")
-    arr.each do |items|
-      @thankscard.image.(params[:thanks_card][:image][items.to_i])
+    arr.each_with_index do |items, index|
+      @image = @thankscard.image.find(items.to_i)
+      @image.purge
+      @thankscard.image.attach(params[:thanks_card][:image][index + 1])
     end
     if @thankscard.update(thankscard_params)
       flash[:success] = "ThanksCard update success"

@@ -16,19 +16,27 @@
         <%= render partial: 'thanks_card/thanks_card', locals: { thanks_card: @users_receiver.thanks_card } %>
       </div>
       <% if (@users_receiver.thanks_card.image.count != 0 && !@users_receiver.thanks_card.image.nil?) %>
-        <div class="thanksCard__image">
-          <p class="thanksCard__image-title">Images Send</p>
-          <div class="d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list">
+        <div class="thanksCard__image w-100 mt-5">
+          <p class="thanksCard__image-title">Images Send (Has <%=@users_receiver.thanks_card.image.count%> image)</p>
+          <div class="position-relative d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list" id="thanksCard__image-list">
             <% @users_receiver.thanks_card.image.each do |items| %>
               <div class="thanksCard__image-item col-3 list-inline-item">
                 <div>
                   <div class="mb-4 d-flex justify-content-center">
-                    <%= image_tag(items, class: "h-124 w-100", id: "img1")%>
+                    <%= image_tag(items, class: "h-124 w-100")%>
                   </div>
                   <div class="d-flex justify-content-center">
                   </div>
                 </div>
               </div>
+            <% end %>
+            <% if (@users_receiver.thanks_card.image.count > 4) %>
+              <button class="control prev" type="button" >
+                <span class="control-icon"><i class="fa-sharp fa-solid fa-chevron-left"></i></span>
+              </button>
+              <button class="control next" type="button" >
+                <span class="control-icon"><i class="fa-solid fa-chevron-right"></i></span>
+              </button>
             <% end %>
           </div>
         </div>
@@ -36,3 +44,4 @@
     </div>
   </div>
 </div>
+<%= javascript_include_tag "view_image_send.js" %>

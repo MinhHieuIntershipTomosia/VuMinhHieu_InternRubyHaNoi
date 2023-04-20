@@ -10,7 +10,6 @@ $('form.new-comment-form').on('submit', function (e) {
   var message = $form.find('textarea[name="comment[message]"]').val();
   var thankscard_id = $form.find('input[name="thankscard_id"]').val();
 
-  $form.parent().parent().find('.card-all-comment').empty();
   // Gửi AJAX request lên server để tạo comment
   $.ajax({
     url: '/comment',
@@ -24,7 +23,16 @@ $('form.new-comment-form').on('submit', function (e) {
     },
     success: function (response) {
       $form.find('textarea[name="comment[message]"]').val('');
-      $form.parent().parent().find('.card-all-comment').html(response);
+      if($form.parent().parent().find('.card-all-comment .comment-list').length == 0){
+        var div =  $form.parent().parent().find('.card-all-comment')
+        div.empty();
+        div.append('<h2 class="carr-all-comment__title">All Comment</h2>');
+        div.append('<ul class="comment-list"></ul>');
+        $form.parent().parent().find('.card-all-comment .comment-list').prepend(response)
+      }else{
+        $form.parent().parent().find('.card-all-comment .comment-list').prepend(response);
+        
+      }
     },
     error: function (jqXHR, textStatus, errorThrown) {
       // Xử lý lỗi khi tạo comment thất bại
@@ -35,4 +43,3 @@ $('form.new-comment-form').on('submit', function (e) {
     }
   });
 });
-

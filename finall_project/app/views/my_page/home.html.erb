@@ -29,7 +29,16 @@
               <!--end form new comment-->
               <!--begin view all comment-->
               <div class="card-all-comment">
-                <%= render partial: 'comment/comment', locals: { comment: items.comments } %>
+                <% if items.comments.nil? || items.comments.count == 0%>
+                  <p class="card-all-no-comment">
+                    this ThanksCard don't comment
+                  </p>
+                <% else %>
+                  <h2 class="carr-all-comment__title">All Comment</h2>
+                  <ul class="comment-list">
+                    <%= render partial: 'comment/comment', collection: items.comments  %>
+                  </ul>
+                <% end %>
               </div>
               <!--end view all comment-->
             </div>
@@ -46,3 +55,4 @@
   </div>
 <% end %>
 <%= javascript_include_tag "ajax_comment.js" %>
+<%= javascript_include_tag "edit_comment.js" %>
