@@ -9,8 +9,9 @@ class ThanksCardController < ApplicationController
     @category = Category.find(params[:thanks_card][:category])
     @thankscard = current_user.thanks_card.build(thankscard_params)
     @thankscard.category = @category
-    puts "vmhieu"
-    puts params[:thanks_card][:image]
+    params[:thanks_card][:image].each do |items|
+      @thankscard.image.attach(items)
+    end
     if @thankscard.save
       old_updated_at = @thankscard.created_at
       @thankscard.update(updated_at: old_updated_at)
@@ -37,11 +38,12 @@ class ThanksCardController < ApplicationController
     @thankscard = ThanksCard.find(params[:id])
     @category = Category.find(params[:thanks_card][:category])
     @thankscard.category = @category
-    @thankscard.image.purge
-    @thankscard.image.attach(params[:thanks_card][:image1])
-    @thankscard.image.attach(params[:thanks_card][:image2])
-    @thankscard.image.attach(params[:thanks_card][:image3])
-    @thankscard.image.attach(params[:thanks_card][:image4])
+    arr = params[:thanks_card][:edit].split(",")
+    arr.each_with_index do |items, index|
+      @image = @thankscard.image.find(items.to_i)
+      @image.purge
+      @thankscard.image.attach(params[:thanks_card][:image][index + 1])
+    end
     if @thankscard.update(thankscard_params)
       flash[:success] = "ThanksCard update success"
       redirect_to send_url
