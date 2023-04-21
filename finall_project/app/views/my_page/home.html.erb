@@ -11,6 +11,7 @@
                 <div class="d-flex flex-column ml-3">
                   <%= items.user.full_name %>
                   <div class="text-muted small">
+                    to: <%= lst_name_userreceiver items%>,    
                     created at:<%=items.created_at.strftime("%d/%m/%Y")%>
                   </div>
                 </div>
@@ -56,3 +57,4 @@
 <% end %>
 <%= javascript_include_tag "ajax_comment.js" %>
 <%= javascript_include_tag "edit_comment.js" %>
+<%= javascript_include_tag "delete_comment.js" %>
