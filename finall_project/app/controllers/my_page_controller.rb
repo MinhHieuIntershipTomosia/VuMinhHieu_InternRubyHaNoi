@@ -36,4 +36,6 @@ class MyPageController < ApplicationController
     render partial: "thanks_card/list_thanks_card_receiver", locals: { user_receivers: @user_receivers }
   end
 
+  def report
+  end
 end

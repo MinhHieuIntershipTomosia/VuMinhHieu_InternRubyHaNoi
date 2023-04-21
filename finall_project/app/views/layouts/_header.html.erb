@@ -14,7 +14,9 @@
         <li>
           <%= link_to "Recevier", receiver_path, class: "nav-link px-2 header-nav-link link-dark #{'text-secondary ' if( params[:action] == "receiver")}" %>
         </li>
-        <li><a href="#" class="nav-link px-2 header-nav-link link-dark">Report</a></li>
+        <li>
+          <%= link_to "Report", report_path, class: "nav-link px-2 header-nav-link link-dark #{'text-secondary ' if( params[:action] == "reports")}" %>
+        </li>
       <% end %>
     </ul>
     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">

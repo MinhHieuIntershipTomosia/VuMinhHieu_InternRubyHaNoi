@@ -10,7 +10,6 @@ import "jquery_ujs"
 import "popper"
 import "bootstrap"
 
-import "chart.js"
 import { Turbo } from "@hotwired/turbo-rails"
 Turbo.session.drive = false
 
