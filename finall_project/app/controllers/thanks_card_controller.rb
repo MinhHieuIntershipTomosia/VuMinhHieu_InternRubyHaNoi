@@ -20,6 +20,7 @@ class ThanksCardController < ApplicationController
       redirect_to send_url
     else
       @users = User.where.not(id: current_user.id)
+      @siderbar = "sendnew"
       render "my_page/send_new_thanks_card"
     end
   end
