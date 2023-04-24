@@ -39,12 +39,7 @@ class ThanksCardController < ApplicationController
     @thankscard = ThanksCard.find(params[:id])
     @category = Category.find(params[:thanks_card][:category])
     @thankscard.category = @category
-    arr = params[:thanks_card][:edit].split(",")
-    arr.each_with_index do |items, index|
-      @image = @thankscard.image.find(items.to_i)
-      @image.purge
-      @thankscard.image.attach(params[:thanks_card][:image][index + 1])
-    end
+    edit_image()
     if @thankscard.update(thankscard_params)
       flash[:success] = "ThanksCard update success"
       redirect_to send_url

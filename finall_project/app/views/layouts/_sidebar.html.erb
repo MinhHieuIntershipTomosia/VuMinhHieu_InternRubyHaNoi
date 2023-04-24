@@ -77,6 +77,18 @@
             <% end %>
           </li>
         </ul>
+      <% elsif params[:action] == "report"%>
+        <p class="d-flex align-items-center mb-3  me-md-auto link-dark text-decoration-none">
+          <span class="fs-4">Report</span>
+        </p>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item border-0">
+            <%= link_to report_path, class: "nav-link active", current: "page" do %>
+              <%= tag.i(class: "fas fa-list-ul me-2") %>
+              All report
+            <% end %>
+          </li>
+        </ul>
       <% else %>
       <% end %>
     </div>

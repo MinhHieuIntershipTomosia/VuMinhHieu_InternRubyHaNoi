@@ -45,9 +45,11 @@
             </a>
           </td>
           <!-- Attachment -->
-          <td>
-            <p class="fs-4 m-0" style="line-height:40px">Option</p>
-          </td>
+          <% if params[:action] == "receiver"%>
+            <td>
+              <p class="fs-4 m-0" style="line-height:40px">Option</p>
+            </td>
+          <%end%>
           <!-- Time -->
           <td class="text-dark fs-4" style="line-height:40px">Sent date</td>
         </tr>
@@ -69,7 +71,7 @@
               </a>
             </td>
             <!-- Attachment -->
-            <% if !items.delete_status %>
+            <% if !items.delete_status && !items.users_receivers_delete%>
               <td>
                 <%= link_to items, class: "text-decoration-none text-dark ms-2 me-2" do %>
                   <%= tag.i(class: "fa-solid fa-eye") %>
