@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "thankscardelete", to: "my_page#getall_tkcard_delete"
   get "receiver", to: "my_page#receiver"
   get "receiverdelete", to: "my_page#getall_tkcardreceiver_delete"
+  get "report", to: "my_page#report"
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

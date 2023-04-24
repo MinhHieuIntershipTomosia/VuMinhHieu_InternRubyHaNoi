@@ -22,7 +22,7 @@
         </div>
         <% if (@thankscard.image.count != 0 && !@thankscard.image.nil?) %>
           <div class="thanksCard__image position-relative" id="thanksCard__image">
-            <p class="thanksCard__image-title">Edit Images</p>
+            <p class="thanksCard__image-title">Edit Images(Has <%=@thankscard.image.count%> image)</p>
             <div class=" d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list">
               <%= f.file_field :image, class: "d-none", multiple: true , id: "lstimage"%>
               <%= f.hidden_field :edit, id: "lstimage-edit"%>

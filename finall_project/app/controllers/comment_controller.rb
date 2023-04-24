@@ -16,4 +16,8 @@ class CommentController < ApplicationController
     @comment.update(comment_content: params[:comment][:message])
     render partial: "comment/comment", locals: { comment: @comment }
   end
+
+  def destroy
+    @comment = Comment.find(params[:id]).destroy
+  end
 end

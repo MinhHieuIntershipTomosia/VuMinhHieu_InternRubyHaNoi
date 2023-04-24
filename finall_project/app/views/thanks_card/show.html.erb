@@ -18,7 +18,7 @@
     </div>
     <% if (@thankscard.image.count != 0 && !@thankscard.image.nil?) %>
       <div class="thanksCard__image w-100">
-        <p class="thanksCard__image-title">Images Send</p>
+        <p class="thanksCard__image-title">Images Send (Has <%=@thankscard.image.count%> image)</p>
         <div class="position-relative d-flex flex-row justify-content-center bd-highlight mb-3 thanksCard__image-list" id="thanksCard__image-list">
           <% @thankscard.image.each do |items| %>
             <div class="thanksCard__image-item col-3 list-inline-item">
