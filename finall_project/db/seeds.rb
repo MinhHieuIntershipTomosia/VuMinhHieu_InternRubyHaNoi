@@ -35,9 +35,10 @@ end
 
 users = User.find(1)
 users2 = User.find(2)
+users3 = User.find(3)
 
 
-10.times do
+15.times do
   content = Faker::Lorem.sentence(word_count: 5)
   title = Faker::Name.name
   cate_id = rand(1..3)
@@ -54,6 +55,16 @@ end
   thankscard = users2.thanks_card.create!(content: content, title: title, description: description, category_id: cate_id)
   thankscard.users_receiver.create!(user_id: [1, 3].sample)
 end
+
+15.times do
+  content = Faker::Lorem.sentence(word_count: 5)
+  title = Faker::Name.name
+  cate_id = rand(1..3)
+  description = "With this change, creating a new book for a particular author is easier:With this change, creating a new book for a particular author is easier:"
+  thankscard = users3.thanks_card.create!(content: content, title: title, description: description, category_id: cate_id)
+  thankscard.users_receiver.create!(user_id: [1, 3].sample)
+end
+
 
 10.times do
   content = Faker::Lorem.sentence(word_count: 5)

@@ -37,5 +37,10 @@ class MyPageController < ApplicationController
   end
 
   def report
+    @user_send = get_top_one_send()
+    @user_receiver = get_top_one_receiver()
+    @all = ThanksCard.where(delete_status: false).count
+    @count_tkcard =  ThanksCard.where(user_id: current_user.id, delete_status: false).count
+    @count_receiver = UsersReceiver.where(user_id: current_user.id, delete_status: false, users_receivers_delete: false).count
   end
 end
