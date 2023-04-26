@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Model representing a user in the application.
 class User < ApplicationRecord
   has_many :thanks_card
   has_many :comments
@@ -18,14 +21,14 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token
 
   # create new tooken
-  def User.new_token
+  def self.new_token
     SecureRandom.urlsafe_base64
   end
 
   # ma hoa 1 chuoi
-  def User.encode_bycrypt(string)
+  def self.encode_bycrypt(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
+    BCrypt::Password.create(string, cost)
   end
 
   # remember token
@@ -43,6 +46,7 @@ class User < ApplicationRecord
   def authenticated?(attribute, token)
     digest = send("#{attribute}_remember_token")
     return false if digest.nil?
+
     BCrypt::Password.new(digest).is_password?(token)
   end
 
@@ -62,8 +66,7 @@ class User < ApplicationRecord
     self.email = email.downcase
   end
 
-  #create token active user
-
+  # create token active user
   def create_activation_token
     self.activation_token = User.new_token
     self.activation_remember_token = User.encode_bycrypt(activation_token)

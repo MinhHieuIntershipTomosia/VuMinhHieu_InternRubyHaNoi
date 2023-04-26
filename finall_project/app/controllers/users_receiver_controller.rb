@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
+# Controller to handle user
 class UsersReceiverController < ApplicationController
   def show
     @users_receiver = UsersReceiver.find(params[:id])
-    @siderbar = "userreceiver"
+    @siderbar = 'userreceiver'
   end
 
   def destroy

@@ -2,9 +2,8 @@
 
 # The ThanksCardHelper module contains methods displayed thankscard.
 module ThanksCardHelper
-  # anho anho
   def test_lst_userreceiver
-    return unless params[:thanks_card][:user_receiver_id].present?
+    return if params[:thanks_card][:user_receiver_id].present?
 
     flash[:danger] = 'No has User receiver'
     redirect_to sendnew_url
@@ -19,7 +18,7 @@ module ThanksCardHelper
   end
 
   def top_one_send
-    return unless ThanksCard.all.count.negative?
+    return if ThanksCard.all.count.negative?
 
     lst_thankscard = ThanksCard.where(delete_status: false)
     top_one(lst_thankscard)
@@ -33,7 +32,7 @@ module ThanksCardHelper
   end
 
   def top_one(lst)
-    return if lst.nil?
+    return if lst.blank?
 
     hash_count = Hash.new(0)
     lst.each do |items|

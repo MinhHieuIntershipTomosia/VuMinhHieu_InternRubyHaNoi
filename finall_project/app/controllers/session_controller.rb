@@ -1,28 +1,24 @@
+# frozen_string_literal: true
+
+# Controller to handle user session
 class SessionController < ApplicationController
   protect_from_forgery with: :null_session
 
-  def new
-  end
+  def new; end
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
+    if user&.authenticate(params[:session][:password])
       if user.activated?
-        log_in user
-        params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-        redirect_to root_url
+        handle_activated_user(user)
       else
-        message = "Account not activated. "
-        message += "Check your email for the activation link."
-        flash.keep[:warning] = message
-        redirect_to root_url
+        handle_unactive_user
       end
     else
-      flash.now[:danger] = "email or password incorrect"
-      render "new"
+      handle_invalid_credentials
     end
   end
-  
+
   def destroy
     log_out if logged_in?
     redirect_to root_url
@@ -35,5 +31,33 @@ class SessionController < ApplicationController
 
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
+  end
+
+  private
+
+  def handle_unactive_user
+    message = 'Account not activated. '
+    message += 'Check your email for the activation link.'
+    flash.keep[:warning] = message
+    redirect_to root_url
+  end
+
+  def handle_invalid_credentials
+    flash.now[:danger] = 'email or password incorrect'
+    render 'new'
+  end
+
+  def should_remember_user?
+    params[:session][:remember_me] == '1'
+  end
+
+  def remember_user(user)
+    should_remember_user? ? remember(user) : forget(user)
+  end
+
+  def handle_activated_user(user)
+    log_in user
+    remember_user(user) if should_remember_user?
+    redirect_to root_url
   end
 end

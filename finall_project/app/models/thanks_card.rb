@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Model representing a Thanks Card in the application.
 class ThanksCard < ApplicationRecord
   belongs_to :user
   belongs_to :category
@@ -11,23 +14,23 @@ class ThanksCard < ApplicationRecord
   after_update :update_satus_delete
 
   def update_satus_delete
-    if self.delete_status
-      @lst_user = self.users_receiver
-      @lst_user.each do |users_receiver|
-        users_receiver.update(delete_status: true)
-      end
+    return if delete_status
+
+    @lst_user = users_receiver
+    @lst_user.each do |users_receiver|
+      users_receiver.update(delete_status: true, users_receivers_delete: true)
     end
   end
 
   def create_user_receiver(lst_user_id)
-    if !lst_user_id.nil?
-      lst_user = lst_user_id.split(",")
-      lst_user.each do |user_id|
-        user = User.find(user_id)
-        users_receiver = self.users_receiver.build
-        users_receiver.user = user
-        users_receiver.save
-      end
+    return if lst_user_id.blank?
+
+    lst_user = lst_user_id.split(',')
+    lst_user.each do |user_id|
+      user = User.find(user_id)
+      users_receiver = self.users_receiver.build
+      users_receiver.user = user
+      users_receiver.save
     end
   end
 end
