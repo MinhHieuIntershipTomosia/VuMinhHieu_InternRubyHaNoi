@@ -1,46 +1,46 @@
+# frozen_string_literal: true
+
+# Controller to display view mypage
 class MyPageController < ApplicationController
   def home
     @thanks_card = ThanksCard.all.order(updated_at: :desc)
   end
 
   def send_thanks_card
-    # @thankscard = ThanksCard.where("user_id = ? and", current_user.id)
-    @thankscard = ThanksCard.where(user_id: current_user.id, delete_status: false)
-    @thankscard = @thankscard.sort_by { |thankscard| (Time.zone.now - thankscard.updated_at).to_i }
-    @user_receivers = @thankscard.map { |thankscard| thankscard.users_receiver }.flatten
+    @thankscard = thankscard_status(false)
+    @thankscard = sort_by_update_at(@thankscard)
+    @user_receivers = @thankscard.map(&:users_receiver).flatten
     puts @thankscard.count
   end
 
   def send_new_thanks_card
     @users = User.where.not(id: current_user.id)
-    # @users = User.all
     @thankscard = ThanksCard.new
-    puts "list user : #{@users.count}"
   end
 
   def receiver
-    @user_receivers = UsersReceiver.where(user_id: current_user.id, delete_status: false, users_receivers_delete: false)
-    @user_receivers = @user_receivers.sort_by { |items| (Time.zone.now - items.thanks_card.updated_at).to_i }
-    @siderbar = "userreceiver"
+    @user_receivers = user_receiver_status(false)
+    @user_receivers = sort_by_update_at(@user_receivers, 'thanks_card')
+    @siderbar = 'userreceiver'
   end
 
   def getall_tkcard_delete
-    @thankscard = ThanksCard.where(user_id: current_user.id, delete_status: true)
-    @thankscard = @thankscard.sort_by { |thankscard| (Time.zone.now - thankscard.updated_at).to_i }
-    render partial: "thanks_card/list_thanks_card", locals: { thanks_card: @thankscard }
+    @thankscard = thankscard_status(true)
+    @thankscard = sort_by_update_at(@thankscard)
+    render partial: 'thanks_card/list_thanks_card', locals: { thanks_card: @thankscard }
   end
 
   def getall_tkcardreceiver_delete
-    @user_receivers = UsersReceiver.where(user_id: current_user.id, delete_status: false, users_receivers_delete: true)
-    @user_receivers = @user_receivers.sort_by { |user_receiver| (Time.zone.now - user_receiver.updated_at).to_i }
-    render partial: "thanks_card/list_thanks_card_receiver", locals: { user_receivers: @user_receivers }
+    @user_receivers = user_receiver_status(true)
+    @user_receivers = sort_by_update_at(@user_receivers)
+    render partial: 'thanks_card/list_thanks_card_receiver', locals: { user_receivers: @user_receivers }
   end
 
   def report
-    @user_send = get_top_one_send()
-    @user_receiver = get_top_one_receiver()
+    @user_send = top_one_send
+    @user_receiver = top_one_receiver
     @all = ThanksCard.where(delete_status: false).count
-    @count_tkcard =  ThanksCard.where(user_id: current_user.id, delete_status: false).count
-    @count_receiver = UsersReceiver.where(user_id: current_user.id, delete_status: false, users_receivers_delete: false).count
+    @count_tkcard = thankscard_status(false).count
+    @count_receiver = user_receiver_status(false).count
   end
 end

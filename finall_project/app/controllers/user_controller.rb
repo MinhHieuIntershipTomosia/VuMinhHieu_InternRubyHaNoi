@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Controller to handle user
 class UserController < ApplicationController
   def new
     @user = User.new
@@ -7,17 +10,16 @@ class UserController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
+      flash[:info] = 'Please check your email to activate your account.'
       redirect_to root_url
     else
-      render "new"
+      render 'new'
     end
   end
 
-  private 
+  private
 
   def user_params
     params.require(:user).permit(:full_name, :email, :password, :phoneNumber, :password, :password_confirmation)
   end
-  
 end

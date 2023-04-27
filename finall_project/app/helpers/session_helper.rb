@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# The SessionHelper module contains methods save current_user, create session to save login.
 module SessionHelper
   def log_in(user)
     session[:user_id] = user.id
@@ -23,7 +26,7 @@ module SessionHelper
       @current_user ||= User.find_by(id: user_id)
     elsif (user_id = cookies.encrypted[:user_id])
       user = User.find_by(id: user_id)
-      if user && user.authenticated?(:user, cookies[:remember_token])
+      if user&.authenticated?(:user, cookies[:remember_token])
         log_in user
         @current_user = user
       end
@@ -40,6 +43,7 @@ module SessionHelper
     @current_user = nil
   end
 
+  # return true if current_user exist , return false if opposite
   def current_user?(user)
     user && user == current_user
   end
