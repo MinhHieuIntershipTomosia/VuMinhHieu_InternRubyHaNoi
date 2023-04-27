@@ -29,12 +29,18 @@ gem "jbuilder"
 
 # my sql
 gem 'mysql2'
-# bycryt  
+# bycryt
 gem 'bcrypt'
 
+gem 'slim-rails'
+gem "slim"
+
 gem "jquery-rails"
+
 gem "bootstrap"
+
 gem "sassc-rails"
+
 gem 'pry-rails', :group => :development
 
 gem "font-awesome-sass"

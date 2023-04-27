@@ -1,0 +1,42 @@
+.col-lg-12.d-flex.justify-content-center
+  .col-lg-6.d-flex.flex-column.align-items-center.justify-content-center
+    .py-2.px-4.border-bottom.d-none.d-lg-block.bg-light.mt-4.w-75
+      .d-flex.align-items-center.py-1
+        .position-relative
+          = gravatar_for @users_receiver.thanks_card.user
+        .flex-grow-1.pl-3
+          strong
+            = @users_receiver.thanks_card.user.full_name
+          .text-muted.small
+            em
+              | to: 
+              = @users_receiver.user.full_name
+              |  , on:
+              =@users_receiver.created_at.strftime("%d/%m/%Y")
+        div
+
+    .container.my-5
+      .thanksCard
+        = render partial: 'thanks_card/thanks_card', locals: { thanks_card: @users_receiver.thanks_card }
+      - if (@users_receiver.thanks_card.image.count != 0 && !@users_receiver.thanks_card.image.nil?)
+        .thanksCard__image.w-100.mt-5
+          p.thanksCard__image-title
+            | Images Send (Has 
+            =@users_receiver.thanks_card.image.count
+            |  image)
+          #thanksCard__image-list.position-relative.d-flex.flex-row.justify-content-center.bd-highlight.mb-3.thanksCard__image-list
+            - @users_receiver.thanks_card.image.each do |items|
+              .thanksCard__image-item.col-3.list-inline-item
+                div
+                  .mb-4.d-flex.justify-content-center
+                    = image_tag(items, class: "h-124 w-100")
+                  .d-flex.justify-content-center
+
+            - if (@users_receiver.thanks_card.image.count > 4)
+              button.control.prev[type="button"]
+                span.control-icon
+                  i.fa-sharp.fa-solid.fa-chevron-left
+              button.control.next[type="button"]
+                span.control-icon
+                  i.fa-solid.fa-chevron-right
+= javascript_include_tag "view_image_send.js"

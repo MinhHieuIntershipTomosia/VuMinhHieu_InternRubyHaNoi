@@ -1,0 +1,23 @@
+- provide(:title, 'Login')
+.bg-white.p-4.h-100
+  = form_with(url: login_path, scope: :session, local: true) do |f|
+    .p-3.d-flex.justify-content-center.flex-column.align-items-center
+      span.main-heading
+        | Signin To Cever
+      ul.social-list.mt-3
+
+      .form-data
+        = f.label :email
+        = f.email_field :email, class: 'form-control w-100' , placeholder: "please enter your email"
+      .form-data
+        = f.label :password
+        = f.password_field :password, class: 'form-control w-100' , placeholder: "please password your password"
+      .d-flex.justify-content-between.w-100.align-items-center
+        .form-check
+          = f.label :remember_me, class: "form-check-label", for:"flexCheckDefault" do
+            = f.check_box :remember_me , class: "form-check-input", id: "flexCheckDefault"
+            span
+              | Remember me
+        = link_to "Forgot password?", class: "text-decoration-none forgot-text"
+      .signin-btn.w-100.mt-2
+        = f.submit "Log in", class: "btn btn-primary btn-block"

@@ -27,8 +27,8 @@ class User < ApplicationRecord
 
   # ma hoa 1 chuoi
   def self.encode_bycrypt(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost)
+    password_cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: password_cost)
   end
 
   # remember token

@@ -66,12 +66,12 @@ end
 end
 
 
-10.times do
+50.times do
   content = Faker::Lorem.sentence(word_count: 5)
-  comment = users2.comments.create!(comment_content: content, thanks_card_id: rand(1..25))
+  comment = users2.comments.create!(comment_content: content, thanks_card_id: rand(1..45))
 end
 
-10.times do
+50.times do
   content = Faker::Lorem.sentence(word_count: 5)
-  comment = users.comments.create!(comment_content: content, thanks_card_id: rand(1..25))
+  comment = users.comments.create!(comment_content: content, thanks_card_id: rand(1..45))
 end

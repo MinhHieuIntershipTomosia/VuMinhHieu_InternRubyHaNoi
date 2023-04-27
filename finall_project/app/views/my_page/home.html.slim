@@ -1,0 +1,41 @@
+/= render partial: 'thanks_card/post_thanks_card', collection: @thanks_card 
+- @thanks_card.each do |items|
+  div.container.posts-content.posts--css
+    div.row
+      div.col-lg-12.d-flex.justify-content-center
+        div.col-lg-6 
+          div.card.mb-4
+            div.card-body
+              div.d-flex.align-items-center.mb-3
+                = gravatar_for items.user
+                div.d-flex.flex-column.ml-3
+                  = items.user.full_name
+                  div.text-muted.small
+                    span to: #{lst_name_userreceiver items}, created at: #{items.created_at.strftime("%d/%m/%Y")}
+              /! begin thanksCard
+              div.thanksCard id='thanksCard-#{items.id}'
+                == render partial: 'thanks_card/thanks_card', locals: { thanks_card: items }
+              /! end thanksCard
+            div.card-comment
+              /! begin form new comment
+              div.new-comment
+                == render partial: 'comment/form_comment', locals: { user: items.user, thanks_card_id: items.id }
+              /! end form new comment
+              /! begin view all comment
+              div.card-all-comment
+                - if items.comments.nil? || items.comments.count == 0
+                  p.card-all-no-comment this ThanksCard don't comment #{items.comments.count}
+                - else
+                  h2.carr-all-comment__title All Comment
+                  ul.comment-list
+                    == render partial: 'comment/comment', collection: items.comments
+
+                /! end view all comment
+            div.card-footer
+              a.d-inline-block.text-muted.ml-3.text-decoration-none
+                strong #{items.comments.count}
+                small.align-middle Comments
+
+= javascript_include_tag "ajax_comment.js"
+= javascript_include_tag "edit_comment.js"
+= javascript_include_tag "delete_comment.js"
