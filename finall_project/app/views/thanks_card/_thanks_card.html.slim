@@ -1,0 +1,29 @@
+- if thanks_card.category_id == 1
+  .thanksCard--bg.thanksCardWendding
+    .thanksCardWendding__container
+      p.thanksCardWendding__title.thanksCard--maxline
+        = thanks_card.title
+      h1.thanksCardWendding__Content.thanksCard--maxline
+        = thanks_card.content
+      p.thanksCardWendding__description.thanksCard--maxline
+        = thanks_card.description
+- elsif thanks_card.category_id == 2
+  .thanksCard--bg.thanksCardHelp
+    .thanksCardHelp__container
+      h1.thanksCard--maxline.thanksCardHelp__title
+        = thanks_card.title
+      p.thanksCard--maxline.thanksCardHelp__description
+        = thanks_card.description
+      p.thanksCard--maxline.thanksCardHelp__underwrite
+        = thanks_card.content
+    div[style="clear: both"]
+- else
+  .thanksCard--bg.thanksCardCristmast
+    .thanksCardCristmast__container
+      p.thanksCardCristmast__title.thanksCard--maxline
+        = thanks_card.title
+      h1.thanksCardCristmast__Content.thanksCard--maxline
+        = thanks_card.content
+      p.thanksCardCristmast__description.thanksCard--maxline
+        = thanks_card.description
+

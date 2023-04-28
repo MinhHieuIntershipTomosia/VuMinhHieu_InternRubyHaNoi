@@ -1,0 +1,87 @@
+#newThanksCard
+  .newThanksCard__select.d-flex.align-items-center
+    h2.newThanksCard__title
+      | select option ThanksCard:
+    ul.newThanksCard__list.d-flex
+      li#1.newThanksCard__item.btn.btn-primary.me-3.active
+        | ThanksCard Wendding
+      li#2.newThanksCard__item.btn.btn-primary.me-3
+        | ThanksCard Helping
+      li#3.newThanksCard__item.btn.btn-primary.me-3
+        | ThanksCard Cirtmast
+  #newThanksCard__form
+    .container.my-5.d-flex.justify-content-center
+      = form_with(model: @thankscard, url: thanks_card_index_path, local: true, html: { class: "thanksCard", id: "thanksCard__form", method: "post" }) do |f|
+        = render 'error/error_message', object: f.object
+        .mb-4
+          = f.hidden_field :user_receiver_id ,id: "select_user_id"
+          select#selectuser[name="selectuser" multiple]
+            - if !@users.nil?
+              - @users.each do |items|
+                |  <option value="
+                = items.id
+                | ">
+                = items.full_name
+                | (
+                = items.email
+                | )
+        div
+          = f.hidden_field :title ,id: "thankscard__title"
+          = f.hidden_field :content , id: "thankscard__content"
+          = f.hidden_field :description, id: "thankscard__description"
+          = f.hidden_field :category   ,id: "thankscard__category_id"
+          #thanksCard--selected
+            #thankscard-category.thanksCard--bg.thanksCardWendding[data-value="1"]
+              .thanksCardWendding__container
+                p#text-thankscard-title.inputCustom.thanksCardWendding__title[role="textbox" contenteditable]
+                h1#text-thankscard-content.inputCustom.thanksCardWendding__Content[role="textbox" contenteditable]
+                p#text-thankscard-description.inputCustom.thanksCardWendding__description[role="textbox" contenteditable]
+        #thanksCard__image.thanksCard__image
+          p.thanksCard__image-title
+            | Add Images
+          .d-flex.flex-row.justify-content-center.bd-highlight.mb-3.thanksCard__image-list
+            = f.file_field :image, class: "d-none", multiple: true , id: "lstimage"
+            .thanksCard__image-item.col-3.list-inline-item
+              div
+                .mb-4.d-flex.justify-content-center
+                  = image_tag("https://mdbootstrap.com/img/Photos/Others/placeholder.jpg", class: "h-124 w-100", id: "img1")
+                .d-flex.justify-content-center
+                  .btn.btn-primary.btn-rounded
+                    label.form-label.text-white.m-1[for="customFile1"]
+                      | Add Image
+                    = f.file_field :images, class: "form-control d-none customFile", id: "customFile1"
+            .thanksCard__image-item.col-3.list-inline-item
+              div
+                .mb-4.d-flex.justify-content-center
+                  = image_tag("https://mdbootstrap.com/img/Photos/Others/placeholder.jpg", class: "h-124 w-100", id: "img2")
+                .d-flex.justify-content-center
+                  .btn.btn-primary.btn-rounded
+                    label.form-label.text-white.m-1[for="customFile2"]
+                      | Add Image
+                    = f.file_field :images, class: "form-control d-none customFile", id: "customFile2"
+            .thanksCard__image-item.col-3.list-inline-item
+              div
+                .mb-4.d-flex.justify-content-center
+                  = image_tag("https://mdbootstrap.com/img/Photos/Others/placeholder.jpg", class: "h-124 w-100", id: "img3")
+                .d-flex.justify-content-center
+                  .btn.btn-primary.btn-rounded
+                    label.form-label.text-white.m-1[for="customFile3"]
+                      | Add Image
+                    = f.file_field :images, class: "form-control d-none customFile", id: "customFile3"
+            .thanksCard__image-item.col-3.list-inline-item
+              div
+                .mb-4.d-flex.justify-content-center
+                  = image_tag("https://mdbootstrap.com/img/Photos/Others/placeholder.jpg", class: "h-124 w-100", id: "img4")
+                .d-flex.justify-content-center
+                  .btn.btn-primary.btn-rounded
+                    label.form-label.text-white.m-1[for="customFile4"]
+                      | Add Image
+                    = f.file_field :images, class: "form-control d-none customFile", id: "customFile4"
+        .d-grid.gap-2
+          button.btn.btn-primary[type="submit"]
+            | Send
+= javascript_include_tag "multi-select-tag.js"
+= javascript_include_tag "select-option-thanksCard.js"
+= javascript_include_tag "multi-selection.js"
+= javascript_include_tag "getdata_thankscard.js"
+= javascript_include_tag "get_image_send.js"

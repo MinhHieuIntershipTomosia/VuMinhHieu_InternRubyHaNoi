@@ -1,0 +1,62 @@
+- if logged_in?
+  div#sidebar
+    div.d-flex.flex-column.flex-shrink-0.p-3.bg-light style="width: 280px; height: 100%; border-right: 1px solid #ccc;"
+      / if @action_name.nil? || @action_name == "home"
+      - if params[:action].blank? || params[:action] == "home"
+          p.d-flex.align-items-center.mb-3.me-md-auto.link-dark.text-decoration-none
+            span.fs-4 Category ThanhsCard
+          ul.nav.nav-pills.flex-column.mb-auto
+            li.nav-item
+              a.nav-link.active[href="#" aria-current="page"]
+                | All ThanksCard
+            li
+              a.nav-link.link-dark[href="#"]
+                | ThanksCard Wendding
+            li
+              a.nav-link.link-dark[href="#"]
+                | ThanksCard Cristmast
+            li
+              a.nav-link.link-dark[href="#"]
+                | ThansCard Help
+      - elsif params[:action] == "send_thanks_card" ||  @siderbar == "send"
+          p.d-flex.align-items-center.mb-3.me-md-auto.link-dark.text-decoration-none
+            span.fs-4 ThanksCard Send
+          ul.nav.nav-pills.flex-column.mb-auto
+            li.nav-item
+              = link_to send_path, class: "nav-link active", current: "page" do
+                = tag.i(class: "fas fa-list-ul me-2")
+                | List Send ThanksCard
+            li.nav-item
+              = link_to sendnew_path, class: "nav-link link-dark text-dark", current: "page" do
+                = tag.i(class: "fa-sharp fa-solid fa-plus me-2")
+                | Add Send ThanksCard
+      - elsif params[:action] == "send_new_thanks_card" || @siderbar == "sendnew"
+          p.d-flex.align-items-center.mb-3.me-md-auto.link-dark.text-decoration-none
+            span.fs-4 ThanksCard Send
+          ul.nav.nav-pills.flex-column.mb-auto
+            li.nav-item.border-0
+              = link_to send_path, class: "nav-link link-dark text-dark", current: "page" do
+                = tag.i(class: "fas fa-list-ul me-2")
+                | List Send ThanksCard
+            li.nav-item
+              = link_to sendnew_path, class: "nav-link active", current: "page" do
+                = tag.i(class: "fa-sharp fa-solid fa-plus me-2")
+                | Add Send ThanksCard
+      - elsif @siderbar == "userreceiver"
+          p.d-flex.align-items-center.mb-3.me-md-auto.link-dark.text-decoration-none
+            span.fs-4 ThanksCard Send
+          ul.nav.nav-pills.flex-column.mb-auto
+            li.nav-item.border-0
+              = link_to receiver_path, class: "nav-link active", current: "page" do
+                = tag.i(class: "fas fa-list-ul me-2")
+                | List Receiver ThanksCard
+      - elsif params[:action] == "report"
+          p.d-flex.align-items-center.mb-3.me-md-auto.link-dark.text-decoration-none
+            span.fs-4 Report
+          ul.nav.nav-pills.flex-column.mb-auto
+            li.nav-item.border-0
+              = link_to report_path, class: "nav-link active", current: "page" do
+                = tag.i(class: "fas fa-list-ul me-2")
+                | All report
+      - else
+- else

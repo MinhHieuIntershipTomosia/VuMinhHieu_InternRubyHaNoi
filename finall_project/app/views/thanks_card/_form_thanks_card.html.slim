@@ -1,0 +1,29 @@
+- if thanks_card.category_id == 1
+  #thankscard-category.thanksCard--bg.thanksCardWendding[data-value="1"]
+    .thanksCardWendding__container
+      p#text-thankscard-title.inputCustom.thanksCardWendding__title[role="textbox" contenteditable]
+        = thanks_card.title
+      h1#text-thankscard-content.inputCustom.thanksCardWendding__Content[role="textbox" contenteditable]
+        = thanks_card.content
+      p#text-thankscard-description.inputCustom.thanksCardWendding__description[role="textbox" contenteditable]
+        = thanks_card.description
+- elsif thanks_card.category_id == 2
+  #thankscard-category.thanksCard--bg.thanksCardHelp[data-value="2"]
+    .thanksCardHelp__container
+      h1#text-thankscard-title.inputCustom.thanksCardHelp__title[role="textbox" contenteditable=""]
+        = thanks_card.title
+      p#text-thankscard-description.inputCustom.thanksCardHelp__description[role="textbox" contenteditable=""]
+        = thanks_card.description
+      p#text-thankscard-content.inputCustom.thanksCardHelp__underwrite[role="textbox" contenteditable=""]
+        = thanks_card.content
+      p
+    div[style="clear: both;"]
+- else
+  #thankscard-category.thanksCard--bg.thanksCardCristmast[data-value="3"]
+    .thanksCardCristmast__container
+      p#text-thankscard-title.inputCustom.thanksCardCristmast__title[role="textbox" contenteditable=""]
+        = thanks_card.title
+      h1#text-thankscard-content.inputCustom.thanksCardCristmast__Content[role="textbox" contenteditable=""]
+        = thanks_card.content
+      p#text-thankscard-description.inputCustom.thanksCardCristmast__description[role="textbox" contenteditable=""]
+        = thanks_card.description

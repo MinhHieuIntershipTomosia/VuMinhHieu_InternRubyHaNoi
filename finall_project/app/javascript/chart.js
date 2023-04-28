@@ -24,7 +24,7 @@ $.getScript("https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js", fu
     options: {
       title: {
         display: true,
-        text: "World Wide Wine Production 2018"
+        text: "my thankscard chart"
       }
     }
   });

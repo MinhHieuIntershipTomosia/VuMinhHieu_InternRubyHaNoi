@@ -1,0 +1,26 @@
+
+<!--begin list send thanksCard -->
+div#list-send-thanksCard[style="padding: 12px;"]
+  div.row
+    div.col-md-12
+      div.card
+        div.card-body.bg-primary.text-white.mailbox-widget.pb-0
+          h2.text-white.pb-3 ThanksCard Send
+          ul.nav.nav-tabs.custom-tab.border-bottom-0.mt-4#myTab role="tablist"
+            li.nav-item
+              a.nav-link.active aria-controls="inbox" data-bs-toggle="tab" href="#inbox" role="tab" aria-selected="true" id="inbox-tab"
+                span.d-block.d-md-none
+                  i.ti-email
+                span.d-none.d-md-block RECEIVER
+            li.nav-item
+              a.nav-link id="delete-tab" data-bs-toggle="tab" href="#delete" role="tab" aria-controls="delete" aria-selected="false"
+                span.d-block.d-md-none
+                  i.ti-trash
+                span.d-none.d-md-block DELETED
+        div.tab-content#myTabContent
+          div.tab-pane.fade.active.show id="inbox" aria-labelledby="inbox-tab" role="tabpanel"
+            div
+              == render partial: 'thanks_card/list_thanks_card_receiver', locals: { user_receivers: @user_receivers }
+          div.tab-pane.fade id="delete" role="tabpanel" aria-labelledby="delete-tab"
+
+= javascript_include_tag "ajax_get_all_thankscard_receiver_delete.js"
