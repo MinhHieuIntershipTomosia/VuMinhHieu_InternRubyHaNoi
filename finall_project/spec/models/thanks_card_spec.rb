@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe ThanksCard, type: :model do
@@ -47,6 +49,30 @@ RSpec.describe ThanksCard, type: :model do
         category: categorys
       )
       expect(thanks_card).to be_valid
+    end
+  end
+
+  # test callback
+  describe 'test callback' do
+    it 'updates delete_status for users_receiver when delete_status is true' do
+      users = User.create(
+        full_name: 'John Smith',
+        email: 'test@example.com',
+        phoneNumber: '1234567890',
+        password: 'password'
+      )
+      categorys = Category.create(category_name: 'Test Category')
+      thankscard = ThanksCard.create(
+        content: 'This is a valid content',
+        title: 'Test',
+        description: 'Test',
+        user: users,
+        category: categorys
+      )
+      users_receiver = UsersReceiver.create(thanks_card: thankscard, user: user)
+      expect(users_receiver.delete_status).to eq(false)
+      users_receiver.update(delete_status: true)
+      expect(users_receiver.reload.delete_status).to eq(true)
     end
   end
 end

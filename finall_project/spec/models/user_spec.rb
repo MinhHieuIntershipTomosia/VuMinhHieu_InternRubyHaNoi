@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -12,12 +14,12 @@ RSpec.describe User, type: :model do
       )
       expect(user).to be_valid
     end
-  end
 
-  it 'is valid with a password of at least 6 characters' do
-    user = User.new(password: '123456')
-    user.valid?
-    expect(user.errors).not_to have_key(:password)
+    it 'is valid with a password of at least 6 characters' do
+      user = User.new(password: '123456')
+      user.valid?
+      expect(user.errors).not_to have_key(:password)
+    end
   end
 
   # Test association
@@ -90,7 +92,7 @@ RSpec.describe User, type: :model do
   end
 
   # Test uniqueness
-  describe 'validations' do
+  describe 'uniqueness' do
     it 'validates uniqueness of email and phone' do
       User.create(
         full_name: 'John Smith',
