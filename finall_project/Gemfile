@@ -44,7 +44,10 @@ gem 'sassc-rails'
 
 gem 'pry-rails', :group => :development
 
+gem 'rails-controller-testing'
+
 gem 'font-awesome-sass'
+
 gem 'multi-select-rails'
 
 gem 'activestorage'
