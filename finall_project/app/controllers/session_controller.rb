@@ -48,6 +48,8 @@ class SessionController < ApplicationController
   end
 
   def should_remember_user?
+    return if params[:session][:remember_me].nil?
+
     params[:session][:remember_me] == '1'
   end
 

@@ -31,6 +31,7 @@
             .team-boxed.position-relative[style="height:345px"]
               .container
                 .row.people.d-flex.justify-content-center
+                - if (!@user_send.blank?)
                   - @user_send.each do |items|
                     .col-md-6.col-lg-6.user-send-item.item
                       .box
@@ -48,7 +49,7 @@
                             i.fa-solid.fa-envelope
                           a[href="#"]
                             i.fa-sharp.fa-solid.fa-user
-              - if (!@user_send.nil? && @user_send.count > 2)
+              - if (!@user_send.blank? && @user_send.count > 2)
                 button.control.prev[type="button" style="left: 22px;"]
                   span.control-icon
                     i.fa-sharp.fa-solid.fa-chevron-left
@@ -68,6 +69,7 @@
             .team-boxed.position-relative[style="height:345px"]
               .container
                 .row.people.d-flex.justify-content-center
+                - if (!@user_receiver.blank?)
                   - @user_receiver.each do |items|
                     .col-md-6.col-lg-6.item.user-receiver-item
                       .box
@@ -84,7 +86,7 @@
                             i.fa-solid.fa-envelope
                           a[href="#"]
                             i.fa-sharp.fa-solid.fa-user
-              - if (!@user_receiver.nil? && @user_receiver.count > 2)
+              - if (!@user_receiver.blank? && @user_receiver.count > 2)
                 button.control.prev[type="button" style="left: 22px;"]
                   span.control-icon
                     i.fa-sharp.fa-solid.fa-chevron-left

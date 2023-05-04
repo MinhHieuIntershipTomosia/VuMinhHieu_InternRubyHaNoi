@@ -10,7 +10,6 @@ class MyPageController < ApplicationController
     @thankscard = thankscard_status(false)
     @thankscard = sort_by_update_at(@thankscard)
     @user_receivers = @thankscard.map(&:users_receiver).flatten
-    puts @thankscard.count
   end
 
   def send_new_thanks_card

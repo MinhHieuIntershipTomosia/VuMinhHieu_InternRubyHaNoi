@@ -69,7 +69,7 @@ RSpec.describe ThanksCard, type: :model do
         user: users,
         category: categorys
       )
-      users_receiver = UsersReceiver.create(thanks_card: thankscard, user: user)
+      users_receiver = UsersReceiver.create(thanks_card: thankscard, user: users)
       expect(users_receiver.delete_status).to eq(false)
       users_receiver.update(delete_status: true)
       expect(users_receiver.reload.delete_status).to eq(true)
