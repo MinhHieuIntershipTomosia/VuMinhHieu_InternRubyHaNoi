@@ -15,7 +15,7 @@ module MyPageHelper
   end
 
   def sort_by_update_at(lst, attribute = nil)
-    return if lst.blank?
+    return [] if lst.blank?
 
     if attribute.present?
       lst.sort_by { |items| (Time.zone.now - items.send(attribute.to_sym).updated_at).to_i }
