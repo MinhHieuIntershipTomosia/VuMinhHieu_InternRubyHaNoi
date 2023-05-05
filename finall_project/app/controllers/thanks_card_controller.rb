@@ -63,15 +63,22 @@ class ThanksCardController < ApplicationController
   # reutrn true if save success, return false if contra
   def save_thankscard
     if @thankscard.save
-      params[:thanks_card][:image].each do |item|
-        @thankscard.image.attach(item)
-      end
+      save_image_thankscard
       old_updated_at = @thankscard.created_at
       @thankscard.update(updated_at: old_updated_at)
       @thankscard.create_user_receiver(params[:thanks_card][:user_receiver_id])
       return true
     end
     false
+  end
+
+  # save image
+  def save_image_thankscard
+    return if params[:thanks_card][:image].blank?
+
+    params[:thanks_card][:image].each do |item|
+      @thankscard.image.attach(item)
+    end
   end
 
   # reutrn true if save success, return false if contra

@@ -95,6 +95,46 @@ RSpec.describe 'Mypages', type: :request do
   end
 end
 
+# test get all thankscard delete
+RSpec.describe 'Mypages', type: :request do
+  describe 'GET #getall_tkcard_delete' do
+    let(:users) { create(:user) }
+    before do
+      post login_path, params: { session: { email: users.email, password: users.password } }
+    end
+
+    it 'returns http success' do
+      get thankscardelete_path
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'renders the get all thankscard delete template' do
+      get thankscardelete_path
+      expect(response).to render_template(partial: 'thanks_card/_list_thanks_card')
+    end
+  end
+end
+
+# test get all thankscard receiver delete
+RSpec.describe 'Mypages', type: :request do
+  describe 'GET #getall_tkcard_delete' do
+    let(:users) { create(:user) }
+    before do
+      post login_path, params: { session: { email: users.email, password: users.password } }
+    end
+
+    it 'returns http success' do
+      get receiverdelete_path
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'renders the get all thankscard delete template' do
+      get receiverdelete_path
+      expect(response).to render_template(partial: 'thanks_card/_list_thanks_card_receiver')
+    end
+  end
+end
+
 # test report
 RSpec.describe 'Mypages', type: :request do
   describe 'GET #report' do
@@ -106,6 +146,11 @@ RSpec.describe 'Mypages', type: :request do
     it 'returns http success' do
       get report_path
       expect(response).to have_http_status(:success)
+    end
+
+    it 'renders the report template' do
+      get report_path
+      expect(response).to render_template('my_page/report')
     end
   end
 end

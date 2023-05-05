@@ -24,15 +24,6 @@ class SessionController < ApplicationController
     redirect_to root_url
   end
 
-  def redirect_back_or(default)
-    redirect_to(session[:forwarding_url] || default)
-    session.delete(:forwarding_url)
-  end
-
-  def store_location
-    session[:forwarding_url] = request.original_url if request.get?
-  end
-
   private
 
   def handle_unactive_user
@@ -48,8 +39,6 @@ class SessionController < ApplicationController
   end
 
   def should_remember_user?
-    return if params[:session][:remember_me].nil?
-
     params[:session][:remember_me] == '1'
   end
 
