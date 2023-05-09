@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   resources :user
   resources :thanks_card
   resources :comment
-  resources :users_receiver, only: [:show, :destroy]
+  resources :users_receiver, only: %i[show destroy]
   resources :account_activations, only: [:edit]
 end

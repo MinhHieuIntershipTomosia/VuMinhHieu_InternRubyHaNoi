@@ -21,14 +21,14 @@ FactoryBot.define do
     user
   end
 
-  factory :user_receiver do
+  factory :users_receiver do
     association :user
     association :thanks_card
   end
 
   factory :comment do
     comment_content { 'Test comment' }
-    association :thanks_card, factory: :thanks_card
-    association :user, factory: :user
+    association :user
+    association :thanks_card
   end
 end
