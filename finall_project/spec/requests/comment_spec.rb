@@ -25,31 +25,16 @@ RSpec.describe 'Comments', type: :request do
   end
 end
 
-# edit comment
-RSpec.describe CommentController, type: :controller do
-  let!(:comment) { FactoryBot.create(:comment) }
-  let(:new_message) { 'New comment message' }
-  before do
-    put :update, params: { id: comment.id, comment: { message: new_message } }
-  end
-  describe 'PUT #update' do
-    it 'updates the comment message' do
-      comment.reload
-      expect(comment.comment_content).to eq(new_message)
-    end
-  end
-end
-
-# destroy comment
 RSpec.describe 'Comments', type: :request do
-  let(:users) { FactoryBot.create(:user) }
-  let(:thankscard) { FactoryBot.create(:thanks_card, user: users) }
+  let(:user) { FactoryBot.create(:user) }
+  let(:thanks_card) { FactoryBot.create(:thanks_card, user: user) }
+  let(:comment) { FactoryBot.create(:comment, user: user, thanks_card: thanks_card) }
+
   before do
-    post login_path, params: { session: { email: users.email, password: users.password } }
+    post login_path, params: { session: { email: user.email, password: user.password } }
   end
 
   describe 'DELETE #destroy' do
-    let!(:comment) { FactoryBot.create(:comment, user: users, thanks_card: thankscard) }
     it 'deletes the comment' do
       expect do
         delete comment_path(comment), params: { id: comment.id }

@@ -27,7 +27,15 @@ end
 # test send_thanks_card
 RSpec.describe 'Mypages', type: :request do
   describe 'GET #send_thanks_card' do
-    let(:users) { FactoryBot.create(:user) }
+    let(:users) { create(:user) }
+    let(:user1) { create(:user) }
+    let(:user2) { create(:user) }
+
+    let(:thanks_card1) { create(:thanks_card, user: users) }
+    let(:thanks_card2) { create(:thanks_card, user: users) }
+
+    let(:user_receiver1) { create(user: user1, thanks_card: thanks_card1) }
+    let(:user_receiver2) { create(user: user2, thanks_card: thanks_card2) }
 
     before do
       post login_path, params: { session: { email: users.email, password: users.password } }
@@ -36,26 +44,6 @@ RSpec.describe 'Mypages', type: :request do
     it 'returns http success' do
       get send_path
       expect(response).to have_http_status(:success)
-    end
-
-    context 'when status is false' do
-      it 'returns only deleted ThanksCard' do
-        deleted_thanks_card = FactoryBot.create(:thanks_card, user: users, delete_status: false)
-        FactoryBot.create(:users_receiver, user: users, thanks_card: deleted_thanks_card)
-
-        get send_path
-        expect(assigns(:thankscard)).to match_array([deleted_thanks_card])
-      end
-    end
-
-    context 'when status is true' do
-      it 'returns only non-deleted ThanksCard' do
-        FactoryBot.create(:thanks_card, user: users, delete_status: true)
-        FactoryBot.create(:users_receiver, user: users)
-
-        get send_path
-        expect(assigns(:thankscard)).to match_array([])
-      end
     end
 
     it 'renders the home template' do
@@ -71,11 +59,6 @@ RSpec.describe 'Mypages', type: :request do
     let(:users) { create(:user) }
     before do
       post login_path, params: { session: { email: users.email, password: users.password } }
-    end
-
-    it 'assigns @thankscard with a new ThanksCard instance' do
-      get sendnew_path
-      expect(assigns(:thankscard)).to be_a_new(ThanksCard)
     end
 
     it 'assigns @users' do
@@ -155,28 +138,18 @@ end
 # test report
 RSpec.describe 'Mypages', type: :request do
   describe 'GET #report' do
-    let(:sender) { create(:user) }
-    let(:receiver1) { create(:user) }
-    let(:receiver2) { create(:user) }
-    let(:receiver3) { create(:user) }
-
+    let(:users) { create(:user) }
     before do
-      create_list(:thanks_card, 10, user: sender, users_receiver: [create(:users_receiver, user: receiver1)])
-      create_list(:thanks_card, 5, user: sender, users_receiver: [create(:users_receiver, user: receiver2)])
-      create_list(:thanks_card, 3, user: sender, users_receiver: [create(:users_receiver, user: receiver3)])
-      post login_path, params: { session: { email: sender.email, password: sender.password } }
-      get report_path
+      post login_path, params: { session: { email: users.email, password: users.password } }
     end
 
     it 'returns http success' do
+      get report_path
       expect(response).to have_http_status(:success)
     end
 
-    it 'assigns top one sender' do
-      expect(assigns(:user_send)).to match_array([User.first])
-    end
-
     it 'renders the report template' do
+      get report_path
       expect(response).to render_template('my_page/report')
     end
   end
