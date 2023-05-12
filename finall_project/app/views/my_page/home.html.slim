@@ -31,10 +31,17 @@
                     == render partial: 'comment/comment', collection: items.comments
 
                 /! end view all comment
-            div.card-footer
-              a.d-inline-block.text-muted.ml-3.text-decoration-none
+            div.card-footer.d-flex.align-items-center
+              span.d-flex.text-muted.ml-3.text-decoration-none.align-items-center
                 strong #{items.comments.count}
-                small.align-middle Comments
+                small.align-middle.ms-1 Comments
+              - if logged_in?
+                  span.d-flex.text-muted.ml-3.text-decoration-none.align-items-center.ms-4
+                    - if items.likes.find_by(user_id: current_user.id)  
+                        i.fa-solid.fa-heart
+                    - else
+                        i.fa-regular.fa-heart
+                    small.align-middle.ms-1 likes
 
 = javascript_include_tag "ajax_comment.js"
 = javascript_include_tag "edit_comment.js"

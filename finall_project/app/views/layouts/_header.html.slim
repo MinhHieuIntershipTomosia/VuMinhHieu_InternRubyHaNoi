@@ -12,22 +12,22 @@ header#header.p-3.text-dark
           = link_to "Receiver", receiver_path, class: "nav-link px-2 header-nav-link link-dark #{'text-secondary ' if( params[:action] == 'receiver')}"
         li
           = link_to "Report", report_path, class: "nav-link px-2 header-nav-link link-dark #{'text-secondary ' if( params[:action] == 'report')}"
-    form[class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"]
-      input[type="search" class="form-control form-control-white" placeholder="Search..." aria-label="Search"]
+    / form[class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"]
+    /   input[type="search" class="form-control form-control-white" placeholder="Search..." aria-label="Search"]
     - if logged_in?
         div.dropdown.text-end
           a[href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"  data-bs-toggle="dropdown" aria-expanded="false"]
             = avatar_header current_user
             span.ms-2  #{current_user.full_name}
           ul.dropdown-menu.text-small[aria-labelledby="dropdownUser1"]
-            li
-              a.dropdown-item(href="#")New project...
-            li
-              a.dropdown-item(href="#")Settings
-            li
-              a.dropdown-item(href="#")Profile
-            li
-              hr.dropdown-divider
+            / li
+            /   a.dropdown-item(href="#")New project...
+            / li
+            /   a.dropdown-item(href="#")Settings
+            / li
+            /   a.dropdown-item(href="#")Profile
+            / li
+            /   hr.dropdown-divider
             li
               = link_to "Sign out", logout_path, method: :delete, class: "dropdown-item"
     - else

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_17_103550) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_12_084106) do
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -53,6 +53,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_103550) do
     t.bigint "thanks_card_id", null: false
     t.index ["thanks_card_id"], name: "index_comments_on_thanks_card_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "likes", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "thanks_card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["thanks_card_id"], name: "index_likes_on_thanks_card_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "thanks_cards", charset: "utf8mb3", force: :cascade do |t|
@@ -99,6 +108,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_103550) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "thanks_cards"
   add_foreign_key "comments", "users"
+  add_foreign_key "likes", "thanks_cards"
+  add_foreign_key "likes", "users"
   add_foreign_key "thanks_cards", "categories"
   add_foreign_key "thanks_cards", "users"
   add_foreign_key "users_receivers", "thanks_cards"
