@@ -1,0 +1,15 @@
+li.comment-item
+  = gravatar_for comment.user
+  div.comment-content.w-100
+    p.comment-content__userName = comment.user.full_name
+    p.thanksCard--maxline.comment-content__text id="comment-#{comment.id}" = comment.comment_content
+    span.comment-content__time
+      - if current_user?(comment.user)
+        span.me-2.py-2.text-dark.edit-comment edit
+        span.me-2.py-2.text-dark.delete-comment delete
+      = time_ago_in_words(comment.updated_at)
+      - if comment.created_at != comment.updated_at
+        - if !comment.thanks_card.delete_status
+          p.m-0 Updated #{time_ago_in_words(comment.updated_at)} ago.
+        - else
+          p.m-0 Delete #{time_ago_in_words(comment.updated_at)} ago.

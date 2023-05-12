@@ -1,23 +1,25 @@
 doctype html
 html
   head
-    title = full_title(yield(:title))
-    meta name="viewport" content="width=device-width, initial-scale=1"
+    title
+      = full_title(yield(:title))
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   body
-    div.app-container
-      /! begin header
-      == render "layouts/header"
-      /! end header
+    .app-container
+      = render "layouts/header"
       main#main
-        /! begin sidebar
-        == render "layouts/sidebar"
-        /! end sidebar
-        div#content
+        = render "layouts/sidebar"
+        #content
           div#content-main
-            - flash.each do |message_type, message|
-              div.mt-2.ms-2.me-2.alert.alert-#{message_type}= message
-            = yield
+            div.flash-messages
+              - flash.each do |message_type, message|
+                | <div class="mt-2 ms-2 me-2 alert alert-
+                = message_type
+                | "> 
+                = message
+            div.main-content
+              = yield

@@ -15,9 +15,17 @@ default: &default
 development:
   <<: *default
   database: projectThanksCard_development
-  
+
 test:
   <<: *default
   database: projectThanksCard_app_test
 
-
+production:
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: projectThanksCard_production
+  username: projectThanksCard
+  password: <%= ENV['projectThanksCard_DATABASE_PASSWORD'] %>

@@ -1,24 +1,7 @@
-- if logged_in?
+- if logged_in? && params[:action] != "home"
   div#sidebar
     div.d-flex.flex-column.flex-shrink-0.p-3.bg-light style="width: 280px; height: 100%; border-right: 1px solid #ccc;"
-      / if @action_name.nil? || @action_name == "home"
-      - if params[:action].blank? || params[:action] == "home"
-          p.d-flex.align-items-center.mb-3.me-md-auto.link-dark.text-decoration-none
-            span.fs-4 Category ThanhsCard
-          ul.nav.nav-pills.flex-column.mb-auto
-            li.nav-item
-              a.nav-link.active[href="#" aria-current="page"]
-                | All ThanksCard
-            li
-              a.nav-link.link-dark[href="#"]
-                | ThanksCard Wendding
-            li
-              a.nav-link.link-dark[href="#"]
-                | ThanksCard Cristmast
-            li
-              a.nav-link.link-dark[href="#"]
-                | ThansCard Help
-      - elsif params[:action] == "send_thanks_card" ||  @siderbar == "send"
+      - if params[:action] == "send_thanks_card" ||  @siderbar == "send"
           p.d-flex.align-items-center.mb-3.me-md-auto.link-dark.text-decoration-none
             span.fs-4 ThanksCard Send
           ul.nav.nav-pills.flex-column.mb-auto
